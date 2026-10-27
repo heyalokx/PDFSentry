@@ -6,3 +6,7 @@ artifacts/**/*.npz
 data/raw/*.zip
 *.dat
 .pytest_cache/
+
+data/ember/
+data/benign_corpus/
+*.model

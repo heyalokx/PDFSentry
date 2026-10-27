@@ -1,0 +1,54 @@
+{
+  "n_benign_originals": 300,
+  "ember_evasion_rate": 0.9933333333333333,
+  "ember_mean_score_original": 0.00042515438535307835,
+  "ember_mean_score_weaponized": 0.010619998178877547,
+  "reachability_detection_rate": 1.0,
+  "detector_auc": {
+    "ember_score_alone": 0.6491333333333333,
+    "ember_plus_reachability_fusion": 0.9983444444444445
+  },
+  "fusion_top_features": [
+    {
+      "feature": "rc_javascript_onopen",
+      "gain": 7688.264350959412
+    },
+    {
+      "feature": "rc_javascript_hidden_gap",
+      "gain": 797.2365289889276
+    },
+    {
+      "feature": "rc_uri_minhops",
+      "gain": 8.926058074606047
+    },
+    {
+      "feature": "rc_javascript_naive",
+      "gain": 8.61856235760024
+    },
+    {
+      "feature": "rc_objstm_count",
+      "gain": 7.366560701266442
+    },
+    {
+      "feature": "rc_total_naive_tokens",
+      "gain": 6.939322624014624
+    },
+    {
+      "feature": "rc_n_objects",
+      "gain": 6.316829157149928
+    },
+    {
+      "feature": "rc_javascript_minhops",
+      "gain": 3.248716827481985
+    },
+    {
+      "feature": "rc_n_auto_triggers",
+      "gain": 1.6751929819584535
+    },
+    {
+      "feature": "rc_n_dormant",
+      "gain": 0.00014632265271075084
+    }
+  ],
+  "note": "Weaponized = benign PDF + reachable auto-run JS hidden in a compressed object stream (harmless alert payload). AUC is for separating originals from their weaponized twins."
+}

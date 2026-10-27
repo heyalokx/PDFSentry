@@ -1,85 +1,70 @@
 # Faculty Q&A — evidence-based answers
 
-**Q. What is genuinely novel here? Isn't this just the EMBER/CIC baseline again?**
-No. The baseline is a control, not the contribution. The contribution is (1) the
-Evasion-Cost Map with an Evasion-Resilience Score, which quantifies how much
-caught malware an author could trivially reclaim, and (2) the Trigger-
-Reachability Analyzer, which replaces token *counting* with structural
-*reachability*. See `NOVELTY.md`. Every count-based PDF detector in the
-literature stops at an AUC on a fixed split; we measure the fragility behind
-that AUC and build a signal that survives it.
+**Q. Did you reproduce the EMBER2024 baseline you cited in Review 2?**
+Yes, on the authors' released PDF model and their protocol: ordinary ROC/PR
+0.9913/0.9933 (published 0.9912/0.9933), evasive challenge 0.9075/0.7864
+(published 0.9066/0.7841). The baseline is verified, not assumed. See
+`scripts/reproduce_ember.py` and `artifacts/metrics/ember_reproduction.json`.
 
-**Q. Your baseline is 99.9% PR-AUC. Why isn't that the result?**
-Because it's the setup, not the finding. The finding is that the same detector
-is evaded on 67% of caught malware at a median of 3 feature edits. High
-benchmark accuracy and evasion resilience are different axes; the standard
-evaluation only ever reports the first.
+**Q. What is genuinely new, versus just reproducing the benchmark?**
+The reachability feature family (O3) and the result that it closes the evasive gap
+(O4). Reproduction is the control. See `NOVELTY.md`.
 
-**Q. Is the evasion search just adversarial examples?**
-It is a *constrained, interpretable* counterfactual search in feature space,
-designed to be realistic rather than minimal-Lp. Edits are limited to moves an
-author actually controls (remove capability tokens, adjust cosmetic fields),
-counts stay non-negative, and derived features recompute after each edit so an
-attacker can't desynchronise a derived feature from its parents. It is a *lower
-bound* on a real attacker's options — we say so in `LIMITATIONS.md`. It never
-generates a PDF or a payload; it operates on integer feature vectors.
+**Q. Why does the detector miss evasive malware? (O2)**
+SHAP on the real EMBER model shows it spends ~60% of its attention on string
+features, ~29% on the byte histogram, ~9% on byte-entropy, and ~0% on structure.
+Crucially the malware it *misses* and the malware it *catches* have nearly
+identical family profiles — so once an evasive file looks byte/string-normal, the
+model has no structural evidence left. The gap is a structural blind spot.
 
-**Q. Why did the structure-first model barely help (0.33 → 0.345)?**
-That negative result *is* evidence. Every count-based feature — raw or derived —
-responds to the same author edit (removing tokens), so dropping some doesn't
-change the attack surface. It shows robustness needs a different *kind* of
-signal, not a different feature subset. Paired bootstrap ΔPR-AUC is not
-significant, so we also lose no accuracy by dropping fragile features.
+**Q. What is "reachability" and why is it robust?**
+We parse the object graph and decide whether a dangerous action (JavaScript,
+Launch, SubmitForm, EmbeddedFile…) is reachable from an automatic trigger
+(`/OpenAction`, `/AA`, `/Names/JavaScript`), in how many hops, and whether it is
+hidden from the byte scan. It is robust because it tracks functional necessity: an
+attack that must auto-run cannot remove its reachable trigger path. Burying or
+compressing tokens defeats a byte/string detector; it does not defeat reachability.
 
-**Q. What does "reachability" actually compute, and why is it robust?**
-It parses the object graph and does a BFS from automatic trigger points
-(`/OpenAction`, `/AA`, `/Names/JavaScript`, etc.) to each dangerous action,
-recording hop distance and whether the trigger is auto or interaction. It is
-robust because it tracks functional necessity: an attack that must auto-run
-cannot remove its reachable trigger path without ceasing to be an attack.
-Burying tokens defeats a counter; it does not defeat reachability.
+**Q. Show me the headline result. (O4)**
+We took 300 real benign PDFs EMBER is confident about and weaponized each with a
+reachable auto-run action hidden in a compressed stream. 99.3% still scored benign
+on the real EMBER model; reachability caught 100%. Fusing reachability with the
+EMBER score lifts separation of safe-vs-weaponized from AUC 0.649 to 0.998
+(5-fold CV). `scripts/structural_evasion_study.py`.
 
-**Q. Show me a case where counting and reachability disagree.**
-`GeoTopo.pdf` (real, benign): a URI action is reachable on open, but the raw
-byte count of `/URI` is **0** because the tokens live inside compressed object
-streams. A byte counter sees nothing; reachability sees it. Conversely
-`cropped-rotated-scaled.pdf` has 128 `/URI` tokens but they're only reachable by
-clicking a link — reachability correctly downgrades it to interaction-required.
-Across the corpus, 7 such disagreements.
+**Q. Isn't injecting your own payload cheating? It's not real malware.**
+The weaponized file is genuinely dangerous — it auto-runs code on open; that is a
+real attack vector. We use a harmless payload for safety, but the evasion
+*mechanism* (hiding the action in a compressed object stream) is payload-agnostic:
+it removes the giveaway strings for *any* JavaScript, which is exactly why real
+evasive malware uses it. This is the EvadeML-style controlled evasion methodology
+Review 2 cites. We state the scope plainly in `LIMITATIONS.md`.
 
-**Q. Why PR-AUC as the primary metric?**
-The class split is roughly balanced here (55% malicious), but PR-AUC is the
-honest primary for detection because it reflects performance on the positive
-(malicious) class and degrades visibly under false positives at low prevalence —
-the regime a deployed scanner faces. We report ROC-AUC, F1, precision, recall,
-accuracy and confusion matrices alongside. PR-AUC is computed as **average
-precision** (documented, not trapezoidal) to avoid the known AP-vs-AUC ambiguity.
+**Q. Could you not just retrain EMBER with structural features on the challenge set?**
+Not directly: EMBER releases the 805 challenge PDFs as feature vectors, not raw
+files, and reachability needs the object graph. That is why we demonstrate the
+augmentation on real PDFs we control, against the real model. Obtaining the raw
+challenge PDFs (VirusTotal-gated) is the natural next step.
 
-**Q. How do you prevent data leakage / tuning on the evaluation set?**
-Single stratified split (seed 1337, 70/30), split hashes recorded. The evasion
-search and SHAP run on the held-out test split; thresholds are fixed at 0.5 and
-never tuned on test. No challenge samples are used to fit anything.
+**Q. Why PR-AUC primary?**
+It reflects positive-class (malicious) performance and degrades under false
+positives at low prevalence — the deployed-scanner regime. We report ROC-AUC, F1,
+precision, recall and confusion matrices too. PR-AUC is average precision
+(documented), not trapezoidal, to avoid the AP-vs-AUC ambiguity.
 
-**Q. Why static analysis and not a sandbox?**
-Scope and safety. Dynamic detonation is explicitly out of scope; everything here
-is static. The reachability engine never executes JavaScript, never opens
-attachments or URLs, never renders the file. Resource guards bound size, object
-count and time; malformed/encrypted inputs are handled without crashing (tested).
+**Q. What about the mimicry probe you promised as O6?**
+Done, on the CIC feature set: a 0.9995-PR-AUC count-based detector is evaded on
+67% of caught malware at a median of 3 feature edits, and dropping the keyword
+counts barely changes resilience (0.33 → 0.345, ΔPR-AUC not significant) — so
+counting is structurally fragile and feature selection doesn't fix it.
 
-**Q. Is SHAP enough on its own?**
-No — SHAP explains model behaviour, not attacker intent, and splits credit
-across correlated features. We cross-check with permutation importance (computed
-independently); the two rankings converge on the same fragile features, which is
-why the evasion map and the explanation agree.
+**Q. How is the uploaded PDF kept safe?**
+Parsed statically with pikepdf; JavaScript is never executed, launch/embedded
+payloads never opened, URLs never contacted, the file never rendered. Size, object
+and time guards; malformed/encrypted files handled without crashing (tested). HTML
+reports escape all untrusted strings (security tests).
 
-**Q. What couldn't you do, honestly?**
-Reproduce EMBER2024 (its data is unreachable from the build environment —
-BLOCKED, not skipped); add reachability as a trained feature on the full set
-(CIC ships counts, not raw PDFs, so reachability is demonstrated on parsed files
-and the live analyzer); and temporal drift (CIC has no timestamps). All stated
-in `LIMITATIONS.md` and on the dashboard's "Method & limits" view.
-
-**Q. Can I see it work live?**
-Yes — `make backend`, then `POST /api/analyze` a PDF, or use the crafted
-fixtures. The dashboard's Investigate tab shows four precomputed real analyses.
-See `DEMO_SCRIPT.md`.
+**Q. Which objectives are complete, and what's left?**
+O1 reproduced; O2 done; O3 reachability family built; O4 augmentation shown on the
+real model; O6 mimicry probe done; O7 risk report + live workbench done. Left:
+validate reachability on raw wild evasive PDFs (needs a raw, labelled corpus).

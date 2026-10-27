@@ -7,6 +7,31 @@ from backend.core.analyze import analyze
 
 bundle = json.load(open(art("metrics", "dashboard_data.json")))
 
+# compression-mechanism proof: EMBER score of the 4 crafted fixtures
+import sys, types, numpy as np
+_m = types.ModuleType("signify"); _a = types.ModuleType("signify.authenticode")
+_a.SignedPEFile = object; _m.authenticode = _a
+sys.modules.setdefault("signify", _m); sys.modules.setdefault("signify.authenticode", _a)
+try:
+    import thrember, lightgbm as lgb
+    from backend.features.reach_features import reach_feature_vector
+    _ext = thrember.PEFeatureExtractor()
+    _mdl = lgb.Booster(model_file=str(ROOT / "data/ember/EMBER2024_PDF.model"))
+    mech = []
+    for lbl, fp in [("auto-run, visible tokens", "fixture_active_onopen"),
+                    ("auto-run, hidden in compressed stream", "fixture_active_buried"),
+                    ("dormant (never runs)", "fixture_dormant"),
+                    ("runs only on click", "fixture_interaction_only")]:
+        d = open(ROOT / f"tests/fixtures/crafted/{fp}.pdf", "rb").read()
+        v = np.array(_ext.feature_vector(d), dtype=np.float32).reshape(1, -1)
+        rf = reach_feature_vector(d)
+        mech.append({"label": lbl, "ember": float(_mdl.predict(v)[0]),
+                     "reach_onopen": int(rf["rc_javascript_onopen"]),
+                     "evasion_sig": int(rf["rc_evasion_signature"])})
+    bundle["mechanism"] = mech
+except Exception as e:
+    bundle["mechanism"] = []
+
 # precompute a few live analyses for the Investigate tab
 examples = {}
 for key, path in {
@@ -170,8 +195,9 @@ const $ = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();
 const pct = x => (x*100).toFixed(1)+'%';
 const f4 = x => x.toFixed(4);
 const VIEWS = [
-  ['overview','Overview'], ['evasion','Evasion collapse'], ['reach','Reachability'],
-  ['explain','Explainability'], ['investigate','Investigate'], ['about','Method & limits']
+  ['overview','Overview'], ['gap','The evasive gap'], ['evasion','Structural evasion'],
+  ['reach','Reachability'], ['explain','Why they evade'], ['probe','Mimicry probe'],
+  ['investigate','Investigate'], ['about','Method & limits']
 ];
 const VCLASS={ACTIVE_ONOPEN:'v-open',ACTIVE_ONINTERACT:'v-inter',PRESENT_DORMANT:'v-dorm',ABSENT:'v-abs'};
 const VSHORT={ACTIVE_ONOPEN:'ACTIVE · on-open',ACTIVE_ONINTERACT:'active · on-click',PRESENT_DORMANT:'dormant',ABSENT:'absent'};
@@ -205,113 +231,124 @@ function lineChart(series, xlab, ylab){
 
 const RENDER = {
  overview(){
-  const pm=D.baseline.point_metrics, bp=D.baseline.bootstrap.pr_auc, rp=D.baseline.bootstrap.roc_auc;
-  const ev=D.comparison.evasion.baseline, ds=D.dataset;
-  const reachDis=D.reachability.disagreement;
+  const eo=D.ember.ordinary.metrics, ec=D.ember.challenge.metrics;
+  const se=D.structural_evasion;
   return `
-   <h2 class="view">The paradox this project measures</h2>
-   <p class="lede">A LightGBM detector trained on the ${ds.final_rows.toLocaleString()}-file
-     CIC-Evasive-PDFMal2022 set scores almost perfectly — and is still evaded on two in three
-     of the malware it catches, by editing a median of three fields. PDFSentry measures that gap
-     and proposes a signal that survives it.</p>
+   <h2 class="view">Closing the evasive gap in EMBER2024</h2>
+   <p class="lede">The EMBER2024 PDF detector scores 0.99 on ordinary malware but collapses on
+     evasive samples. We reproduce that gap exactly on the authors' own model, diagnose it with
+     SHAP, and close it with a structural <em>reachability</em> signal — tested against the real
+     published model, start to finish.</p>
    <div class="grid cards4">
-     <div class="card"><h3>PR-AUC (test)</h3><div class="stat tnum">${f4(pm.pr_auc)}</div>
-       <div class="sub">95% CI ${f4(bp.ci_low)}–${f4(bp.ci_high)}</div></div>
-     <div class="card"><h3>ROC-AUC (test)</h3><div class="stat tnum">${f4(pm.roc_auc)}</div>
-       <div class="sub">95% CI ${f4(rp.ci_low)}–${f4(rp.ci_high)}</div></div>
-     <div class="card"><h3>F1 · recall</h3><div class="stat tnum">${f4(pm.f1)}</div>
-       <div class="sub">recall ${pct(pm.recall)} · prec ${pct(pm.precision)}</div></div>
-     <div class="card" style="border-color:var(--accent2)"><h3>Evasion-resilience score</h3>
-       <div class="stat tnum" style="color:var(--accent2)">${pct(ev.ers)}</div>
-       <div class="sub">${ev.n_evaded}/${ev.n_caught} caught malware evaded</div></div>
+     <div class="card"><h3>EMBER ordinary PR-AUC</h3><div class="stat tnum">${f4(eo.pr_auc)}</div>
+       <div class="sub">published 0.9933 · reproduced</div></div>
+     <div class="card" style="border-color:var(--el)"><h3>EMBER evasive PR-AUC</h3>
+       <div class="stat tnum" style="color:var(--el)">${f4(ec.pr_auc)}</div>
+       <div class="sub">published 0.7841 · ${ec.confusion.fn}/${D.ember.challenge.n_evasive} missed</div></div>
+     <div class="card" style="border-color:var(--hi)"><h3>Weaponized docs evading EMBER</h3>
+       <div class="stat tnum" style="color:var(--hi)">${pct(se.ember_evasion_rate)}</div>
+       <div class="sub">reachability catches ${pct(se.reachability_detection_rate)}</div></div>
+     <div class="card" style="border-color:var(--accent)"><h3>EMBER + reachability (fusion)</h3>
+       <div class="stat tnum" style="color:var(--accent)">${f4(se.detector_auc.ember_plus_reachability_fusion)}</div>
+       <div class="sub">AUC vs ${f4(se.detector_auc.ember_score_alone)} for EMBER alone</div></div>
    </div>
    <div class="callout">
-     <b>Read the last two tiles together.</b> The model wins the benchmark (PR-AUC ${f4(pm.pr_auc)})
-     yet only ${pct(ev.ers)} of the malware it catches resists a constrained, author-side evasion
-     search. Benchmark accuracy and evasion resilience are different axes — the Review-2 scope only
-     ever measured the first.
+     <b>The whole thesis in one line.</b> A detector at ${f4(eo.pr_auc)} PR-AUC on ordinary malware
+     is blind to ${pct(se.ember_evasion_rate)} of structurally weaponized documents, because it reads
+     bytes and strings, not structure. Adding one family of reachability features lifts separation
+     from AUC ${f4(se.detector_auc.ember_score_alone)} to ${f4(se.detector_auc.ember_plus_reachability_fusion)}.
    </div>
    <div class="two" style="margin-top:16px">
-     <div class="panel" style="margin:0"><h3 class="t">Precision–recall curve</h3>
-       <p class="d">Test split, ${pm.n.toLocaleString()} files, prevalence ${pct(pm.prevalence)}.</p>
+     <div class="panel" style="margin:0"><h3 class="t">EMBER reproduction</h3>
+       <p class="d">Authors' released PDF model, their evaluation protocol. Our numbers match the
+         published benchmark within bootstrap noise — the baseline is verified, not assumed.</p>
+       <table><thead><tr><th>Evaluation</th><th class="mono">ROC-AUC</th><th class="mono">PR-AUC</th><th class="mono">published</th></tr></thead><tbody>
+         <tr><td>Ordinary test</td><td class="mono">${f4(eo.roc_auc)}</td><td class="mono">${f4(eo.pr_auc)}</td><td class="mono">.9912 / .9933</td></tr>
+         <tr><td>Evasive challenge</td><td class="mono">${f4(ec.roc_auc)}</td><td class="mono">${f4(ec.pr_auc)}</td><td class="mono">.9066 / .7841</td></tr>
+       </tbody></table>
+       <p class="note">Challenge = ${D.ember.challenge.n_evasive} evasive PDFs + ${D.ember.challenge.n_benign.toLocaleString()} benign (authors' protocol).</p></div>
+     <div class="panel" style="margin:0"><h3 class="t">Ordinary vs evasive — the gap</h3>
+       <p class="d">Same model, two precision–recall curves. Evasive malware drags precision down
+         where ordinary malware never does.</p>
        <div id="prc"></div></div>
-     <div class="panel" style="margin:0"><h3 class="t">Where the two signals disagree</h3>
-       <p class="d">Across ${D.reachability.n_crafted+D.reachability.n_real} real + crafted PDFs,
-         a byte-counting view and the reachability view reach different conclusions in
-         ${reachDis.naive_over_alarm+reachDis.naive_under_alarm} cases.</p>
-       <div class="grid cards2" style="gap:10px">
-         <div class="card" style="background:var(--panel2)"><h3>Count over-alarms</h3>
-           <div class="stat tnum" style="font-size:24px">${reachDis.naive_over_alarm}</div>
-           <div class="sub">tokens present, nothing auto-runs</div></div>
-         <div class="card" style="background:var(--panel2)"><h3>Count under-alarms</h3>
-           <div class="stat tnum" style="font-size:24px;color:var(--hi)">${reachDis.naive_under_alarm}</div>
-           <div class="sub">auto-runs, tokens hidden from byte scan</div></div>
-       </div>
-       <p class="note">Dataset: ${ds.label_counts.malicious.toLocaleString()} malicious ·
-         ${ds.label_counts.benign.toLocaleString()} benign · ${ds.parse_failure_rows.toLocaleString()}
-         files with parser-failure sentinels · ${ds.malformed_header_rows} malformed headers.</p>
-     </div>
    </div>`;
  },
- evasion(){
-  const eb=D.evasion_baseline, cmp=D.comparison;
-  const hist=eb.evasion_cost.hist;
-  const maxc=Math.max(...Object.values(hist));
-  const bars=Object.entries(hist).map(([k,v])=>{
-    const h=Math.max(4,(v/maxc)*120);
-    return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1">
-      <div class="mono" style="font-size:10px;color:var(--muted)">${v}</div>
-      <div style="width:70%;height:${h}px;background:var(--accent2);border-radius:4px 4px 0 0"></div>
-      <div class="mono" style="font-size:10px;color:var(--faint)">${k}</div></div>`;
-  }).join('');
-  const maxFrag=eb.feature_fragility[0].used_in_evasions;
-  const frag=eb.feature_fragility.slice(0,10).map(x=>({feature:x.feature,v:x.used_in_evasions,share:x.share}));
+ gap(){
+  const eo=D.ember.ordinary.metrics, ec=D.ember.challenge.metrics;
+  const fm=D.ember_shap.family_mass;
   return `
-   <h2 class="view">Evasion collapse</h2>
-   <p class="lede">For every malicious file the detector catches, a constrained counterfactual search
-     looks for the cheapest set of author-side edits — removing capability tokens, trimming metadata —
-     that flips the verdict to benign. Edits run entirely in feature space on integer counts; derived
-     features recompute after each edit, so nothing can be gamed in isolation.</p>
+   <h2 class="view">The evasive gap, reproduced</h2>
+   <p class="lede">EMBER2024's own result: a PDF detector that looks solved on ordinary malware
+     misses a large share of malware that first evaded antivirus. We reproduce it on the authors'
+     model so everything downstream builds on a verified baseline.</p>
    <div class="grid cards3">
-     <div class="card"><h3>Caught malware probed</h3><div class="stat tnum">${eb.n_caught_evaluated}</div></div>
-     <div class="card" style="border-color:var(--accent2)"><h3>Successfully evaded</h3>
-       <div class="stat tnum" style="color:var(--accent2)">${eb.n_evaded}
-       <small>(${pct(eb.n_evaded/eb.n_caught_evaluated)})</small></div></div>
-     <div class="card"><h3>Median edits to evade</h3><div class="stat tnum">${eb.evasion_cost.median}
-       <small>of ${eb.controllable_features.length} editable</small></div></div>
+     <div class="card"><h3>Ordinary recall</h3><div class="stat tnum">${pct(eo.recall)}</div>
+       <div class="sub">at threshold 0.5</div></div>
+     <div class="card" style="border-color:var(--el)"><h3>Evasive missed (FN)</h3>
+       <div class="stat tnum" style="color:var(--el)">${ec.confusion.fn}<small>/${D.ember.challenge.n_evasive}</small></div>
+       <div class="sub">${pct(ec.confusion.fn/D.ember.challenge.n_evasive)} of evasive malware slips through</div></div>
+     <div class="card"><h3>PR-AUC drop</h3><div class="stat tnum">${f4(eo.pr_auc-ec.pr_auc)}</div>
+       <div class="sub">${f4(eo.pr_auc)} → ${f4(ec.pr_auc)}</div></div>
    </div>
    <div class="two" style="margin-top:16px">
-     <div class="panel" style="margin:0"><h3 class="t">Evasion cost distribution</h3>
-       <p class="d">Number of distinct fields an author must change to flip a caught sample.
-         Most fall at ${eb.evasion_cost.median} edits.</p>
-       <div style="display:flex;align-items:flex-end;gap:8px;height:150px;padding:0 4px">${bars}</div>
-       <div class="mono" style="text-align:center;font-size:10px;color:var(--faint);margin-top:6px">edits required →</div>
-     </div>
-     <div class="panel" style="margin:0"><h3 class="t">Most fragile features</h3>
-       <p class="d">Share of successful evasions that touched each feature. The detector leans on
-         exactly the removable keyword counts an author controls.</p>
-       ${hbars(frag,'v',maxFrag,'var(--accent2)',v=>Math.round(v))}
-     </div>
+     <div class="panel" style="margin:0"><h3 class="t">Ordinary PR curve</h3><div id="prc_ord"></div></div>
+     <div class="panel" style="margin:0"><h3 class="t">Evasive-challenge PR curve</h3><div id="prc_ch"></div></div>
    </div>
-   <div class="panel"><h3 class="t">You can't feature-select your way out</h3>
-     <p class="d">A second detector drops the raw keyword counts and keeps only structural and derived
-       features. Clean accuracy barely moves — and so does resilience. Every count-based feature
-       answers the same author edit, so removing some doesn't help. That is the argument for a
-       different <em>kind</em> of signal (reachability), not a different feature subset.</p>
-     <table><thead><tr><th>Detector</th><th class="mono">Clean PR-AUC</th><th class="mono">ΔPR-AUC (paired)</th>
-       <th class="mono">Evasion-resilience</th><th class="mono">Median cost</th></tr></thead><tbody>
-       <tr><td>Baseline (all features)</td><td class="mono">${f4(cmp.clean.baseline.pr_auc)}</td>
-         <td class="mono">—</td><td class="mono">${pct(cmp.evasion.baseline.ers)}</td>
-         <td class="mono">${cmp.evasion.baseline.median_cost}</td></tr>
-       <tr><td>Structure-first (keyword counts dropped)</td><td class="mono">${f4(cmp.clean.structure_first.pr_auc)}</td>
-         <td class="mono">${cmp.clean.paired_pr_auc_delta.delta>=0?'+':''}${f4(cmp.clean.paired_pr_auc_delta.delta)}</td>
-         <td class="mono">${pct(cmp.evasion.structure_first.ers)}</td>
-         <td class="mono">${cmp.evasion.structure_first.median_cost}</td></tr>
-     </tbody></table>
-     <p class="note">Paired bootstrap ΔPR-AUC 95% CI
-       ${f4(cmp.clean.paired_pr_auc_delta.ci_low)} to ${f4(cmp.clean.paired_pr_auc_delta.ci_high)};
-       dropping fragile features costs no meaningful accuracy and barely changes resilience.</p>
-   </div>`;
+   <div class="panel"><h3 class="t">Why they evade — a preview</h3>
+     <p class="d">SHAP (next: "Why they evade") shows the baseline spends
+       ${pct(fm.missed_evasive.strings)} of its attention on string features and
+       ${pct(fm.missed_evasive.histogram)} on the byte histogram, with essentially nothing on
+       structure. The malware it misses looks byte- and string-normal — so there is nothing left
+       for the model to catch it with. That absence is the opening reachability fills.</p></div>`;
+ },
+ evasion(){
+  const se=D.structural_evasion, mech=D.mechanism||[];
+  const imp=se.fusion_top_features.slice(0,8).map(x=>({feature:x.feature,v:x.gain}));
+  const maxg=imp[0].v;
+  const mechRows=mech.map(m=>`<tr><td>${m.label}</td>
+    <td class="mono tnum">${m.ember.toFixed(3)}</td>
+    <td>${m.ember>=0.5?'<span class="tagv v-open">flagged</span>':'<span class="tagv v-dorm">missed</span>'}</td>
+    <td class="mono tnum">${m.reach_onopen}</td>
+    <td>${m.evasion_sig?'<span class="tagv v-open">yes</span>':'<span class="v-abs">—</span>'}</td></tr>`).join('');
+  return `
+   <h2 class="view">Structural evasion of the real detector</h2>
+   <p class="lede">We take ${se.n_benign_originals} real benign PDFs the EMBER model is confident
+     about, and weaponize each one: inject a reachable auto-run JavaScript action (a harmless
+     <span class="mono">app.alert</span>), hidden inside a compressed object stream so the bytes stay
+     document-like. The file now auto-runs code on open — a genuine structural threat — and we ask
+     whether the 0.99-AUC detector notices.</p>
+   <div class="grid cards3">
+     <div class="card" style="border-color:var(--hi)"><h3>Evaded EMBER</h3>
+       <div class="stat tnum" style="color:var(--hi)">${pct(se.ember_evasion_rate)}</div>
+       <div class="sub">scored benign despite live payload</div></div>
+     <div class="card" style="border-color:var(--accent)"><h3>Caught by reachability</h3>
+       <div class="stat tnum" style="color:var(--accent)">${pct(se.reachability_detection_rate)}</div>
+       <div class="sub">every weaponized file flagged</div></div>
+     <div class="card"><h3>Mean EMBER score</h3>
+       <div class="stat tnum" style="font-size:22px">${se.ember_mean_score_original.toFixed(3)} → ${se.ember_mean_score_weaponized.toFixed(3)}</div>
+       <div class="sub">original → weaponized (barely moves)</div></div>
+   </div>
+   <div class="panel"><h3 class="t">Fusion closes the gap — EMBER + reachability</h3>
+     <p class="d">Task: tell a safe PDF from its weaponized twin. EMBER's score alone can't
+       (AUC ${f4(se.detector_auc.ember_score_alone)}); adding the reachability features makes it
+       near-perfect (5-fold CV AUC ${f4(se.detector_auc.ember_plus_reachability_fusion)}).</p>
+     <div class="barrow"><div class="lab">EMBER alone</div>
+       <div class="track"><div class="fill" style="width:${se.detector_auc.ember_score_alone*100}%;background:var(--el)"></div></div>
+       <div class="val">${f4(se.detector_auc.ember_score_alone)}</div></div>
+     <div class="barrow"><div class="lab">EMBER + reachability</div>
+       <div class="track"><div class="fill" style="width:${se.detector_auc.ember_plus_reachability_fusion*100}%;background:var(--accent)"></div></div>
+       <div class="val">${f4(se.detector_auc.ember_plus_reachability_fusion)}</div></div>
+     <p class="note" style="margin-top:14px">Features doing the work (fusion gain):</p>
+     ${hbars(imp,'v',maxg,'var(--accent)',v=>Math.round(v))}
+   </div>
+   <div class="panel"><h3 class="t">The compression mechanism, isolated</h3>
+     <p class="d">The same JavaScript action, scored by the real EMBER model four ways. Visible tokens
+       are flagged; hiding the identical action in a compressed stream drops the score below the
+       threshold — while reachability tracks it regardless.</p>
+     <table><thead><tr><th>Crafted PDF</th><th class="mono">EMBER score</th><th>EMBER verdict</th>
+       <th class="mono">reach on-open</th><th>evasion signature</th></tr></thead><tbody>${mechRows}</tbody></table>
+     <p class="note">Harmless payload throughout; nothing is executed. Compression-based token hiding
+       is a real in-the-wild technique — the benign file GeoTopo.pdf does exactly this by accident.</p></div>`;
  },
  reach(){
   const craft=D.reachability.rows.crafted;
@@ -363,29 +400,71 @@ const RENDER = {
    </div>`;
  },
  explain(){
-  const g=D.shap.global_importance.slice(0,10);
-  const p=D.shap.permutation_importance.slice(0,10);
-  const mg=g[0].mean_abs_shap, mp=p[0].importance;
-  const fn=D.shap.group_importance.false_negative;
+  const fm=D.ember_shap.family_mass, gr=D.ember_shap.groups;
+  const FAMS=["strings","histogram","byteentropy","general","header","section"];
+  const COL={strings:"var(--accent)",histogram:"var(--accent2)",byteentropy:"var(--el)",
+             general:"var(--muted)",header:"var(--lo)",section:"var(--faint)"};
+  function stack(mass){
+    const seg=FAMS.filter(f=>mass[f]>0.002).map(f=>
+      `<div title="${f} ${pct(mass[f])}" style="width:${mass[f]*100}%;background:${COL[f]}"></div>`).join('');
+    return `<div style="display:flex;height:26px;border-radius:5px;overflow:hidden;background:var(--panel2)">${seg}</div>`;
+  }
   return `
-   <h2 class="view">Explainability</h2>
-   <p class="lede">SHAP (TreeExplainer) and permutation importance agree on which features drive the
-     detector — and they are the same removable keyword counts the evasion search exploits. SHAP
-     explains model behaviour, not attacker intent; correlated features share credit.</p>
-   <div class="two">
-     <div class="panel" style="margin:0"><h3 class="t">Global mean |SHAP|</h3>
-       <p class="d">Average absolute contribution across the test split.</p>
-       ${hbars(g.map(x=>({feature:x.feature,v:x.mean_abs_shap})),'v',mg,'var(--accent)',v=>v.toFixed(2))}
-     </div>
-     <div class="panel" style="margin:0"><h3 class="t">Permutation importance (cross-check)</h3>
-       <p class="d">ROC-AUC drop when each feature is shuffled — computed independently of SHAP.</p>
-       ${hbars(p.map(x=>({feature:x.feature,v:x.importance})),'v',mp,'var(--accent)',v=>v.toFixed(3))}
-     </div>
+   <h2 class="view">Why the evasive malware is missed</h2>
+   <p class="lede">SHAP on the authors' EMBER model (Review-2 O2). Each bar is how the model splits
+     its attention across EMBER feature families, for three groups. The striking part: the malware
+     it <em>misses</em> looks almost identical to the malware it <em>catches</em> — both read as
+     byte/string statistics, with no structural signal to separate them.</p>
+   <div class="panel" style="margin-top:0">
+     ${["caught_ordinary","caught_evasive","missed_evasive"].map(g=>{
+       const names={caught_ordinary:"Caught ordinary malware",caught_evasive:"Caught evasive malware",missed_evasive:"MISSED evasive malware"};
+       return `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px">
+         <b>${names[g]}</b><span class="mono" style="color:var(--faint)">n=${gr[g]}</span></div>
+         ${stack(fm[g])}
+         <div class="mono" style="font-size:10.5px;color:var(--faint);margin-top:4px">
+           strings ${pct(fm[g].strings)} · histogram ${pct(fm[g].histogram)} · byte-entropy ${pct(fm[g].byteentropy)} · structure ~0%</div></div>`;
+     }).join('')}
+     <div class="legend">${FAMS.map(f=>`<span><i style="background:${COL[f]}"></i>${f}</span>`).join('')}</div>
    </div>
-   <div class="callout"><b>The two methods converge.</b> Metadata size, keyword concentration,
-     JavaScript counts and PDF size lead both rankings — independent confirmation that the model's
-     evidence is exactly the fragile surface the evasion map maps. ${fn.n} malicious test files are
-     missed outright (false negatives), before any evasion is attempted.</div>`;
+   <div class="callout"><b>Missed and caught evasive malware are nearly indistinguishable to the model.</b>
+     Both are ~${pct(fm.missed_evasive.strings)} string + ${pct(fm.missed_evasive.histogram)} histogram
+     features, with essentially no structural evidence. Once an evasive file's byte/string profile
+     looks benign, the baseline has nothing left — which is exactly the void reachability fills.</div>`;
+ },
+ probe(){
+  const eb=D.evasion_baseline, cmp=D.comparison;
+  const hist=eb.evasion_cost.hist, maxc=Math.max(...Object.values(hist));
+  const bars=Object.entries(hist).map(([k,v])=>{
+    const h=Math.max(4,(v/maxc)*110);
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1">
+      <div class="mono" style="font-size:10px;color:var(--muted)">${v}</div>
+      <div style="width:70%;height:${h}px;background:var(--accent2);border-radius:4px 4px 0 0"></div>
+      <div class="mono" style="font-size:10px;color:var(--faint)">${k}</div></div>`;}).join('');
+  const frag=eb.feature_fragility.slice(0,8).map(x=>({feature:x.feature,v:x.used_in_evasions}));
+  return `
+   <h2 class="view">Mimicry probe (Review-2 O6)</h2>
+   <p class="lede">A second, complementary angle on the same fragility, run on the CIC-Evasive-PDFMal2022
+     feature set: for every malicious file a count-based detector catches, search for the cheapest set
+     of author-side feature edits that flips it to benign. It quantifies how little effort evasion
+     costs against a keyword-count model.</p>
+   <div class="grid cards3">
+     <div class="card" style="border-color:var(--accent2)"><h3>Caught malware evaded</h3>
+       <div class="stat tnum" style="color:var(--accent2)">${pct(eb.n_evaded/eb.n_caught_evaluated)}</div>
+       <div class="sub">${eb.n_evaded}/${eb.n_caught_evaluated} samples</div></div>
+     <div class="card"><h3>Median edits to evade</h3><div class="stat tnum">${eb.evasion_cost.median}</div>
+       <div class="sub">of ${eb.controllable_features.length} editable fields</div></div>
+     <div class="card"><h3>Feature-selection fix?</h3><div class="stat tnum" style="font-size:22px">${pct(cmp.evasion.baseline.ers)} → ${pct(cmp.evasion.structure_first.ers)}</div>
+       <div class="sub">resilience barely moves — no</div></div>
+   </div>
+   <div class="two" style="margin-top:16px">
+     <div class="panel" style="margin:0"><h3 class="t">Evasion cost distribution</h3>
+       <p class="d">Distinct fields an author must change to flip a caught sample.</p>
+       <div style="display:flex;align-items:flex-end;gap:8px;height:140px;padding:0 4px">${bars}</div>
+       <div class="mono" style="text-align:center;font-size:10px;color:var(--faint);margin-top:6px">edits required →</div></div>
+     <div class="panel" style="margin:0"><h3 class="t">Most fragile features</h3>
+       <p class="d">Share of successful evasions touching each feature — the removable keyword counts.</p>
+       ${hbars(frag,'v',frag[0].v,'var(--accent2)',v=>Math.round(v))}</div>
+   </div>`;
  },
  investigate(){
   const names=Object.keys(D.examples);
@@ -407,26 +486,23 @@ const RENDER = {
    <div class="two">
      <div class="panel" style="margin:0"><h3 class="t">What is real here</h3>
        <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:18px">
-         <li>Detector trained on the real CIC-Evasive-PDFMal2022 set (${ds.final_rows.toLocaleString()} files).</li>
-         <li>Every metric, CI, SHAP value and evasion number traces to a stored JSON artifact.</li>
-         <li>Reachability verdicts computed by static parsing of real PDFs (pikepdf), never executed.</li>
-         <li>Evasion search is feature-space only — no PDF is generated, no payload produced.</li>
+         <li>EMBER2024 benchmark reproduced on the authors' released PDF model and protocol.</li>
+         <li>SHAP, evasion and fusion all run against that real model — not a re-trained stand-in.</li>
+         <li>Reachability verdicts from static parsing of real PDFs (pikepdf); nothing is executed.</li>
+         <li>Every number on this page traces to a stored JSON artifact.</li>
        </ul></div>
-     <div class="panel" style="margin:0"><h3 class="t">What is NOT claimed</h3>
+     <div class="panel" style="margin:0"><h3 class="t">Honest scope</h3>
        <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:18px">
-         <li>EMBER2024 reproduction is <b>blocked</b> — its data is unreachable from this environment.</li>
-         <li>CIC has no timestamps, so temporal drift (as in EMBER) is not available and not shown.</li>
-         <li>Reachability is not yet a feature in the trained detector (CIC ships counts, not raw PDFs);
-           it is demonstrated on parsed files and the live analyzer.</li>
-         <li>Feature-space evasion is a lower bound on a real attacker's options, not a full adversarial eval.</li>
+         <li>Weaponized samples are <b>controlled</b> (benign PDF + harmless reachable payload), not wild malware — a standard evasion-study methodology (cf. EvadeML).</li>
+         <li>EMBER's 805 challenge PDFs are released as features only, so reachability can't be computed on them directly; the evasion study uses real PDFs we control.</li>
+         <li>The mimicry probe uses the CIC feature set (counts), a lower bound on a real attacker.</li>
        </ul></div>
    </div>
    <div class="panel"><h3 class="t">Provenance</h3>
-     <p class="note">Dataset SHA-256 <span class="mono">${ds.raw_sha256.slice(0,32)}…</span> ·
-       baseline model hash <span class="mono">${D.baseline.model_hash}</span> ·
-       split seed ${D.split.seed} · stratified ${D.split.test_fraction*100}% holdout
-       (train ${D.split.n_train.toLocaleString()} / test ${D.split.n_test.toLocaleString()}).
-       ${ds.deviations[ds.deviations.length-1]}</p></div>`;
+     <p class="note">EMBER PDF model (authors' release) · ordinary ${D.ember.ordinary.metrics.n.toLocaleString()} test PDFs ·
+       ${D.ember.challenge.n_evasive} evasive challenge + ${D.ember.challenge.n_benign.toLocaleString()} benign ·
+       structural-evasion study ${D.structural_evasion.n_benign_originals} real benign PDFs ·
+       reachability engine TRA-1.0, ${D.reachability.n_real} real + ${D.reachability.n_crafted} crafted PDFs.</p></div>`;
  }
 };
 
@@ -466,10 +542,16 @@ function go(v){
   current=v;
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current', b.dataset.v===v));
   document.getElementById('view').innerHTML = RENDER[v]();
+  const prpts=c=>c.recall.map((r,i)=>[r,c.precision[i]]);
   if(v==='overview'){
-    const pr=D.baseline.curves.pr;
-    const pts=pr.recall.map((r,i)=>[r,pr.precision[i]]);
-    document.getElementById('prc').innerHTML=lineChart({pts},'recall','precision');
+    // overlay ordinary (accent) + challenge (amber) on one axis
+    const o=D.ember.ordinary.curves.pr, ch=D.ember.challenge.curves.pr;
+    document.getElementById('prc').innerHTML=lineChart({pts:prpts(o)},'recall','precision')
+      .replace('</svg>', `<path d="${prpts(ch).map((p,i)=>(i?'L':'M')+(38+p[0]*(440-48))+' '+(260-38-p[1]*(260-38-14))).join(' ')}" fill="none" stroke="var(--el)" stroke-width="2.2"/></svg>`);
+  }
+  if(v==='gap'){
+    document.getElementById('prc_ord').innerHTML=lineChart({pts:prpts(D.ember.ordinary.curves.pr)},'recall','precision');
+    document.getElementById('prc_ch').innerHTML=lineChart({pts:prpts(D.ember.challenge.curves.pr)},'recall','precision');
   }
   if(v==='investigate'){
     renderExample(0);
@@ -487,10 +569,10 @@ document.getElementById('nav').innerHTML = VIEWS.map((v,i)=>
   `<button data-v="${v[0]}" aria-current="${i===0}"><span class="idx">${String(i+1).padStart(2,'0')}</span>${v[1]}</button>`).join('');
 document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.v);});
 document.getElementById('status').innerHTML =
-  `<span class="pill"><span class="d" style="background:var(--lo)"></span>model ${D.baseline.model_hash}</span>
-   <span class="pill">CIC-PDFMal2022</span><span class="pill">engine TRA-1.0</span>`;
+  `<span class="pill"><span class="d" style="background:var(--lo)"></span>EMBER2024 PDF model</span>
+   <span class="pill">reproduced</span><span class="pill">engine TRA-1.0</span>`;
 document.getElementById('railfoot').innerHTML =
-  `Static analysis only.<br>A clean result never proves safety.<br>— BCSE497J · Alok Singh`;
+  `Static analysis only.<br>A clean result never proves safety.<br>— BCSE321L · Alok Singh, Mrinali Charhate, Aarya Nagvekar`;
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(RENDER[h]&&h!==current)go(h);});
 go(RENDER[location.hash.slice(1)]?location.hash.slice(1):'overview');
 </script>

@@ -1,38 +1,36 @@
 # Limitations and honest scope
 
-1. **EMBER2024 reproduction — BLOCKED.** The EMBER2024 features/models are hosted
-   on HuggingFace, which is unreachable from the build environment (proxy denies
-   `huggingface.co`). We therefore do **not** reproduce the published
-   PDF-only benchmark (0.9912/0.9933 ordinary, 0.9066/0.7841 challenge). Those
-   numbers are reference values only and appear nowhere as our results. The
-   official `thrember` code is vendored and the loader interface is implemented,
-   so the comparison can be run later verbatim.
+1. **Weaponized samples are controlled, not wild malware.** The structural-evasion
+   study injects a *harmless* reachable payload (`app.alert`) into real benign
+   PDFs and hides it in a compressed stream. This is a standard evasion-study
+   methodology (cf. EvadeML, cited in Review 2), and the evasion *mechanism*
+   (compression-based token hiding) is real and payload-agnostic — it hides any
+   JavaScript content from a byte/string scanner. But we do not claim to have
+   tested against a corpus of wild evasive malware. Nothing is ever executed.
 
-2. **Reachability is not yet a trained feature on the full dataset.** CIC-PDFMal2022
-   ships *feature counts*, not raw PDFs, so we cannot compute reachability for its
-   10k rows. Reachability is demonstrated on 39 real + crafted PDFs and in the
-   live analyzer. The quantitative robustness argument on the tabular side is the
-   evasion-cost map (which proves the count paradigm is fragile); the reachability
-   robustness claim is demonstrated structurally, not yet trained-and-scored at
-   scale. Closing this needs a raw-PDF corpus with labels.
+2. **EMBER's 805 challenge PDFs are released as features, not raw files.** So
+   reachability (which needs the object graph) cannot be computed on them
+   directly. The augmentation result is therefore demonstrated on real PDFs we
+   control, scored by the real EMBER model — not on the 805 challenge files
+   themselves. Closing this would require the raw challenge PDFs (VirusTotal-gated,
+   not publicly released).
 
-3. **Temporal drift — not available.** CIC has no timestamps, so the EMBER-style
-   temporal challenge/drift analysis cannot be done here. We do not fabricate a
-   time series.
+3. **The fusion result separates safe vs weaponized, not wild-malicious vs benign.**
+   AUC 0.998 is for the controlled task. It demonstrates that reachability supplies
+   the discriminative signal EMBER lacks; it is not a drop-in replacement
+   benchmark number for a production detector.
 
-4. **The evasion search is a lower bound.** It is a constrained, realistic
-   feature-space counterfactual, not a complete adversarial evaluation. A real
-   attacker has moves we don't model (and some we model may be impractical). ERS
-   should be read as "at least this evadable," not an exact security guarantee.
+4. **The mimicry probe (CIC) is feature-space and a lower bound.** Edits are
+   realistic author-side moves on integer counts; a real attacker has options we
+   don't model.
 
-5. **CIC-compatible live extraction is approximate.** The original CIC features
-   came from a specific pdfid-style tool; `backend/features/extract.py`
-   reconstructs them and may differ in edge cases. The live model score carries
-   this caveat; the reachability verdict does not depend on it.
+5. **Reachability resolves most but not all object structures.** Encrypted PDFs
+   (no key), heavily malformed files and deeply nested name trees can defeat the
+   parser; these are reported as parse failures, not silently scored.
 
-6. **SHAP attributes model behaviour, not causation or intent.** Correlated
-   features share credit; permutation importance is reported as an independent
-   cross-check.
+6. **SHAP attributes model behaviour, not causation or intent.** Cross-checked
+   with permutation importance on the CIC model; on EMBER it is used as a
+   comparative family-level diagnostic.
 
-7. **Static only.** No dynamic/sandbox analysis. A clean result never proves a
-   file is safe; a flagged result is evidence, not proof.
+7. **Static only.** No dynamic/sandbox analysis. A clean result never proves a file
+   is safe; a flagged result is evidence, not proof.

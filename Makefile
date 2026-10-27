@@ -8,6 +8,15 @@ pipeline:
 	python scripts/run_reachability_corpus.py
 	python scripts/bundle_dashboard_data.py
 	python scripts/build_dashboard.py
+
+# EMBER track — needs data/ember/ (PDF_test.zip, challenge.zip extracted;
+# EMBER2024_PDF.model) obtained from the EMBER2024 HuggingFace release.
+ember:
+	python scripts/reproduce_ember.py
+	python scripts/ember_shap.py
+	python scripts/structural_evasion_study.py
+	python scripts/bundle_dashboard_data.py
+	python scripts/build_dashboard.py
 test:
 	python3 -m pytest -q
 backend:

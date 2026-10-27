@@ -1,0 +1,240 @@
+{
+  "groups": {
+    "caught_ordinary": 1500,
+    "caught_evasive": 450,
+    "missed_evasive": 355
+  },
+  "top_features": {
+    "caught_ordinary": [
+      {
+        "feature_index": 622,
+        "family": "strings",
+        "mean_abs_shap": 4.258697586995202
+      },
+      {
+        "feature_index": 665,
+        "family": "strings",
+        "mean_abs_shap": 1.1152773061817174
+      },
+      {
+        "feature_index": 644,
+        "family": "strings",
+        "mean_abs_shap": 0.6252988841124018
+      },
+      {
+        "feature_index": 650,
+        "family": "strings",
+        "mean_abs_shap": 0.40992967226006916
+      },
+      {
+        "feature_index": 521,
+        "family": "strings",
+        "mean_abs_shap": 0.3640342980672744
+      },
+      {
+        "feature_index": 519,
+        "family": "strings",
+        "mean_abs_shap": 0.3125844412603333
+      },
+      {
+        "feature_index": 602,
+        "family": "strings",
+        "mean_abs_shap": 0.27582930274131284
+      },
+      {
+        "feature_index": 539,
+        "family": "strings",
+        "mean_abs_shap": 0.2751004344916267
+      },
+      {
+        "feature_index": 590,
+        "family": "strings",
+        "mean_abs_shap": 0.26489699931173416
+      },
+      {
+        "feature_index": 46,
+        "family": "histogram",
+        "mean_abs_shap": 0.2630053600603293
+      },
+      {
+        "feature_index": 0,
+        "family": "general",
+        "mean_abs_shap": 0.23714978102083362
+      },
+      {
+        "feature_index": 664,
+        "family": "strings",
+        "mean_abs_shap": 0.22370494122535464
+      }
+    ],
+    "caught_evasive": [
+      {
+        "feature_index": 622,
+        "family": "strings",
+        "mean_abs_shap": 3.8438399850627034
+      },
+      {
+        "feature_index": 665,
+        "family": "strings",
+        "mean_abs_shap": 1.1935896855428463
+      },
+      {
+        "feature_index": 519,
+        "family": "strings",
+        "mean_abs_shap": 0.8829433517847856
+      },
+      {
+        "feature_index": 644,
+        "family": "strings",
+        "mean_abs_shap": 0.6189796984330829
+      },
+      {
+        "feature_index": 684,
+        "family": "strings",
+        "mean_abs_shap": 0.6115554011501727
+      },
+      {
+        "feature_index": 521,
+        "family": "strings",
+        "mean_abs_shap": 0.5338041512064023
+      },
+      {
+        "feature_index": 650,
+        "family": "strings",
+        "mean_abs_shap": 0.48192096599409534
+      },
+      {
+        "feature_index": 0,
+        "family": "general",
+        "mean_abs_shap": 0.3698120367341049
+      },
+      {
+        "feature_index": 602,
+        "family": "strings",
+        "mean_abs_shap": 0.36506664631109564
+      },
+      {
+        "feature_index": 560,
+        "family": "strings",
+        "mean_abs_shap": 0.3364135751691692
+      },
+      {
+        "feature_index": 590,
+        "family": "strings",
+        "mean_abs_shap": 0.2904387637315083
+      },
+      {
+        "feature_index": 692,
+        "family": "strings",
+        "mean_abs_shap": 0.27895217223346697
+      }
+    ],
+    "missed_evasive": [
+      {
+        "feature_index": 622,
+        "family": "strings",
+        "mean_abs_shap": 3.470682505722097
+      },
+      {
+        "feature_index": 665,
+        "family": "strings",
+        "mean_abs_shap": 1.0060611487502638
+      },
+      {
+        "feature_index": 519,
+        "family": "strings",
+        "mean_abs_shap": 0.7079184382286199
+      },
+      {
+        "feature_index": 644,
+        "family": "strings",
+        "mean_abs_shap": 0.5593237818225646
+      },
+      {
+        "feature_index": 602,
+        "family": "strings",
+        "mean_abs_shap": 0.4858325036501242
+      },
+      {
+        "feature_index": 521,
+        "family": "strings",
+        "mean_abs_shap": 0.43848470482184854
+      },
+      {
+        "feature_index": 590,
+        "family": "strings",
+        "mean_abs_shap": 0.4097619471461422
+      },
+      {
+        "feature_index": 684,
+        "family": "strings",
+        "mean_abs_shap": 0.3777640801233556
+      },
+      {
+        "feature_index": 560,
+        "family": "strings",
+        "mean_abs_shap": 0.3609918369609343
+      },
+      {
+        "feature_index": 650,
+        "family": "strings",
+        "mean_abs_shap": 0.2993361464919402
+      },
+      {
+        "feature_index": 0,
+        "family": "general",
+        "mean_abs_shap": 0.29180338548243523
+      },
+      {
+        "feature_index": 539,
+        "family": "strings",
+        "mean_abs_shap": 0.25191356267693976
+      }
+    ]
+  },
+  "family_mass": {
+    "caught_ordinary": {
+      "strings": 0.5755,
+      "histogram": 0.3338,
+      "byteentropy": 0.0804,
+      "general": 0.0104,
+      "header": 0.0,
+      "section": 0.0,
+      "imports": 0.0,
+      "exports": 0.0,
+      "datadirectories": 0.0,
+      "richheader": 0.0,
+      "authenticode": 0.0,
+      "pefilewarnings": 0.0
+    },
+    "caught_evasive": {
+      "strings": 0.6229,
+      "histogram": 0.2814,
+      "byteentropy": 0.0807,
+      "general": 0.0151,
+      "header": 0.0,
+      "section": 0.0,
+      "imports": 0.0,
+      "exports": 0.0,
+      "datadirectories": 0.0,
+      "richheader": 0.0,
+      "authenticode": 0.0,
+      "pefilewarnings": 0.0
+    },
+    "missed_evasive": {
+      "strings": 0.6014,
+      "histogram": 0.2925,
+      "byteentropy": 0.0941,
+      "general": 0.012,
+      "header": 0.0,
+      "section": 0.0,
+      "imports": 0.0,
+      "exports": 0.0,
+      "datadirectories": 0.0,
+      "richheader": 0.0,
+      "authenticode": 0.0,
+      "pefilewarnings": 0.0
+    }
+  },
+  "note": "Feature indices are EMBER v3 positions; PDFs carry only general, byte histogram, byte-entropy and string families (PE families are ~0)."
+}
