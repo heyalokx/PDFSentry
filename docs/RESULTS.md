@@ -58,6 +58,22 @@ Compression-mechanism isolation (same action, real EMBER model):
 Hiding the identical action in a compressed stream drops EMBER below threshold;
 reachability tracks it regardless.
 
+### Generality + ablation (refutes "designed to win")
+`artifacts/metrics/evasion_generality.json` — the same auto-run action wired four
+structurally distinct ways (over 150 base PDFs), each hidden in a compressed stream.
+
+| Evasion wiring | EMBER evaded | reachability | reachability (ablated) |
+|---|---|---|---|
+| direct /OpenAction | 99% | 100% | 100% |
+| GoTo→Next action chain | 99% | 100% | 100% |
+| document-level /Names/JavaScript | 99% | 100% | 100% |
+| page-open /AA | 99% | 100% | 100% |
+
+"Ablated" = the purpose-built hidden-gap / evasion-signature features **removed**,
+using only "is a dangerous action reachable on open". Reachability still catches
+100% across every wiring — so detection comes from the graph traversal, not a
+single tailored feature.
+
 ## 4. Mimicry probe (O6)
 `artifacts/metrics/evasion_baseline.json`, `model_comparison.json` — CIC feature set.
 

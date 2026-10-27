@@ -1,0 +1,91 @@
+{
+  "n_malicious": 4,
+  "n_benign": 24,
+  "A_ember_only": {
+    "model": "EMBER score alone",
+    "roc_auc": {
+      "metric": "roc_auc",
+      "estimate": 1.0,
+      "ci_low": 0.9999999999999999,
+      "ci_high": 1.0,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    },
+    "pr_auc": {
+      "metric": "pr_auc",
+      "estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    }
+  },
+  "B_reachability_only": {
+    "model": "reachability only",
+    "roc_auc": {
+      "metric": "roc_auc",
+      "estimate": 0.3802083333333333,
+      "ci_low": 0.1717447916666669,
+      "ci_high": 0.5625,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    },
+    "pr_auc": {
+      "metric": "pr_auc",
+      "estimate": 0.13354037267080743,
+      "ci_low": 0.11309523809523808,
+      "ci_high": 0.19047619047619047,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    }
+  },
+  "C_fusion": {
+    "model": "EMBER + reachability",
+    "roc_auc": {
+      "metric": "roc_auc",
+      "estimate": 0.3802083333333333,
+      "ci_low": 0.1717447916666669,
+      "ci_high": 0.5625,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    },
+    "pr_auc": {
+      "metric": "pr_auc",
+      "estimate": 0.13354037267080743,
+      "ci_low": 0.11309523809523808,
+      "ci_high": 0.19047619047619047,
+      "ci_level": 0.95,
+      "n_boot": 2000,
+      "seed": 1337,
+      "stratified": true
+    }
+  },
+  "paired_fusion_vs_ember_pr": {
+    "metric": "pr_auc",
+    "delta": -0.8664596273291926,
+    "ci_low": -0.96,
+    "ci_high": -0.7147515527950317,
+    "ci_level": 0.95,
+    "significant": true,
+    "n_boot": 1965
+  },
+  "paired_fusion_vs_ember_roc": {
+    "metric": "roc_auc",
+    "delta": -0.6197916666666667,
+    "ci_low": -0.8693509615384614,
+    "ci_high": -0.4375,
+    "ci_level": 0.95,
+    "significant": true,
+    "n_boot": 1965
+  }
+}

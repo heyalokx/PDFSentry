@@ -27,19 +27,55 @@ from pikepdf import Name, String, Dictionary
 HARMLESS_JS = "app.alert('structural-evasion study \\u2014 harmless');"
 
 
-def inject_autorun(data: bytes, hide: bool = True) -> bytes | None:
-    """Add a reachable /OpenAction -> JavaScript action to an existing PDF.
-    hide=True re-saves with object streams so the action's tokens are
-    compressed out of the raw byte scan (the evasion); hide=False leaves them
-    visible (the control). Returns None if the file can't be parsed."""
+from pikepdf import Array
+
+# structurally DISTINCT ways to wire the same auto-run action. Reachability must
+# catch all of them; each exercises a different part of the graph traversal, so
+# the result cannot be an artefact of one tailored feature.
+WIRINGS = ["openaction", "action_chain", "names_js", "page_aa"]
+
+
+def _js_action(pdf):
+    return pdf.make_indirect(Dictionary(
+        Type=Name("/Action"), S=Name("/JavaScript"), JS=String(HARMLESS_JS)))
+
+
+def inject_autorun(data: bytes, hide: bool = True, wiring: str = "openaction") -> bytes | None:
+    """Inject a reachable auto-run JavaScript action (harmless alert) into an
+    existing PDF via `wiring`, then optionally hide its tokens in a compressed
+    object stream. Returns None if the file can't be parsed/edited.
+
+    wirings:
+      openaction   - /Root /OpenAction -> JS                  (hops 0)
+      action_chain - /Root /OpenAction -> GoTo, /Next -> JS   (deeper chain)
+      names_js      - /Root /Names /JavaScript name tree -> JS (document-level)
+      page_aa       - first /Page /AA /O (page-open) -> JS
+    """
     try:
         pdf = pikepdf.open(io.BytesIO(data))
     except Exception:
         return None
     try:
-        act = pdf.make_indirect(Dictionary(
-            Type=Name("/Action"), S=Name("/JavaScript"), JS=String(HARMLESS_JS)))
-        pdf.Root.OpenAction = act
+        act = _js_action(pdf)
+        if wiring == "openaction":
+            pdf.Root.OpenAction = act
+        elif wiring == "action_chain":
+            lead = pdf.make_indirect(Dictionary(
+                Type=Name("/Action"), S=Name("/GoTo"), Next=act))
+            pdf.Root.OpenAction = lead
+        elif wiring == "names_js":
+            name_entry = pdf.make_indirect(Dictionary(
+                Names=Array([String("PDFSentryJS"), act])))
+            names = pdf.Root.get("/Names")
+            if names is None:
+                pdf.Root.Names = pdf.make_indirect(Dictionary())
+                names = pdf.Root["/Names"]
+            names["/JavaScript"] = name_entry
+        elif wiring == "page_aa":
+            page = pdf.pages[0].obj
+            page["/AA"] = pdf.make_indirect(Dictionary(O=act))
+        else:
+            return None
         out = io.BytesIO()
         if hide:
             pdf.save(out, object_stream_mode=pikepdf.ObjectStreamMode.generate,

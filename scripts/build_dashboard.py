@@ -348,7 +348,21 @@ const RENDER = {
      <table><thead><tr><th>Crafted PDF</th><th class="mono">EMBER score</th><th>EMBER verdict</th>
        <th class="mono">reach on-open</th><th>evasion signature</th></tr></thead><tbody>${mechRows}</tbody></table>
      <p class="note">Harmless payload throughout; nothing is executed. Compression-based token hiding
-       is a real in-the-wild technique — the benign file GeoTopo.pdf does exactly this by accident.</p></div>`;
+       is a real in-the-wild technique — the benign file GeoTopo.pdf does exactly this by accident.</p></div>
+   ${(()=>{const g=D.evasion_generality; if(!g)return'';
+     const rows=Object.entries(g.wirings).map(([w,v])=>`<tr><td class="mono">${w}</td>
+       <td class="mono tnum">${pct(v.ember_evasion_rate)}</td>
+       <td class="mono tnum" style="color:var(--accent)">${pct(v.reach_detection_full)}</td>
+       <td class="mono tnum" style="color:var(--accent)">${pct(v.reach_detection_ablated)}</td></tr>`).join('');
+     return `<div class="panel"><h3 class="t">It isn't one tailored feature — generality &amp; ablation</h3>
+     <p class="d">The same auto-run action wired four structurally different ways (direct, action-chain,
+       document-level name tree, page-open), each hidden in a compressed stream, over ${g.n_base_pdfs}
+       base PDFs. Reachability catches every wiring — <b>and still 100% with the purpose-built
+       evasion-signature feature removed</b> (ablated column), using only "is a dangerous action
+       reachable on open". The result is the graph traversal, not a gotcha feature.</p>
+     <table><thead><tr><th>Evasion wiring</th><th class="mono">EMBER evaded</th>
+       <th class="mono">reachability</th><th class="mono">reachability (ablated)</th></tr></thead>
+       <tbody>${rows}</tbody></table></div>`;})()}`;
  },
  reach(){
   const craft=D.reachability.rows.crafted;

@@ -40,6 +40,15 @@ it removes the giveaway strings for *any* JavaScript, which is exactly why real
 evasive malware uses it. This is the EvadeML-style controlled evasion methodology
 Review 2 cites. We state the scope plainly in `LIMITATIONS.md`.
 
+**Q. Didn't you just design the feature to catch the evasion you built?**
+We tested exactly that. The auto-run action was wired four structurally distinct
+ways (direct /OpenAction, a GoTo→Next action chain, the document-level
+/Names/JavaScript name tree, and a page-open /AA), each hidden in a compressed
+stream. Reachability catches all four at 100% — and still 100% with the
+purpose-built hidden-gap / evasion-signature features *removed* (using only "is a
+dangerous action reachable on open"). Detection comes from the graph traversal,
+not one tailored feature. See `artifacts/metrics/evasion_generality.json`.
+
 **Q. Could you not just retrain EMBER with structural features on the challenge set?**
 Not directly: EMBER releases the 805 challenge PDFs as feature vectors, not raw
 files, and reachability needs the object graph. That is why we demonstrate the

@@ -1,0 +1,33 @@
+{
+  "n_base_pdfs": 150,
+  "wirings": {
+    "openaction": {
+      "n": 150,
+      "ember_evasion_rate": 0.9933333333333333,
+      "reach_detection_full": 1.0,
+      "reach_detection_ablated": 1.0,
+      "mean_min_hops": 0.0
+    },
+    "action_chain": {
+      "n": 150,
+      "ember_evasion_rate": 0.9933333333333333,
+      "reach_detection_full": 1.0,
+      "reach_detection_ablated": 1.0,
+      "mean_min_hops": 0.9933333333333333
+    },
+    "names_js": {
+      "n": 150,
+      "ember_evasion_rate": 0.9933333333333333,
+      "reach_detection_full": 1.0,
+      "reach_detection_ablated": 1.0,
+      "mean_min_hops": 0.0
+    },
+    "page_aa": {
+      "n": 150,
+      "ember_evasion_rate": 0.9933333333333333,
+      "reach_detection_full": 1.0,
+      "reach_detection_ablated": 1.0,
+      "mean_min_hops": 0.0
+    }
+  }
+}
