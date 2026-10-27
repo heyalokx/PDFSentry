@@ -1,0 +1,106 @@
+{
+  "model": "structure_first",
+  "model_hash": "65191c202b760e27",
+  "n_caught_evaluated": 800,
+  "n_evaded": 524,
+  "evasion_resilience_score": 0.345,
+  "evasion_cost": {
+    "mean": 3.2576335877862594,
+    "median": 3.0,
+    "min": 1,
+    "max": 11,
+    "hist": {
+      "1": 26,
+      "2": 95,
+      "3": 179,
+      "4": 184,
+      "5": 28,
+      "6": 10,
+      "7": 1,
+      "11": 1
+    }
+  },
+  "feature_fragility": [
+    {
+      "feature": "Javascript",
+      "used_in_evasions": 445,
+      "share": 0.8492366412213741
+    },
+    {
+      "feature": "metadata size",
+      "used_in_evasions": 430,
+      "share": 0.8206106870229007
+    },
+    {
+      "feature": "JS",
+      "used_in_evasions": 414,
+      "share": 0.7900763358778626
+    },
+    {
+      "feature": "OpenAction",
+      "used_in_evasions": 220,
+      "share": 0.4198473282442748
+    },
+    {
+      "feature": "Acroform",
+      "used_in_evasions": 68,
+      "share": 0.1297709923664122
+    },
+    {
+      "feature": "EmbeddedFile",
+      "used_in_evasions": 52,
+      "share": 0.09923664122137404
+    },
+    {
+      "feature": "XFA",
+      "used_in_evasions": 26,
+      "share": 0.04961832061068702
+    },
+    {
+      "feature": "AA",
+      "used_in_evasions": 22,
+      "share": 0.04198473282442748
+    },
+    {
+      "feature": "title characters",
+      "used_in_evasions": 16,
+      "share": 0.030534351145038167
+    },
+    {
+      "feature": "launch",
+      "used_in_evasions": 7,
+      "share": 0.013358778625954198
+    },
+    {
+      "feature": "JBIG2Decode",
+      "used_in_evasions": 3,
+      "share": 0.0057251908396946565
+    },
+    {
+      "feature": "RichMedia",
+      "used_in_evasions": 2,
+      "share": 0.003816793893129771
+    },
+    {
+      "feature": "ObjStm",
+      "used_in_evasions": 2,
+      "share": 0.003816793893129771
+    }
+  ],
+  "budget_steps": 40,
+  "controllable_features": [
+    "JS",
+    "Javascript",
+    "AA",
+    "OpenAction",
+    "Acroform",
+    "JBIG2Decode",
+    "RichMedia",
+    "launch",
+    "EmbeddedFile",
+    "XFA",
+    "ObjStm",
+    "title characters",
+    "metadata size"
+  ]
+}

@@ -1,0 +1,661 @@
+{
+  "engine": "TRA-1.0",
+  "n_crafted": 4,
+  "n_real": 35,
+  "disagreement": {
+    "naive_over_alarm": 4,
+    "naive_under_alarm": 3,
+    "agree": 30,
+    "examples": [
+      {
+        "file": "fixture_active_buried.pdf",
+        "capability": "javascript",
+        "type": "naive_under_alarm",
+        "naive": 0,
+        "verdict": "ACTIVE_ONOPEN"
+      },
+      {
+        "file": "fixture_dormant.pdf",
+        "capability": "javascript",
+        "type": "naive_over_alarm",
+        "naive": 2,
+        "verdict": "PRESENT_DORMANT"
+      },
+      {
+        "file": "fixture_interaction_only.pdf",
+        "capability": "javascript",
+        "type": "naive_over_alarm",
+        "naive": 2,
+        "verdict": "ACTIVE_ONINTERACT"
+      },
+      {
+        "file": "GeoTopo.pdf",
+        "capability": "uri",
+        "type": "naive_under_alarm",
+        "naive": 0,
+        "verdict": "ACTIVE_ONOPEN"
+      },
+      {
+        "file": "cropped-rotated-scaled.pdf",
+        "capability": "uri",
+        "type": "naive_over_alarm",
+        "naive": 128,
+        "verdict": "ACTIVE_ONINTERACT"
+      },
+      {
+        "file": "pdflatex-forms.pdf",
+        "capability": "submit_form",
+        "type": "naive_under_alarm",
+        "naive": 0,
+        "verdict": "ACTIVE_ONOPEN"
+      },
+      {
+        "file": "with-attachment.pdf",
+        "capability": "embedded_file",
+        "type": "naive_over_alarm",
+        "naive": 2,
+        "verdict": "PRESENT_DORMANT"
+      }
+    ]
+  },
+  "rows": {
+    "crafted": [
+      {
+        "file": "fixture_active_buried.pdf",
+        "parsed": true,
+        "n_objects": 7,
+        "naive_token_count": 0,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "javascript",
+            "naive_count": 0,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 0,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction"
+            ]
+          }
+        ],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "fixture_active_onopen.pdf",
+        "parsed": true,
+        "n_objects": 5,
+        "naive_token_count": 2,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "javascript",
+            "naive_count": 2,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 0,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction"
+            ]
+          }
+        ],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "fixture_dormant.pdf",
+        "parsed": true,
+        "n_objects": 5,
+        "naive_token_count": 2,
+        "reachability_verdict": "PRESENT_DORMANT",
+        "capabilities": [
+          {
+            "capability": "javascript",
+            "naive_count": 2,
+            "present_in_graph": true,
+            "reachable_from_trigger": false,
+            "min_hops": null,
+            "verdict": "PRESENT_DORMANT",
+            "trigger_class": null,
+            "trigger_path": []
+          }
+        ],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "fixture_interaction_only.pdf",
+        "parsed": true,
+        "n_objects": 6,
+        "naive_token_count": 2,
+        "reachability_verdict": "ACTIVE_ONINTERACT",
+        "capabilities": [
+          {
+            "capability": "javascript",
+            "naive_count": 2,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 0,
+            "verdict": "ACTIVE_ONINTERACT",
+            "trigger_class": "interaction",
+            "trigger_path": [
+              "Annot/A"
+            ]
+          }
+        ],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      }
+    ],
+    "real": [
+      {
+        "file": "002-trivial-libre-office-writer.pdf",
+        "parsed": true,
+        "n_objects": 14,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "GeoTopo-komprimiert.pdf",
+        "parsed": true,
+        "n_objects": 3724,
+        "naive_token_count": 58,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "uri",
+            "naive_count": 58,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 8,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction",
+              "/D",
+              "[0]",
+              "/Parent",
+              "/Kids",
+              "[1]",
+              "/Annots",
+              "[0]",
+              "/A"
+            ]
+          }
+        ],
+        "n_triggers": 40,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "GeoTopo.pdf",
+        "parsed": true,
+        "n_objects": 4243,
+        "naive_token_count": 1,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "javascript",
+            "naive_count": 1,
+            "present_in_graph": false,
+            "reachable_from_trigger": false,
+            "min_hops": null,
+            "verdict": "PRESENT_DORMANT",
+            "trigger_class": null,
+            "trigger_path": []
+          },
+          {
+            "capability": "uri",
+            "naive_count": 0,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 8,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction",
+              "/D",
+              "[0]",
+              "/Parent",
+              "/Kids",
+              "[1]",
+              "/Annots",
+              "[0]",
+              "/A"
+            ]
+          }
+        ],
+        "n_triggers": 40,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "annotated_pdf.pdf",
+        "parsed": true,
+        "n_objects": 8,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "base64image.pdf",
+        "parsed": true,
+        "n_objects": 20,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "cmyk-image.pdf",
+        "parsed": true,
+        "n_objects": 6,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "crazyones-pdfa.pdf",
+        "parsed": true,
+        "n_objects": 20,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "cropped-rotated-scaled.pdf",
+        "parsed": true,
+        "n_objects": 757,
+        "naive_token_count": 128,
+        "reachability_verdict": "ACTIVE_ONINTERACT",
+        "capabilities": [
+          {
+            "capability": "uri",
+            "naive_count": 128,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 0,
+            "verdict": "ACTIVE_ONINTERACT",
+            "trigger_class": "interaction",
+            "trigger_path": [
+              "Annot/A"
+            ]
+          }
+        ],
+        "n_triggers": 40,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "google-doc-document.pdf",
+        "parsed": true,
+        "n_objects": 45,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "grayscale-image.pdf",
+        "parsed": true,
+        "n_objects": 6,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "habibi-oneline-cmap.pdf",
+        "parsed": true,
+        "n_objects": 17,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "habibi-rotated.pdf",
+        "parsed": true,
+        "n_objects": 20,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "habibi.pdf",
+        "parsed": true,
+        "n_objects": 17,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "imagemagick-ASCII85Decode.pdf",
+        "parsed": true,
+        "n_objects": 19,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "imagemagick-CCITTFaxDecode.pdf",
+        "parsed": true,
+        "n_objects": 17,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "imagemagick-images.pdf",
+        "parsed": true,
+        "n_objects": 99,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "imagemagick-lzw.pdf",
+        "parsed": true,
+        "n_objects": 19,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "inline-image.pdf",
+        "parsed": true,
+        "n_objects": 7,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "libre-office-link.pdf",
+        "parsed": true,
+        "n_objects": 15,
+        "naive_token_count": 2,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "uri",
+            "naive_count": 2,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 4,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction",
+              "[0]",
+              "/Annots",
+              "[0]",
+              "/A"
+            ]
+          }
+        ],
+        "n_triggers": 2,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "libreoffice-form.pdf",
+        "parsed": true,
+        "n_objects": 54,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 2,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "libreoffice-writer-password.pdf",
+        "parsed": false,
+        "n_objects": 0,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [
+          "parse failed: PasswordError"
+        ],
+        "error": "stream <_io.BytesIO object at 0x7f7a78c5a980>: invalid password"
+      },
+      {
+        "file": "minimal-document.pdf",
+        "parsed": true,
+        "n_objects": 13,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "mistitled_outlines_example.pdf",
+        "parsed": true,
+        "n_objects": 116,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 10,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "multicolumn.pdf",
+        "parsed": true,
+        "n_objects": 38,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "ocg_map_test.pdf",
+        "parsed": true,
+        "n_objects": 81,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "output_with_metadata_pymupdf.pdf",
+        "parsed": true,
+        "n_objects": 9,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "pdfkit.pdf",
+        "parsed": true,
+        "n_objects": 24,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "pdflatex-4-pages.pdf",
+        "parsed": true,
+        "n_objects": 22,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "pdflatex-forms.pdf",
+        "parsed": true,
+        "n_objects": 41,
+        "naive_token_count": 0,
+        "reachability_verdict": "ACTIVE_ONOPEN",
+        "capabilities": [
+          {
+            "capability": "submit_form",
+            "naive_count": 0,
+            "present_in_graph": true,
+            "reachable_from_trigger": true,
+            "min_hops": 5,
+            "verdict": "ACTIVE_ONOPEN",
+            "trigger_class": "auto",
+            "trigger_path": [
+              "Root/OpenAction",
+              "/D",
+              "[0]",
+              "/Annots",
+              "[2]",
+              "/A"
+            ]
+          }
+        ],
+        "n_triggers": 3,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "pdflatex-image.pdf",
+        "parsed": true,
+        "n_objects": 19,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "pdflatex-outline.pdf",
+        "parsed": true,
+        "n_objects": 90,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 10,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "reportlab-overlay.pdf",
+        "parsed": true,
+        "n_objects": 11,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 1,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "unreadablemetadata.pdf",
+        "parsed": false,
+        "n_objects": 0,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [
+          "parse failed: PdfError"
+        ],
+        "error": "stream <_io.BytesIO object at 0x7f7a78c76070>: root of pages tree has no /Kids array"
+      },
+      {
+        "file": "with-attachment.pdf",
+        "parsed": true,
+        "n_objects": 14,
+        "naive_token_count": 2,
+        "reachability_verdict": "PRESENT_DORMANT",
+        "capabilities": [
+          {
+            "capability": "embedded_file",
+            "naive_count": 2,
+            "present_in_graph": true,
+            "reachable_from_trigger": false,
+            "min_hops": null,
+            "verdict": "PRESENT_DORMANT",
+            "trigger_class": null,
+            "trigger_path": []
+          }
+        ],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "file": "wrong-references.pdf",
+        "parsed": true,
+        "n_objects": 35,
+        "naive_token_count": 0,
+        "reachability_verdict": "ABSENT",
+        "capabilities": [],
+        "n_triggers": 0,
+        "warnings": [],
+        "error": null
+      }
+    ]
+  }
+}

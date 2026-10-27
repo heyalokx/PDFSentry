@@ -1,0 +1,94 @@
+{
+  "model": "baseline",
+  "model_hash": "8c7d3b75ff3886cc",
+  "n_caught_evaluated": 800,
+  "n_evaded": 536,
+  "evasion_resilience_score": 0.32999999999999996,
+  "evasion_cost": {
+    "mean": 2.824626865671642,
+    "median": 3.0,
+    "min": 1,
+    "max": 6,
+    "hist": {
+      "1": 25,
+      "2": 160,
+      "3": 252,
+      "4": 85,
+      "5": 11,
+      "6": 3
+    }
+  },
+  "feature_fragility": [
+    {
+      "feature": "Javascript",
+      "used_in_evasions": 474,
+      "share": 0.8843283582089553
+    },
+    {
+      "feature": "metadata size",
+      "used_in_evasions": 418,
+      "share": 0.7798507462686567
+    },
+    {
+      "feature": "JS",
+      "used_in_evasions": 259,
+      "share": 0.4832089552238806
+    },
+    {
+      "feature": "OpenAction",
+      "used_in_evasions": 237,
+      "share": 0.44216417910447764
+    },
+    {
+      "feature": "XFA",
+      "used_in_evasions": 49,
+      "share": 0.0914179104477612
+    },
+    {
+      "feature": "EmbeddedFile",
+      "used_in_evasions": 39,
+      "share": 0.07276119402985075
+    },
+    {
+      "feature": "Acroform",
+      "used_in_evasions": 17,
+      "share": 0.03171641791044776
+    },
+    {
+      "feature": "title characters",
+      "used_in_evasions": 9,
+      "share": 0.016791044776119403
+    },
+    {
+      "feature": "AA",
+      "used_in_evasions": 8,
+      "share": 0.014925373134328358
+    },
+    {
+      "feature": "launch",
+      "used_in_evasions": 3,
+      "share": 0.005597014925373134
+    },
+    {
+      "feature": "ObjStm",
+      "used_in_evasions": 1,
+      "share": 0.0018656716417910447
+    }
+  ],
+  "budget_steps": 40,
+  "controllable_features": [
+    "JS",
+    "Javascript",
+    "AA",
+    "OpenAction",
+    "Acroform",
+    "JBIG2Decode",
+    "RichMedia",
+    "launch",
+    "EmbeddedFile",
+    "XFA",
+    "ObjStm",
+    "title characters",
+    "metadata size"
+  ]
+}

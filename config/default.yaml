@@ -1,0 +1,83 @@
+# PDFSentry configuration — single source of truth for dataset semantics.
+# All column names are the raw CIC-Evasive-PDFMal2022 headers (verbatim).
+
+project:
+  name: PDFSentry
+  thesis: "Reachability over Recognition: structural reachability + evasion-cost mapping for PDF malware detection"
+  seed: 1337
+
+dataset:
+  name: CIC-Evasive-PDFMal2022
+  source: "Canadian Institute for Cybersecurity (UNB), 2022"
+  raw_csv: data/raw/CIC-Evasive-PDFMal2022.csv
+  id_column: "File name"
+  label_column: "Class"
+  label_map: {Benign: 0, Malicious: 1}
+  # columns stored as strings but semantically numeric -> coerce
+  stringy_numeric: [obj, endobj, endstream, xref, startxref, pageno]
+  # columns where -1 is a parser-failure sentinel, not a real count
+  sentinel_neg1: [isEncrypted, "embedded files", images, encrypt, OpenAction,
+                  Acroform, JBIG2Decode, RichMedia, launch, XFA, Colors]
+  # categorical text column: No/Yes/unclear/-1/0
+  text_column: text
+
+feature_groups:
+  # Flat "bag-of-keyword" capability counts — the FRAGILE features our thesis targets.
+  keyword_capability: [JS, Javascript, AA, OpenAction, Acroform, JBIG2Decode,
+                       RichMedia, launch, EmbeddedFile, XFA]
+  # Structural size / object-count features.
+  structural_size: [pdfsize, "metadata size", pages, "xref Length",
+                    "title characters", obj, endobj, stream, endstream,
+                    xref, trailer, startxref, pageno, ObjStm, Colors, images]
+  # Boolean / low-cardinality flags.
+  flags: [isEncrypted, "embedded files", encrypt, text_code]
+  # Header-derived.
+  header: [header_version, header_malformed]
+  # Derived integrity / density signals we ADD (robustness candidates).
+  derived: [obj_endobj_delta, stream_endstream_delta, js_total, autoexec_tokens,
+            n_parse_failures, content_density, keyword_concentration]
+
+split:
+  # CIC has NO time axis — temporal drift is NOT available here (unlike EMBER2024).
+  # Honest stratified holdout. The "evasion stress-test" is our novel evaluation,
+  # not a fabricated temporal challenge set.
+  test_fraction: 0.30
+  stratify: true
+
+model:
+  algorithm: lightgbm
+  params:
+    objective: binary
+    boosting: gbdt
+    num_iterations: 500
+    num_leaves: 64
+    min_data_in_leaf: 100
+    learning_rate: 0.05
+    feature_fraction: 0.9
+    bagging_fraction: 0.9
+    bagging_freq: 1
+    lambda_l2: 1.0
+    is_unbalance: true
+    seed: 1337
+    num_threads: 0
+    verbosity: -1
+  decision_threshold: 0.5
+
+evaluation:
+  bootstrap_replicates: 2000
+  bootstrap_ci: 0.95
+
+evasion:
+  # Constrained counterfactual search budget (feature-space, harmless).
+  budget_steps: 40          # max single-feature edits per sample
+  samples_analyzed: 800     # caught-malicious samples to probe
+  # features an attacker can cheaply manipulate at authoring time (payload-side)
+  attacker_controllable: [JS, Javascript, AA, OpenAction, Acroform, JBIG2Decode,
+                          RichMedia, launch, EmbeddedFile, XFA, ObjStm,
+                          "title characters", "metadata size"]
+
+structural:
+  max_file_bytes: 15000000      # 15 MB upload cap
+  max_objects: 50000            # object-count guard
+  parse_timeout_s: 20
+  reachability_max_hops: 12

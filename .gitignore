@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+artifacts/models/*.txt
+artifacts/**/*.npz
+data/raw/*.zip
+*.dat
+.pytest_cache/

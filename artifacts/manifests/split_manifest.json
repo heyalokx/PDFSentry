@@ -1,0 +1,18 @@
+{
+  "seed": 1337,
+  "test_fraction": 0.3,
+  "stratified": true,
+  "n_train": 7017,
+  "n_test": 3008,
+  "train_hash": "1f9fefd224e538e0",
+  "test_hash": "fa5f17939cf446a7",
+  "train_label_counts": {
+    "benign": 3127,
+    "malicious": 3890
+  },
+  "test_label_counts": {
+    "benign": 1341,
+    "malicious": 1667
+  },
+  "note": "No temporal axis in CIC-PDFMal2022; stratified random holdout, NOT a temporal challenge split."
+}

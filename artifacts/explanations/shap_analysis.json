@@ -1,0 +1,969 @@
+{
+  "caveat": "SHAP attributions describe how the trained model responds to feature values. They do not establish that a feature caused maliciousness or that an attacker intended it. Correlated features share credit.",
+  "model_hash": "8c7d3b75ff3886cc",
+  "global_importance": [
+    {
+      "feature": "keyword_concentration",
+      "mean_abs_shap": 2.19073628273713
+    },
+    {
+      "feature": "metadata size",
+      "mean_abs_shap": 2.1339087787628865
+    },
+    {
+      "feature": "Javascript",
+      "mean_abs_shap": 1.4441756007822923
+    },
+    {
+      "feature": "pdfsize",
+      "mean_abs_shap": 0.925263241120431
+    },
+    {
+      "feature": "js_total",
+      "mean_abs_shap": 0.7220010158439217
+    },
+    {
+      "feature": "xref Length",
+      "mean_abs_shap": 0.6230240221017401
+    },
+    {
+      "feature": "obj",
+      "mean_abs_shap": 0.5585084014081655
+    },
+    {
+      "feature": "startxref",
+      "mean_abs_shap": 0.49816046483427767
+    },
+    {
+      "feature": "pageno",
+      "mean_abs_shap": 0.4505736783505558
+    },
+    {
+      "feature": "n_parse_failures",
+      "mean_abs_shap": 0.41583801774630036
+    },
+    {
+      "feature": "xref",
+      "mean_abs_shap": 0.41137657018397833
+    },
+    {
+      "feature": "stream",
+      "mean_abs_shap": 0.3732068323814241
+    },
+    {
+      "feature": "text_code",
+      "mean_abs_shap": 0.3675162035976751
+    },
+    {
+      "feature": "pages",
+      "mean_abs_shap": 0.3138670683036951
+    },
+    {
+      "feature": "images",
+      "mean_abs_shap": 0.24830601724907694
+    },
+    {
+      "feature": "Colors",
+      "mean_abs_shap": 0.2287448449432937
+    },
+    {
+      "feature": "OpenAction",
+      "mean_abs_shap": 0.21955044738362495
+    },
+    {
+      "feature": "endstream",
+      "mean_abs_shap": 0.19467381815720228
+    },
+    {
+      "feature": "title characters",
+      "mean_abs_shap": 0.18389431532054373
+    },
+    {
+      "feature": "Acroform",
+      "mean_abs_shap": 0.18100596213313588
+    },
+    {
+      "feature": "header_version",
+      "mean_abs_shap": 0.16552821002374424
+    },
+    {
+      "feature": "autoexec_tokens",
+      "mean_abs_shap": 0.15597396740687797
+    },
+    {
+      "feature": "XFA",
+      "mean_abs_shap": 0.1448125609444177
+    },
+    {
+      "feature": "endobj",
+      "mean_abs_shap": 0.12124198790136397
+    },
+    {
+      "feature": "content_density",
+      "mean_abs_shap": 0.11611182810019381
+    },
+    {
+      "feature": "EmbeddedFile",
+      "mean_abs_shap": 0.10334217219959005
+    },
+    {
+      "feature": "ObjStm",
+      "mean_abs_shap": 0.0982776972998119
+    },
+    {
+      "feature": "obj_endobj_delta",
+      "mean_abs_shap": 0.0799693245255067
+    },
+    {
+      "feature": "embedded files",
+      "mean_abs_shap": 0.05835500513346283
+    },
+    {
+      "feature": "JS",
+      "mean_abs_shap": 0.04715836564770999
+    },
+    {
+      "feature": "AA",
+      "mean_abs_shap": 0.03435024442685145
+    },
+    {
+      "feature": "stream_endstream_delta",
+      "mean_abs_shap": 0.025188277608065617
+    },
+    {
+      "feature": "trailer",
+      "mean_abs_shap": 0.008839781534403148
+    },
+    {
+      "feature": "header_malformed",
+      "mean_abs_shap": 0.002204861204167902
+    },
+    {
+      "feature": "launch",
+      "mean_abs_shap": 0.0021123024152395094
+    },
+    {
+      "feature": "JBIG2Decode",
+      "mean_abs_shap": 0.000633518688687046
+    },
+    {
+      "feature": "encrypt",
+      "mean_abs_shap": 0.0005018031211913596
+    },
+    {
+      "feature": "isEncrypted",
+      "mean_abs_shap": 7.257302261803408e-06
+    },
+    {
+      "feature": "RichMedia",
+      "mean_abs_shap": 0.0
+    }
+  ],
+  "group_importance": {
+    "true_positive": {
+      "n": 1654,
+      "top": [
+        {
+          "feature": "metadata size",
+          "mean_abs_shap": 2.369772019513674
+        },
+        {
+          "feature": "keyword_concentration",
+          "mean_abs_shap": 2.2246289840783917
+        },
+        {
+          "feature": "Javascript",
+          "mean_abs_shap": 1.4519824237580052
+        },
+        {
+          "feature": "pdfsize",
+          "mean_abs_shap": 1.0081497213091695
+        },
+        {
+          "feature": "js_total",
+          "mean_abs_shap": 0.7314583192395896
+        },
+        {
+          "feature": "xref Length",
+          "mean_abs_shap": 0.5416506112050797
+        },
+        {
+          "feature": "n_parse_failures",
+          "mean_abs_shap": 0.496988503891236
+        },
+        {
+          "feature": "obj",
+          "mean_abs_shap": 0.42889529324113546
+        },
+        {
+          "feature": "startxref",
+          "mean_abs_shap": 0.41291261796384665
+        },
+        {
+          "feature": "pageno",
+          "mean_abs_shap": 0.3944743750284284
+        }
+      ]
+    },
+    "false_negative": {
+      "n": 13,
+      "top": [
+        {
+          "feature": "keyword_concentration",
+          "mean_abs_shap": 2.199550863340046
+        },
+        {
+          "feature": "metadata size",
+          "mean_abs_shap": 1.8014785693154662
+        },
+        {
+          "feature": "Javascript",
+          "mean_abs_shap": 1.4021339591250608
+        },
+        {
+          "feature": "pdfsize",
+          "mean_abs_shap": 0.9473365826878517
+        },
+        {
+          "feature": "js_total",
+          "mean_abs_shap": 0.7094876259395225
+        },
+        {
+          "feature": "startxref",
+          "mean_abs_shap": 0.6867123325737821
+        },
+        {
+          "feature": "xref Length",
+          "mean_abs_shap": 0.6467108429862335
+        },
+        {
+          "feature": "Colors",
+          "mean_abs_shap": 0.5836058187391046
+        },
+        {
+          "feature": "obj",
+          "mean_abs_shap": 0.540513344686621
+        },
+        {
+          "feature": "n_parse_failures",
+          "mean_abs_shap": 0.4332235488910647
+        }
+      ]
+    },
+    "false_positive": {
+      "n": 16,
+      "top": [
+        {
+          "feature": "metadata size",
+          "mean_abs_shap": 2.3494440555408262
+        },
+        {
+          "feature": "keyword_concentration",
+          "mean_abs_shap": 1.836852203437649
+        },
+        {
+          "feature": "obj",
+          "mean_abs_shap": 1.370945172514112
+        },
+        {
+          "feature": "Javascript",
+          "mean_abs_shap": 1.350050199226222
+        },
+        {
+          "feature": "n_parse_failures",
+          "mean_abs_shap": 1.14949364988971
+        },
+        {
+          "feature": "pdfsize",
+          "mean_abs_shap": 1.0334867441617854
+        },
+        {
+          "feature": "pageno",
+          "mean_abs_shap": 0.886869489868416
+        },
+        {
+          "feature": "js_total",
+          "mean_abs_shap": 0.6679378899896427
+        },
+        {
+          "feature": "xref Length",
+          "mean_abs_shap": 0.6439548266231352
+        },
+        {
+          "feature": "xref",
+          "mean_abs_shap": 0.5259873299730085
+        }
+      ]
+    },
+    "true_negative": {
+      "n": 1325,
+      "top": [
+        {
+          "feature": "keyword_concentration",
+          "mean_abs_shap": 2.1526147942107134
+        },
+        {
+          "feature": "metadata size",
+          "mean_abs_shap": 1.840139139587458
+        },
+        {
+          "feature": "Javascript",
+          "mean_abs_shap": 1.4359794215857762
+        },
+        {
+          "feature": "pdfsize",
+          "mean_abs_shap": 0.8202724730289538
+        },
+        {
+          "feature": "xref Length",
+          "mean_abs_shap": 0.7241174561238093
+        },
+        {
+          "feature": "js_total",
+          "mean_abs_shap": 0.7109710567993814
+        },
+        {
+          "feature": "obj",
+          "mean_abs_shap": 0.7106706869235996
+        },
+        {
+          "feature": "startxref",
+          "mean_abs_shap": 0.60246413694075
+        },
+        {
+          "feature": "pageno",
+          "mean_abs_shap": 0.5159825270329044
+        },
+        {
+          "feature": "xref",
+          "mean_abs_shap": 0.5128974073951899
+        }
+      ]
+    },
+    "borderline": {
+      "n": 2,
+      "top": [
+        {
+          "feature": "keyword_concentration",
+          "mean_abs_shap": 1.9667282291621697
+        },
+        {
+          "feature": "pdfsize",
+          "mean_abs_shap": 1.5467640725328964
+        },
+        {
+          "feature": "Javascript",
+          "mean_abs_shap": 1.5057498193458287
+        },
+        {
+          "feature": "metadata size",
+          "mean_abs_shap": 1.4995252599375148
+        },
+        {
+          "feature": "obj",
+          "mean_abs_shap": 1.1754399205245893
+        },
+        {
+          "feature": "xref Length",
+          "mean_abs_shap": 1.1018988267351222
+        },
+        {
+          "feature": "AA",
+          "mean_abs_shap": 0.7797881645410889
+        },
+        {
+          "feature": "js_total",
+          "mean_abs_shap": 0.721900822062512
+        },
+        {
+          "feature": "startxref",
+          "mean_abs_shap": 0.6618452599044704
+        },
+        {
+          "feature": "xref",
+          "mean_abs_shap": 0.6591311997451881
+        }
+      ]
+    }
+  },
+  "rank_shift_caught_vs_missed": [
+    {
+      "feature": "EmbeddedFile",
+      "rank_caught": 20,
+      "rank_missed": 30,
+      "shift": -10
+    },
+    {
+      "feature": "XFA",
+      "rank_caught": 16,
+      "rank_missed": 26,
+      "shift": -10
+    },
+    {
+      "feature": "endstream",
+      "rank_caught": 18,
+      "rank_missed": 22,
+      "shift": -4
+    },
+    {
+      "feature": "pageno",
+      "rank_caught": 9,
+      "rank_missed": 13,
+      "shift": -4
+    },
+    {
+      "feature": "content_density",
+      "rank_caught": 23,
+      "rank_missed": 27,
+      "shift": -4
+    },
+    {
+      "feature": "n_parse_failures",
+      "rank_caught": 6,
+      "rank_missed": 9,
+      "shift": -3
+    },
+    {
+      "feature": "obj_endobj_delta",
+      "rank_caught": 26,
+      "rank_missed": 28,
+      "shift": -2
+    },
+    {
+      "feature": "metadata size",
+      "rank_caught": 0,
+      "rank_missed": 1,
+      "shift": -1
+    },
+    {
+      "feature": "pages",
+      "rank_caught": 13,
+      "rank_missed": 14,
+      "shift": -1
+    },
+    {
+      "feature": "xref Length",
+      "rank_caught": 5,
+      "rank_missed": 6,
+      "shift": -1
+    },
+    {
+      "feature": "images",
+      "rank_caught": 15,
+      "rank_missed": 16,
+      "shift": -1
+    },
+    {
+      "feature": "obj",
+      "rank_caught": 7,
+      "rank_missed": 8,
+      "shift": -1
+    },
+    {
+      "feature": "OpenAction",
+      "rank_caught": 14,
+      "rank_missed": 15,
+      "shift": -1
+    },
+    {
+      "feature": "Acroform",
+      "rank_caught": 22,
+      "rank_missed": 23,
+      "shift": -1
+    },
+    {
+      "feature": "header_malformed",
+      "rank_caught": 33,
+      "rank_missed": 34,
+      "shift": -1
+    },
+    {
+      "feature": "pdfsize",
+      "rank_caught": 3,
+      "rank_missed": 3,
+      "shift": 0
+    },
+    {
+      "feature": "isEncrypted",
+      "rank_caught": 37,
+      "rank_missed": 37,
+      "shift": 0
+    },
+    {
+      "feature": "stream",
+      "rank_caught": 12,
+      "rank_missed": 12,
+      "shift": 0
+    },
+    {
+      "feature": "xref",
+      "rank_caught": 10,
+      "rank_missed": 10,
+      "shift": 0
+    },
+    {
+      "feature": "trailer",
+      "rank_caught": 32,
+      "rank_missed": 32,
+      "shift": 0
+    },
+    {
+      "feature": "encrypt",
+      "rank_caught": 35,
+      "rank_missed": 35,
+      "shift": 0
+    },
+    {
+      "feature": "JS",
+      "rank_caught": 29,
+      "rank_missed": 29,
+      "shift": 0
+    },
+    {
+      "feature": "Javascript",
+      "rank_caught": 2,
+      "rank_missed": 2,
+      "shift": 0
+    },
+    {
+      "feature": "JBIG2Decode",
+      "rank_caught": 36,
+      "rank_missed": 36,
+      "shift": 0
+    },
+    {
+      "feature": "RichMedia",
+      "rank_caught": 38,
+      "rank_missed": 38,
+      "shift": 0
+    },
+    {
+      "feature": "text_code",
+      "rank_caught": 11,
+      "rank_missed": 11,
+      "shift": 0
+    },
+    {
+      "feature": "stream_endstream_delta",
+      "rank_caught": 31,
+      "rank_missed": 31,
+      "shift": 0
+    },
+    {
+      "feature": "js_total",
+      "rank_caught": 4,
+      "rank_missed": 4,
+      "shift": 0
+    },
+    {
+      "feature": "autoexec_tokens",
+      "rank_caught": 19,
+      "rank_missed": 19,
+      "shift": 0
+    },
+    {
+      "feature": "endobj",
+      "rank_caught": 25,
+      "rank_missed": 24,
+      "shift": 1
+    },
+    {
+      "feature": "launch",
+      "rank_caught": 34,
+      "rank_missed": 33,
+      "shift": 1
+    },
+    {
+      "feature": "keyword_concentration",
+      "rank_caught": 1,
+      "rank_missed": 0,
+      "shift": 1
+    },
+    {
+      "feature": "title characters",
+      "rank_caught": 24,
+      "rank_missed": 21,
+      "shift": 3
+    },
+    {
+      "feature": "startxref",
+      "rank_caught": 8,
+      "rank_missed": 5,
+      "shift": 3
+    },
+    {
+      "feature": "header_version",
+      "rank_caught": 21,
+      "rank_missed": 18,
+      "shift": 3
+    },
+    {
+      "feature": "AA",
+      "rank_caught": 30,
+      "rank_missed": 25,
+      "shift": 5
+    },
+    {
+      "feature": "embedded files",
+      "rank_caught": 27,
+      "rank_missed": 20,
+      "shift": 7
+    },
+    {
+      "feature": "Colors",
+      "rank_caught": 17,
+      "rank_missed": 7,
+      "shift": 10
+    },
+    {
+      "feature": "ObjStm",
+      "rank_caught": 28,
+      "rank_missed": 17,
+      "shift": 11
+    }
+  ],
+  "permutation_importance": [
+    {
+      "feature": "metadata size",
+      "importance": 0.0033845579877312625,
+      "std": 0.0005286729190659543
+    },
+    {
+      "feature": "keyword_concentration",
+      "importance": 0.0033609832843274124,
+      "std": 0.0003961238985721685
+    },
+    {
+      "feature": "pdfsize",
+      "importance": 0.0005882045067496455,
+      "std": 0.00019330713858215387
+    },
+    {
+      "feature": "Colors",
+      "importance": 0.00041177446837249444,
+      "std": 4.929949011250427e-05
+    },
+    {
+      "feature": "n_parse_failures",
+      "importance": 0.00040980618194038645,
+      "std": 7.978767666843889e-05
+    },
+    {
+      "feature": "Javascript",
+      "importance": 0.0003893628433149665,
+      "std": 9.963132312437533e-05
+    },
+    {
+      "feature": "images",
+      "importance": 0.0002439780500275601,
+      "std": 2.846221849064663e-05
+    },
+    {
+      "feature": "xref Length",
+      "importance": 0.0002271134140062081,
+      "std": 0.00017597704335422184
+    },
+    {
+      "feature": "title characters",
+      "importance": 0.00017808518833145603,
+      "std": 6.057603323977489e-05
+    },
+    {
+      "feature": "text_code",
+      "importance": 0.00016479925491404978,
+      "std": 8.985305556135227e-05
+    },
+    {
+      "feature": "header_version",
+      "importance": 0.00010932936455211317,
+      "std": 3.0933143782051745e-05
+    },
+    {
+      "feature": "js_total",
+      "importance": 0.0001087478253789298,
+      "std": 7.353870584339938e-05
+    },
+    {
+      "feature": "Acroform",
+      "importance": 9.756437974145493e-05,
+      "std": 2.1809221537584146e-05
+    },
+    {
+      "feature": "XFA",
+      "importance": 9.743017839380919e-05,
+      "std": 1.064964713535701e-05
+    },
+    {
+      "feature": "OpenAction",
+      "importance": 9.063064344621008e-05,
+      "std": 2.7794190241346224e-05
+    },
+    {
+      "feature": "obj",
+      "importance": 8.660460301671558e-05,
+      "std": 0.00011897743154054249
+    },
+    {
+      "feature": "pages",
+      "importance": 8.190755584898124e-05,
+      "std": 6.376861503124696e-05
+    },
+    {
+      "feature": "EmbeddedFile",
+      "importance": 5.408314310287876e-05,
+      "std": 6.486720853480261e-05
+    },
+    {
+      "feature": "content_density",
+      "importance": 4.947556350021198e-05,
+      "std": 2.698689406758805e-05
+    },
+    {
+      "feature": "embedded files",
+      "importance": 3.88289232533312e-05,
+      "std": 3.8084084164977806e-05
+    },
+    {
+      "feature": "stream",
+      "importance": 3.390820717281695e-05,
+      "std": 6.575799085991486e-05
+    },
+    {
+      "feature": "autoexec_tokens",
+      "importance": 2.818228300647263e-05,
+      "std": 1.9166742359622487e-05
+    },
+    {
+      "feature": "obj_endobj_delta",
+      "importance": 2.2948430448122002e-05,
+      "std": 2.174637035961956e-05
+    },
+    {
+      "feature": "stream_endstream_delta",
+      "importance": 1.2122855071017291e-05,
+      "std": 1.5163366661570183e-06
+    },
+    {
+      "feature": "AA",
+      "importance": 1.0870309159571877e-05,
+      "std": 1.8557781520130714e-06
+    },
+    {
+      "feature": "pageno",
+      "importance": 1.019930242135425e-05,
+      "std": 7.185498805447075e-05
+    },
+    {
+      "feature": "xref",
+      "importance": 3.0866309958854642e-06,
+      "std": 5.700300427596219e-05
+    },
+    {
+      "feature": "ObjStm",
+      "importance": 1.2972796938903741e-06,
+      "std": 5.2768592585365245e-05
+    },
+    {
+      "feature": "launch",
+      "importance": 3.5787026035905e-07,
+      "std": 4.382997660323127e-07
+    },
+    {
+      "feature": "isEncrypted",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "RichMedia",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "encrypt",
+      "importance": -4.4733782578187944e-08,
+      "std": 1.3420134766054897e-07
+    },
+    {
+      "feature": "JBIG2Decode",
+      "importance": -4.4733782578187944e-08,
+      "std": 1.3420134762354152e-07
+    },
+    {
+      "feature": "trailer",
+      "importance": -1.0288769986765978e-06,
+      "std": 2.491073291801657e-06
+    },
+    {
+      "feature": "header_malformed",
+      "importance": -1.2078121289116339e-06,
+      "std": 5.676080685543317e-07
+    },
+    {
+      "feature": "endobj",
+      "importance": -1.6551499544048553e-06,
+      "std": 2.9945617332355373e-05
+    },
+    {
+      "feature": "JS",
+      "importance": -1.6551499544159575e-06,
+      "std": 5.0135774706906905e-06
+    },
+    {
+      "feature": "startxref",
+      "importance": -3.176098561075147e-06,
+      "std": 7.064948624322577e-05
+    },
+    {
+      "feature": "endstream",
+      "importance": -1.2301790201285634e-05,
+      "std": 3.532510425714505e-05
+    }
+  ],
+  "sample_explanations": [
+    {
+      "group": "true_positive",
+      "row": 1506,
+      "score": 0.9999349597929956,
+      "base_value": 1.471883001362719,
+      "top_contributions": [
+        {
+          "feature": "keyword_concentration",
+          "shap": 3.8366202894804786,
+          "value": 0.30000001192092896
+        },
+        {
+          "feature": "Javascript",
+          "shap": 1.7956912388630437,
+          "value": 1.0
+        },
+        {
+          "feature": "metadata size",
+          "shap": -1.006402786921956,
+          "value": 293.0
+        },
+        {
+          "feature": "js_total",
+          "shap": 0.8040239594735819,
+          "value": 2.0
+        },
+        {
+          "feature": "OpenAction",
+          "shap": 0.6009598052905303,
+          "value": 1.0
+        },
+        {
+          "feature": "startxref",
+          "shap": 0.504721781806181,
+          "value": 1.0
+        },
+        {
+          "feature": "pdfsize",
+          "shap": 0.4992989751763018,
+          "value": 14.0
+        },
+        {
+          "feature": "stream",
+          "shap": 0.4038292893623685,
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "group": "false_negative",
+      "row": 1345,
+      "score": 0.05134702121399714,
+      "base_value": 1.471883001362719,
+      "top_contributions": [
+        {
+          "feature": "keyword_concentration",
+          "shap": -2.4010415244840257,
+          "value": 0.043478261679410934
+        },
+        {
+          "feature": "metadata size",
+          "shap": -2.2714296237458793,
+          "value": 287.0
+        },
+        {
+          "feature": "embedded files",
+          "shap": 2.199702746183103,
+          "value": 1.0
+        },
+        {
+          "feature": "Javascript",
+          "shap": -1.4525264716348412,
+          "value": 0.0
+        },
+        {
+          "feature": "js_total",
+          "shap": -0.8273451969633916,
+          "value": 0.0
+        },
+        {
+          "feature": "OpenAction",
+          "shap": 0.7331851911759893,
+          "value": 1.0
+        },
+        {
+          "feature": "obj",
+          "shap": -0.6797847008982553,
+          "value": 22.0
+        },
+        {
+          "feature": "startxref",
+          "shap": 0.645212207159682,
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "group": "false_positive",
+      "row": 1693,
+      "score": 0.9221870452103686,
+      "base_value": 1.471883001362719,
+      "top_contributions": [
+        {
+          "feature": "pdfsize",
+          "shap": -3.000880587818455,
+          "value": 113.0
+        },
+        {
+          "feature": "obj",
+          "shap": 2.34282975700229,
+          "value": -1.0
+        },
+        {
+          "feature": "n_parse_failures",
+          "shap": 1.8261343200988607,
+          "value": 8.0
+        },
+        {
+          "feature": "keyword_concentration",
+          "shap": -1.6890150513520903,
+          "value": 0.0
+        },
+        {
+          "feature": "pageno",
+          "shap": 1.4201760245099453,
+          "value": -1.0
+        },
+        {
+          "feature": "Javascript",
+          "shap": -1.2314818391548565,
+          "value": -1.0
+        },
+        {
+          "feature": "xref Length",
+          "shap": 0.7410501028140383,
+          "value": 50.0
+        },
+        {
+          "feature": "startxref",
+          "shap": 0.6613565323957014,
+          "value": -1.0
+        }
+      ]
+    }
+  ],
+  "base_value": 1.471883001362719
+}
