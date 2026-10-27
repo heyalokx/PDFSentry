@@ -26,7 +26,7 @@ from backend.features.reach_features import reach_feature_vector, FEATURE_NAMES
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--malicious", required=True)
-    ap.add_argument("--benign", required=True)
+    ap.add_argument("--benign", default=None, help="optional; omit for a malicious-only recovery table")
     ap.add_argument("--ember-model", default=None)
     ap.add_argument("--out", default="features.csv")
     ap.add_argument("--max-bytes", type=int, default=6_000_000)
@@ -43,9 +43,10 @@ def main():
 
     cols = ["sha256", "label", "ember_score"] + FEATURE_NAMES
     n = {"malicious": 0, "benign": 0}; fail = 0
+    targets = [(1, args.malicious)] + ([(0, args.benign)] if args.benign else [])
     with open(args.out, "w", newline="") as fh:
         w = csv.writer(fh); w.writerow(cols)
-        for label, folder in [(1, args.malicious), (0, args.benign)]:
+        for label, folder in targets:
             for p in glob.glob(f"{folder}/**/*", recursive=True):
                 if not p.lower().endswith(".pdf"):
                     continue

@@ -1,0 +1,9 @@
+{
+  "n_malicious": 4,
+  "ember_recall": 0.75,
+  "ember_missed": 1,
+  "reachability_alarm_rate_overall": 0.5,
+  "recovered_of_missed": 1,
+  "recovery_rate_of_missed": 1.0,
+  "combined_recall_ember_or_reach": 1.0
+}
