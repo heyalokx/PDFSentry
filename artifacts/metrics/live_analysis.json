@@ -1,0 +1,4226 @@
+{
+  "specimens": [
+    {
+      "name": "Clean report",
+      "category": "benign",
+      "desc": "A normal LaTeX document \u2014 no reachable actions.",
+      "base": "pdflatex-outline.pdf",
+      "ember_score": 0.005740564989282927,
+      "ember_verdict": "benign",
+      "reach_verdict": "ABSENT",
+      "reach_capability": null,
+      "reach_dangerous": false,
+      "evasion_sig": 0,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "88_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "87_0",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "38_0",
+            "label": "OpenAction",
+            "role": "trigger"
+          },
+          {
+            "id": "82_0",
+            "label": "Outlines",
+            "role": "dict"
+          },
+          {
+            "id": "57_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "86_0",
+            "label": "Dests",
+            "role": "dict"
+          },
+          {
+            "id": "38_0:/D",
+            "label": "D",
+            "role": "other"
+          },
+          {
+            "id": "4_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "36_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "57_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "86_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "86_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "39_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "1_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "8_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "34_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "32_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "59_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "63_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "67_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "83_0",
+            "label": "[0]",
+            "role": "dict"
+          },
+          {
+            "id": "84_0",
+            "label": "[1]",
+            "role": "dict"
+          },
+          {
+            "id": "85_0",
+            "label": "[2]",
+            "role": "dict"
+          },
+          {
+            "id": "39_0:/Annots",
+            "label": "Annots",
+            "role": "other"
+          },
+          {
+            "id": "50_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "39_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "49_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "6_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "12_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "30_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "28_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "60_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "59_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "58_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "64_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "63_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "62_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "68_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "67_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "66_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "83_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "83_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "84_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "84_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "85_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "85_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "40_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "41_0",
+            "label": "Annot",
+            "role": "annot"
+          }
+        ],
+        "edges": [
+          {
+            "source": "88_0",
+            "target": "87_0"
+          },
+          {
+            "source": "88_0",
+            "target": "38_0"
+          },
+          {
+            "source": "88_0",
+            "target": "82_0"
+          },
+          {
+            "source": "88_0",
+            "target": "57_0"
+          },
+          {
+            "source": "87_0",
+            "target": "86_0"
+          },
+          {
+            "source": "38_0",
+            "target": "38_0:/D"
+          },
+          {
+            "source": "82_0",
+            "target": "4_0"
+          },
+          {
+            "source": "82_0",
+            "target": "36_0"
+          },
+          {
+            "source": "57_0",
+            "target": "57_0:/Kids"
+          },
+          {
+            "source": "86_0",
+            "target": "86_0:/Kids"
+          },
+          {
+            "source": "86_0",
+            "target": "86_0:/Limits"
+          },
+          {
+            "source": "38_0:/D",
+            "target": "39_0"
+          },
+          {
+            "source": "4_0",
+            "target": "1_0"
+          },
+          {
+            "source": "4_0",
+            "target": "8_0"
+          },
+          {
+            "source": "4_0",
+            "target": "82_0"
+          },
+          {
+            "source": "36_0",
+            "target": "34_0"
+          },
+          {
+            "source": "36_0",
+            "target": "82_0"
+          },
+          {
+            "source": "36_0",
+            "target": "32_0"
+          },
+          {
+            "source": "57_0:/Kids",
+            "target": "39_0"
+          },
+          {
+            "source": "57_0:/Kids",
+            "target": "59_0"
+          },
+          {
+            "source": "57_0:/Kids",
+            "target": "63_0"
+          },
+          {
+            "source": "57_0:/Kids",
+            "target": "67_0"
+          },
+          {
+            "source": "86_0:/Kids",
+            "target": "83_0"
+          },
+          {
+            "source": "86_0:/Kids",
+            "target": "84_0"
+          },
+          {
+            "source": "86_0:/Kids",
+            "target": "85_0"
+          },
+          {
+            "source": "39_0",
+            "target": "39_0:/Annots"
+          },
+          {
+            "source": "39_0",
+            "target": "50_0"
+          },
+          {
+            "source": "39_0",
+            "target": "39_0:/MediaBox"
+          },
+          {
+            "source": "39_0",
+            "target": "57_0"
+          },
+          {
+            "source": "39_0",
+            "target": "49_0"
+          },
+          {
+            "source": "8_0",
+            "target": "6_0"
+          },
+          {
+            "source": "8_0",
+            "target": "12_0"
+          },
+          {
+            "source": "8_0",
+            "target": "82_0"
+          },
+          {
+            "source": "8_0",
+            "target": "4_0"
+          },
+          {
+            "source": "32_0",
+            "target": "30_0"
+          },
+          {
+            "source": "32_0",
+            "target": "36_0"
+          },
+          {
+            "source": "32_0",
+            "target": "82_0"
+          },
+          {
+            "source": "32_0",
+            "target": "28_0"
+          },
+          {
+            "source": "59_0",
+            "target": "60_0"
+          },
+          {
+            "source": "59_0",
+            "target": "59_0:/MediaBox"
+          },
+          {
+            "source": "59_0",
+            "target": "57_0"
+          },
+          {
+            "source": "59_0",
+            "target": "58_0"
+          },
+          {
+            "source": "63_0",
+            "target": "64_0"
+          },
+          {
+            "source": "63_0",
+            "target": "63_0:/MediaBox"
+          },
+          {
+            "source": "63_0",
+            "target": "57_0"
+          },
+          {
+            "source": "63_0",
+            "target": "62_0"
+          },
+          {
+            "source": "67_0",
+            "target": "68_0"
+          },
+          {
+            "source": "67_0",
+            "target": "67_0:/MediaBox"
+          },
+          {
+            "source": "67_0",
+            "target": "57_0"
+          },
+          {
+            "source": "67_0",
+            "target": "66_0"
+          },
+          {
+            "source": "83_0",
+            "target": "83_0:/Limits"
+          },
+          {
+            "source": "83_0",
+            "target": "83_0:/Names"
+          },
+          {
+            "source": "84_0",
+            "target": "84_0:/Limits"
+          },
+          {
+            "source": "84_0",
+            "target": "84_0:/Names"
+          },
+          {
+            "source": "85_0",
+            "target": "85_0:/Limits"
+          },
+          {
+            "source": "85_0",
+            "target": "85_0:/Names"
+          },
+          {
+            "source": "39_0:/Annots",
+            "target": "40_0"
+          },
+          {
+            "source": "39_0:/Annots",
+            "target": "41_0"
+          }
+        ],
+        "danger": [],
+        "path": []
+      }
+    },
+    {
+      "name": "Multi-column paper",
+      "category": "benign",
+      "desc": "A benign formatted document.",
+      "base": "multicolumn.pdf",
+      "ember_score": 0.0029618535525661673,
+      "ember_verdict": "benign",
+      "reach_verdict": "ABSENT",
+      "reach_capability": null,
+      "reach_dangerous": false,
+      "evasion_sig": 0,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "36_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "9_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "9_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "2_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "11_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "14_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "3_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "2_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "1_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "12_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "10_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "15_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "14_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "13_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "1_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "1_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "10_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "13_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "13_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "7_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "4_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "5_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "6_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "16_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "17_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "31_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "20_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "35_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "23_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "33_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "22_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "27_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "21_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "25_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "19_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "29_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "18_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "31_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "30_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "35_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "34_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "33_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "32_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "27_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "26_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "25_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          }
+        ],
+        "edges": [
+          {
+            "source": "36_0",
+            "target": "9_0"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/Kids"
+          },
+          {
+            "source": "9_0:/Kids",
+            "target": "2_0"
+          },
+          {
+            "source": "9_0:/Kids",
+            "target": "11_0"
+          },
+          {
+            "source": "9_0:/Kids",
+            "target": "14_0"
+          },
+          {
+            "source": "2_0",
+            "target": "3_0"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/MediaBox"
+          },
+          {
+            "source": "2_0",
+            "target": "9_0"
+          },
+          {
+            "source": "2_0",
+            "target": "1_0"
+          },
+          {
+            "source": "11_0",
+            "target": "12_0"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/MediaBox"
+          },
+          {
+            "source": "11_0",
+            "target": "9_0"
+          },
+          {
+            "source": "11_0",
+            "target": "10_0"
+          },
+          {
+            "source": "14_0",
+            "target": "15_0"
+          },
+          {
+            "source": "14_0",
+            "target": "14_0:/MediaBox"
+          },
+          {
+            "source": "14_0",
+            "target": "9_0"
+          },
+          {
+            "source": "14_0",
+            "target": "13_0"
+          },
+          {
+            "source": "1_0",
+            "target": "1_0:/Font"
+          },
+          {
+            "source": "1_0",
+            "target": "1_0:/ProcSet"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/Font"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/ProcSet"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/Font"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/ProcSet"
+          },
+          {
+            "source": "1_0:/Font",
+            "target": "7_0"
+          },
+          {
+            "source": "1_0:/Font",
+            "target": "4_0"
+          },
+          {
+            "source": "1_0:/Font",
+            "target": "5_0"
+          },
+          {
+            "source": "1_0:/Font",
+            "target": "6_0"
+          },
+          {
+            "source": "10_0:/Font",
+            "target": "7_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "7_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "16_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "17_0"
+          },
+          {
+            "source": "7_0",
+            "target": "31_0"
+          },
+          {
+            "source": "7_0",
+            "target": "20_0"
+          },
+          {
+            "source": "4_0",
+            "target": "35_0"
+          },
+          {
+            "source": "4_0",
+            "target": "23_0"
+          },
+          {
+            "source": "5_0",
+            "target": "33_0"
+          },
+          {
+            "source": "5_0",
+            "target": "22_0"
+          },
+          {
+            "source": "6_0",
+            "target": "27_0"
+          },
+          {
+            "source": "6_0",
+            "target": "21_0"
+          },
+          {
+            "source": "16_0",
+            "target": "25_0"
+          },
+          {
+            "source": "16_0",
+            "target": "19_0"
+          },
+          {
+            "source": "17_0",
+            "target": "29_0"
+          },
+          {
+            "source": "17_0",
+            "target": "18_0"
+          },
+          {
+            "source": "31_0",
+            "target": "31_0:/FontBBox"
+          },
+          {
+            "source": "31_0",
+            "target": "30_0"
+          },
+          {
+            "source": "35_0",
+            "target": "35_0:/FontBBox"
+          },
+          {
+            "source": "35_0",
+            "target": "34_0"
+          },
+          {
+            "source": "33_0",
+            "target": "33_0:/FontBBox"
+          },
+          {
+            "source": "33_0",
+            "target": "32_0"
+          },
+          {
+            "source": "27_0",
+            "target": "27_0:/FontBBox"
+          },
+          {
+            "source": "27_0",
+            "target": "26_0"
+          },
+          {
+            "source": "25_0",
+            "target": "25_0:/FontBBox"
+          }
+        ],
+        "danger": [],
+        "path": []
+      }
+    },
+    {
+      "name": "GeoTopo.pdf",
+      "category": "benign",
+      "desc": "Real benign file \u2014 a URI action is reachable on open (link navigation).",
+      "base": "GeoTopo.pdf",
+      "ember_score": 2.5119620704473532e-05,
+      "ember_verdict": "benign",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "uri",
+      "reach_dangerous": true,
+      "evasion_sig": 1,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "4326_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "4325_0",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "169_0",
+            "label": "OpenAction",
+            "role": "trigger"
+          },
+          {
+            "id": "4054_0",
+            "label": "Outlines",
+            "role": "dict"
+          },
+          {
+            "id": "4326_0:/PageLabels",
+            "label": "PageLabels",
+            "role": "dict"
+          },
+          {
+            "id": "4053_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "4324_0",
+            "label": "Dests",
+            "role": "dict"
+          },
+          {
+            "id": "169_0:/D",
+            "label": "D",
+            "role": "other"
+          },
+          {
+            "id": "31_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "167_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "4326_0:/PageLabels:/Nums",
+            "label": "Nums",
+            "role": "other"
+          },
+          {
+            "id": "4053_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4324_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4324_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "170_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "29_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "35_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "59_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "63_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "165_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "163_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "4326_0:/PageLabels:/Nums:[1]",
+            "label": "[1]",
+            "role": "dict"
+          },
+          {
+            "id": "4326_0:/PageLabels:/Nums:[3]",
+            "label": "[3]",
+            "role": "dict"
+          },
+          {
+            "id": "4049_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "4050_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "4051_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "4052_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "4322_0",
+            "label": "[0]",
+            "role": "dict"
+          },
+          {
+            "id": "4323_0",
+            "label": "[1]",
+            "role": "dict"
+          },
+          {
+            "id": "173_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "170_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "178_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "172_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "33_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "39_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "57_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "55_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "61_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "67_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "79_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "83_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "161_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "159_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "4049_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4050_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4051_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4052_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4322_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          }
+        ],
+        "edges": [
+          {
+            "source": "4326_0",
+            "target": "4325_0"
+          },
+          {
+            "source": "4326_0",
+            "target": "169_0"
+          },
+          {
+            "source": "4326_0",
+            "target": "4054_0"
+          },
+          {
+            "source": "4326_0",
+            "target": "4326_0:/PageLabels"
+          },
+          {
+            "source": "4326_0",
+            "target": "4053_0"
+          },
+          {
+            "source": "4325_0",
+            "target": "4324_0"
+          },
+          {
+            "source": "169_0",
+            "target": "169_0:/D"
+          },
+          {
+            "source": "4054_0",
+            "target": "31_0"
+          },
+          {
+            "source": "4054_0",
+            "target": "167_0"
+          },
+          {
+            "source": "4326_0:/PageLabels",
+            "target": "4326_0:/PageLabels:/Nums"
+          },
+          {
+            "source": "4053_0",
+            "target": "4053_0:/Kids"
+          },
+          {
+            "source": "4324_0",
+            "target": "4324_0:/Kids"
+          },
+          {
+            "source": "4324_0",
+            "target": "4324_0:/Limits"
+          },
+          {
+            "source": "169_0:/D",
+            "target": "170_0"
+          },
+          {
+            "source": "31_0",
+            "target": "29_0"
+          },
+          {
+            "source": "31_0",
+            "target": "35_0"
+          },
+          {
+            "source": "31_0",
+            "target": "59_0"
+          },
+          {
+            "source": "31_0",
+            "target": "63_0"
+          },
+          {
+            "source": "31_0",
+            "target": "4054_0"
+          },
+          {
+            "source": "167_0",
+            "target": "165_0"
+          },
+          {
+            "source": "167_0",
+            "target": "4054_0"
+          },
+          {
+            "source": "167_0",
+            "target": "163_0"
+          },
+          {
+            "source": "4326_0:/PageLabels:/Nums",
+            "target": "4326_0:/PageLabels:/Nums:[1]"
+          },
+          {
+            "source": "4326_0:/PageLabels:/Nums",
+            "target": "4326_0:/PageLabels:/Nums:[3]"
+          },
+          {
+            "source": "4053_0:/Kids",
+            "target": "4049_0"
+          },
+          {
+            "source": "4053_0:/Kids",
+            "target": "4050_0"
+          },
+          {
+            "source": "4053_0:/Kids",
+            "target": "4051_0"
+          },
+          {
+            "source": "4053_0:/Kids",
+            "target": "4052_0"
+          },
+          {
+            "source": "4324_0:/Kids",
+            "target": "4322_0"
+          },
+          {
+            "source": "4324_0:/Kids",
+            "target": "4323_0"
+          },
+          {
+            "source": "170_0",
+            "target": "173_0"
+          },
+          {
+            "source": "170_0",
+            "target": "170_0:/MediaBox"
+          },
+          {
+            "source": "170_0",
+            "target": "178_0"
+          },
+          {
+            "source": "170_0",
+            "target": "172_0"
+          },
+          {
+            "source": "35_0",
+            "target": "33_0"
+          },
+          {
+            "source": "35_0",
+            "target": "39_0"
+          },
+          {
+            "source": "35_0",
+            "target": "31_0"
+          },
+          {
+            "source": "59_0",
+            "target": "57_0"
+          },
+          {
+            "source": "59_0",
+            "target": "31_0"
+          },
+          {
+            "source": "59_0",
+            "target": "55_0"
+          },
+          {
+            "source": "63_0",
+            "target": "61_0"
+          },
+          {
+            "source": "63_0",
+            "target": "67_0"
+          },
+          {
+            "source": "63_0",
+            "target": "79_0"
+          },
+          {
+            "source": "63_0",
+            "target": "83_0"
+          },
+          {
+            "source": "63_0",
+            "target": "4054_0"
+          },
+          {
+            "source": "63_0",
+            "target": "31_0"
+          },
+          {
+            "source": "163_0",
+            "target": "161_0"
+          },
+          {
+            "source": "163_0",
+            "target": "167_0"
+          },
+          {
+            "source": "163_0",
+            "target": "4054_0"
+          },
+          {
+            "source": "163_0",
+            "target": "159_0"
+          },
+          {
+            "source": "4049_0",
+            "target": "4049_0:/Kids"
+          },
+          {
+            "source": "4049_0",
+            "target": "4053_0"
+          },
+          {
+            "source": "4050_0",
+            "target": "4050_0:/Kids"
+          },
+          {
+            "source": "4050_0",
+            "target": "4053_0"
+          },
+          {
+            "source": "4051_0",
+            "target": "4051_0:/Kids"
+          },
+          {
+            "source": "4051_0",
+            "target": "4053_0"
+          },
+          {
+            "source": "4052_0",
+            "target": "4052_0:/Kids"
+          },
+          {
+            "source": "4052_0",
+            "target": "4053_0"
+          },
+          {
+            "source": "4322_0",
+            "target": "4322_0:/Kids"
+          }
+        ],
+        "danger": [],
+        "path": []
+      }
+    },
+    {
+      "name": "Weaponized \u00b7 visible JS",
+      "category": "weaponized",
+      "desc": "Auto-run JavaScript wired to /OpenAction, tokens visible.",
+      "base": "pdflatex-outline.pdf",
+      "ember_score": 0.816815859499405,
+      "ember_verdict": "malicious",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "javascript",
+      "reach_dangerous": true,
+      "evasion_sig": 0,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "1_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "3_0",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "4_0",
+            "label": "JavaScript",
+            "role": "dangerous"
+          },
+          {
+            "id": "5_0",
+            "label": "Outlines",
+            "role": "dict"
+          },
+          {
+            "id": "6_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "7_0",
+            "label": "Dests",
+            "role": "dict"
+          },
+          {
+            "id": "8_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "9_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "6_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "7_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "7_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "17_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "18_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "20_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "21_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "10_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "11_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "12_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "13_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "14_0",
+            "label": "[0]",
+            "role": "dict"
+          },
+          {
+            "id": "15_0",
+            "label": "[1]",
+            "role": "dict"
+          },
+          {
+            "id": "16_0",
+            "label": "[2]",
+            "role": "dict"
+          },
+          {
+            "id": "55_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "56_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "58_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "59_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/Annots",
+            "label": "Annots",
+            "role": "other"
+          },
+          {
+            "id": "32_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "33_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "34_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "35_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "36_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "12_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "37_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "38_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "13_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "39_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "14_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "14_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "15_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "15_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "16_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "16_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "64_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "65_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "67_0",
+            "label": "A",
+            "role": "dict"
+          }
+        ],
+        "edges": [
+          {
+            "source": "1_0",
+            "target": "3_0"
+          },
+          {
+            "source": "1_0",
+            "target": "4_0"
+          },
+          {
+            "source": "1_0",
+            "target": "5_0"
+          },
+          {
+            "source": "1_0",
+            "target": "6_0"
+          },
+          {
+            "source": "3_0",
+            "target": "7_0"
+          },
+          {
+            "source": "5_0",
+            "target": "8_0"
+          },
+          {
+            "source": "5_0",
+            "target": "9_0"
+          },
+          {
+            "source": "6_0",
+            "target": "6_0:/Kids"
+          },
+          {
+            "source": "7_0",
+            "target": "7_0:/Kids"
+          },
+          {
+            "source": "7_0",
+            "target": "7_0:/Limits"
+          },
+          {
+            "source": "8_0",
+            "target": "17_0"
+          },
+          {
+            "source": "8_0",
+            "target": "18_0"
+          },
+          {
+            "source": "8_0",
+            "target": "5_0"
+          },
+          {
+            "source": "9_0",
+            "target": "20_0"
+          },
+          {
+            "source": "9_0",
+            "target": "5_0"
+          },
+          {
+            "source": "9_0",
+            "target": "21_0"
+          },
+          {
+            "source": "6_0:/Kids",
+            "target": "10_0"
+          },
+          {
+            "source": "6_0:/Kids",
+            "target": "11_0"
+          },
+          {
+            "source": "6_0:/Kids",
+            "target": "12_0"
+          },
+          {
+            "source": "6_0:/Kids",
+            "target": "13_0"
+          },
+          {
+            "source": "7_0:/Kids",
+            "target": "14_0"
+          },
+          {
+            "source": "7_0:/Kids",
+            "target": "15_0"
+          },
+          {
+            "source": "7_0:/Kids",
+            "target": "16_0"
+          },
+          {
+            "source": "18_0",
+            "target": "55_0"
+          },
+          {
+            "source": "18_0",
+            "target": "56_0"
+          },
+          {
+            "source": "18_0",
+            "target": "5_0"
+          },
+          {
+            "source": "18_0",
+            "target": "8_0"
+          },
+          {
+            "source": "21_0",
+            "target": "58_0"
+          },
+          {
+            "source": "21_0",
+            "target": "9_0"
+          },
+          {
+            "source": "21_0",
+            "target": "5_0"
+          },
+          {
+            "source": "21_0",
+            "target": "59_0"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/Annots"
+          },
+          {
+            "source": "10_0",
+            "target": "32_0"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/MediaBox"
+          },
+          {
+            "source": "10_0",
+            "target": "6_0"
+          },
+          {
+            "source": "10_0",
+            "target": "33_0"
+          },
+          {
+            "source": "11_0",
+            "target": "34_0"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/MediaBox"
+          },
+          {
+            "source": "11_0",
+            "target": "6_0"
+          },
+          {
+            "source": "11_0",
+            "target": "35_0"
+          },
+          {
+            "source": "12_0",
+            "target": "36_0"
+          },
+          {
+            "source": "12_0",
+            "target": "12_0:/MediaBox"
+          },
+          {
+            "source": "12_0",
+            "target": "6_0"
+          },
+          {
+            "source": "12_0",
+            "target": "37_0"
+          },
+          {
+            "source": "13_0",
+            "target": "38_0"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/MediaBox"
+          },
+          {
+            "source": "13_0",
+            "target": "6_0"
+          },
+          {
+            "source": "13_0",
+            "target": "39_0"
+          },
+          {
+            "source": "14_0",
+            "target": "14_0:/Limits"
+          },
+          {
+            "source": "14_0",
+            "target": "14_0:/Names"
+          },
+          {
+            "source": "15_0",
+            "target": "15_0:/Limits"
+          },
+          {
+            "source": "15_0",
+            "target": "15_0:/Names"
+          },
+          {
+            "source": "16_0",
+            "target": "16_0:/Limits"
+          },
+          {
+            "source": "16_0",
+            "target": "16_0:/Names"
+          },
+          {
+            "source": "56_0",
+            "target": "64_0"
+          },
+          {
+            "source": "56_0",
+            "target": "65_0"
+          },
+          {
+            "source": "56_0",
+            "target": "5_0"
+          },
+          {
+            "source": "56_0",
+            "target": "18_0"
+          },
+          {
+            "source": "59_0",
+            "target": "67_0"
+          },
+          {
+            "source": "59_0",
+            "target": "21_0"
+          },
+          {
+            "source": "59_0",
+            "target": "5_0"
+          }
+        ],
+        "danger": [
+          "4_0"
+        ],
+        "path": [
+          "1_0",
+          "4_0"
+        ]
+      }
+    },
+    {
+      "name": "Weaponized \u00b7 hidden JS",
+      "category": "weaponized",
+      "desc": "Same auto-run action, hidden inside a compressed object stream.",
+      "base": "pdflatex-outline.pdf",
+      "ember_score": 0.005479738210306064,
+      "ember_verdict": "benign",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "javascript",
+      "reach_dangerous": true,
+      "evasion_sig": 1,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "77_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "76_0",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "79_0",
+            "label": "JavaScript",
+            "role": "dangerous"
+          },
+          {
+            "id": "71_0",
+            "label": "Outlines",
+            "role": "dict"
+          },
+          {
+            "id": "55_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "75_0",
+            "label": "Dests",
+            "role": "dict"
+          },
+          {
+            "id": "4_0",
+            "label": "First",
+            "role": "dict"
+          },
+          {
+            "id": "36_0",
+            "label": "Last",
+            "role": "dict"
+          },
+          {
+            "id": "55_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "75_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "75_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "2_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "8_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "34_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "32_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "38_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "57_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "60_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "63_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "72_0",
+            "label": "[0]",
+            "role": "dict"
+          },
+          {
+            "id": "73_0",
+            "label": "[1]",
+            "role": "dict"
+          },
+          {
+            "id": "74_0",
+            "label": "[2]",
+            "role": "dict"
+          },
+          {
+            "id": "6_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "12_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "30_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "28_0",
+            "label": "Prev",
+            "role": "dict"
+          },
+          {
+            "id": "38_0:/Annots",
+            "label": "Annots",
+            "role": "other"
+          },
+          {
+            "id": "80_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "38_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "48_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "84_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "57_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "56_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "85_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "60_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "59_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "86_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "63_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "62_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "72_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "72_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "73_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "73_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "74_0:/Limits",
+            "label": "Limits",
+            "role": "other"
+          },
+          {
+            "id": "74_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "10_0",
+            "label": "A",
+            "role": "dict"
+          },
+          {
+            "id": "16_0",
+            "label": "Next",
+            "role": "dict"
+          },
+          {
+            "id": "26_0",
+            "label": "A",
+            "role": "dict"
+          }
+        ],
+        "edges": [
+          {
+            "source": "77_0",
+            "target": "76_0"
+          },
+          {
+            "source": "77_0",
+            "target": "79_0"
+          },
+          {
+            "source": "77_0",
+            "target": "71_0"
+          },
+          {
+            "source": "77_0",
+            "target": "55_0"
+          },
+          {
+            "source": "76_0",
+            "target": "75_0"
+          },
+          {
+            "source": "71_0",
+            "target": "4_0"
+          },
+          {
+            "source": "71_0",
+            "target": "36_0"
+          },
+          {
+            "source": "55_0",
+            "target": "55_0:/Kids"
+          },
+          {
+            "source": "75_0",
+            "target": "75_0:/Kids"
+          },
+          {
+            "source": "75_0",
+            "target": "75_0:/Limits"
+          },
+          {
+            "source": "4_0",
+            "target": "2_0"
+          },
+          {
+            "source": "4_0",
+            "target": "8_0"
+          },
+          {
+            "source": "4_0",
+            "target": "71_0"
+          },
+          {
+            "source": "36_0",
+            "target": "34_0"
+          },
+          {
+            "source": "36_0",
+            "target": "71_0"
+          },
+          {
+            "source": "36_0",
+            "target": "32_0"
+          },
+          {
+            "source": "55_0:/Kids",
+            "target": "38_0"
+          },
+          {
+            "source": "55_0:/Kids",
+            "target": "57_0"
+          },
+          {
+            "source": "55_0:/Kids",
+            "target": "60_0"
+          },
+          {
+            "source": "55_0:/Kids",
+            "target": "63_0"
+          },
+          {
+            "source": "75_0:/Kids",
+            "target": "72_0"
+          },
+          {
+            "source": "75_0:/Kids",
+            "target": "73_0"
+          },
+          {
+            "source": "75_0:/Kids",
+            "target": "74_0"
+          },
+          {
+            "source": "8_0",
+            "target": "6_0"
+          },
+          {
+            "source": "8_0",
+            "target": "12_0"
+          },
+          {
+            "source": "8_0",
+            "target": "71_0"
+          },
+          {
+            "source": "8_0",
+            "target": "4_0"
+          },
+          {
+            "source": "32_0",
+            "target": "30_0"
+          },
+          {
+            "source": "32_0",
+            "target": "36_0"
+          },
+          {
+            "source": "32_0",
+            "target": "71_0"
+          },
+          {
+            "source": "32_0",
+            "target": "28_0"
+          },
+          {
+            "source": "38_0",
+            "target": "38_0:/Annots"
+          },
+          {
+            "source": "38_0",
+            "target": "80_0"
+          },
+          {
+            "source": "38_0",
+            "target": "38_0:/MediaBox"
+          },
+          {
+            "source": "38_0",
+            "target": "55_0"
+          },
+          {
+            "source": "38_0",
+            "target": "48_0"
+          },
+          {
+            "source": "57_0",
+            "target": "84_0"
+          },
+          {
+            "source": "57_0",
+            "target": "57_0:/MediaBox"
+          },
+          {
+            "source": "57_0",
+            "target": "55_0"
+          },
+          {
+            "source": "57_0",
+            "target": "56_0"
+          },
+          {
+            "source": "60_0",
+            "target": "85_0"
+          },
+          {
+            "source": "60_0",
+            "target": "60_0:/MediaBox"
+          },
+          {
+            "source": "60_0",
+            "target": "55_0"
+          },
+          {
+            "source": "60_0",
+            "target": "59_0"
+          },
+          {
+            "source": "63_0",
+            "target": "86_0"
+          },
+          {
+            "source": "63_0",
+            "target": "63_0:/MediaBox"
+          },
+          {
+            "source": "63_0",
+            "target": "55_0"
+          },
+          {
+            "source": "63_0",
+            "target": "62_0"
+          },
+          {
+            "source": "72_0",
+            "target": "72_0:/Limits"
+          },
+          {
+            "source": "72_0",
+            "target": "72_0:/Names"
+          },
+          {
+            "source": "73_0",
+            "target": "73_0:/Limits"
+          },
+          {
+            "source": "73_0",
+            "target": "73_0:/Names"
+          },
+          {
+            "source": "74_0",
+            "target": "74_0:/Limits"
+          },
+          {
+            "source": "74_0",
+            "target": "74_0:/Names"
+          },
+          {
+            "source": "12_0",
+            "target": "10_0"
+          },
+          {
+            "source": "12_0",
+            "target": "16_0"
+          },
+          {
+            "source": "12_0",
+            "target": "71_0"
+          },
+          {
+            "source": "12_0",
+            "target": "8_0"
+          },
+          {
+            "source": "28_0",
+            "target": "26_0"
+          },
+          {
+            "source": "28_0",
+            "target": "32_0"
+          },
+          {
+            "source": "28_0",
+            "target": "71_0"
+          }
+        ],
+        "danger": [
+          "79_0"
+        ],
+        "path": [
+          "77_0",
+          "79_0"
+        ]
+      }
+    },
+    {
+      "name": "Weaponized \u00b7 document JS",
+      "category": "weaponized",
+      "desc": "Document-level /Names/JavaScript \u2014 runs on open, compressed.",
+      "base": "libreoffice-form.pdf",
+      "ember_score": 0.5062374490966434,
+      "ember_verdict": "malicious",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "javascript",
+      "reach_dangerous": true,
+      "evasion_sig": 1,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "26_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "26_0:/AcroForm",
+            "label": "AcroForm",
+            "role": "dict"
+          },
+          {
+            "id": "30_0",
+            "label": "JavaScript",
+            "role": "dangerous"
+          },
+          {
+            "id": "26_0:/OpenAction",
+            "label": "OpenAction",
+            "role": "trigger"
+          },
+          {
+            "id": "14_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "25_0",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "26_0:/AcroForm:/Fields",
+            "label": "Fields",
+            "role": "other"
+          },
+          {
+            "id": "29_0",
+            "label": "JavaScript",
+            "role": "dict"
+          },
+          {
+            "id": "2_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "14_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "25_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "3_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "5_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "7_0",
+            "label": "[2]",
+            "role": "dict"
+          },
+          {
+            "id": "9_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "10_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "11_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "12_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "13_0",
+            "label": "Annot",
+            "role": "annot"
+          },
+          {
+            "id": "29_0:/Names",
+            "label": "Names",
+            "role": "trigger"
+          },
+          {
+            "id": "2_0:/Annots",
+            "label": "Annots",
+            "role": "other"
+          },
+          {
+            "id": "31_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "2_0:/Group",
+            "label": "Group",
+            "role": "dict"
+          },
+          {
+            "id": "2_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "20_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "18_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "24_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "16_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "22_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "3_0:/AP",
+            "label": "AP",
+            "role": "dict"
+          },
+          {
+            "id": "3_0:/DR",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "3_0:/Rect",
+            "label": "Rect",
+            "role": "other"
+          },
+          {
+            "id": "5_0:/AP",
+            "label": "AP",
+            "role": "dict"
+          },
+          {
+            "id": "5_0:/DR",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "5_0:/Rect",
+            "label": "Rect",
+            "role": "other"
+          },
+          {
+            "id": "7_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "9_0:/AP",
+            "label": "AP",
+            "role": "dict"
+          },
+          {
+            "id": "9_0:/DR",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "9_0:/Rect",
+            "label": "Rect",
+            "role": "other"
+          },
+          {
+            "id": "10_0:/AP",
+            "label": "AP",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/DR",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/MK",
+            "label": "MK",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/Rect",
+            "label": "Rect",
+            "role": "other"
+          },
+          {
+            "id": "11_0:/AP",
+            "label": "AP",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/DR",
+            "label": "DR",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/MK",
+            "label": "MK",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/Rect",
+            "label": "Rect",
+            "role": "other"
+          }
+        ],
+        "edges": [
+          {
+            "source": "26_0",
+            "target": "26_0:/AcroForm"
+          },
+          {
+            "source": "26_0",
+            "target": "30_0"
+          },
+          {
+            "source": "26_0",
+            "target": "26_0:/OpenAction"
+          },
+          {
+            "source": "26_0",
+            "target": "14_0"
+          },
+          {
+            "source": "26_0:/AcroForm",
+            "target": "25_0"
+          },
+          {
+            "source": "26_0:/AcroForm",
+            "target": "26_0:/AcroForm:/Fields"
+          },
+          {
+            "source": "30_0",
+            "target": "29_0"
+          },
+          {
+            "source": "26_0:/OpenAction",
+            "target": "2_0"
+          },
+          {
+            "source": "14_0",
+            "target": "14_0:/Kids"
+          },
+          {
+            "source": "25_0",
+            "target": "4_0"
+          },
+          {
+            "source": "25_0",
+            "target": "25_0:/ProcSet"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "3_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "5_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "7_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "9_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "10_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "11_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "12_0"
+          },
+          {
+            "source": "26_0:/AcroForm:/Fields",
+            "target": "13_0"
+          },
+          {
+            "source": "29_0",
+            "target": "29_0:/Names"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/Annots"
+          },
+          {
+            "source": "2_0",
+            "target": "31_0"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/Group"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/MediaBox"
+          },
+          {
+            "source": "2_0",
+            "target": "14_0"
+          },
+          {
+            "source": "2_0",
+            "target": "25_0"
+          },
+          {
+            "source": "14_0:/Kids",
+            "target": "2_0"
+          },
+          {
+            "source": "4_0",
+            "target": "20_0"
+          },
+          {
+            "source": "4_0",
+            "target": "18_0"
+          },
+          {
+            "source": "4_0",
+            "target": "24_0"
+          },
+          {
+            "source": "4_0",
+            "target": "16_0"
+          },
+          {
+            "source": "4_0",
+            "target": "22_0"
+          },
+          {
+            "source": "3_0",
+            "target": "3_0:/AP"
+          },
+          {
+            "source": "3_0",
+            "target": "3_0:/DR"
+          },
+          {
+            "source": "3_0",
+            "target": "2_0"
+          },
+          {
+            "source": "3_0",
+            "target": "3_0:/Rect"
+          },
+          {
+            "source": "5_0",
+            "target": "5_0:/AP"
+          },
+          {
+            "source": "5_0",
+            "target": "5_0:/DR"
+          },
+          {
+            "source": "5_0",
+            "target": "2_0"
+          },
+          {
+            "source": "5_0",
+            "target": "5_0:/Rect"
+          },
+          {
+            "source": "7_0",
+            "target": "7_0:/Kids"
+          },
+          {
+            "source": "7_0",
+            "target": "2_0"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/AP"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/DR"
+          },
+          {
+            "source": "9_0",
+            "target": "2_0"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/Rect"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/AP"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/DR"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/MK"
+          },
+          {
+            "source": "10_0",
+            "target": "2_0"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/Rect"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/AP"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/DR"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/MK"
+          },
+          {
+            "source": "11_0",
+            "target": "2_0"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/Rect"
+          }
+        ],
+        "danger": [
+          "30_0"
+        ],
+        "path": [
+          "26_0",
+          "30_0"
+        ]
+      }
+    },
+    {
+      "name": "Weaponized \u00b7 page action",
+      "category": "weaponized",
+      "desc": "Page-open /AA action triggers the payload.",
+      "base": "multicolumn.pdf",
+      "ember_score": 0.14882570809218187,
+      "ember_verdict": "benign",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "javascript",
+      "reach_dangerous": true,
+      "evasion_sig": 0,
+      "n_objects": 48,
+      "graph": {
+        "nodes": [
+          {
+            "id": "1_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "3_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "3_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "4_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "5_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "6_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "7_0",
+            "label": "AA",
+            "role": "trigger"
+          },
+          {
+            "id": "8_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "4_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "9_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "10_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "5_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "11_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "12_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "6_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "13_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "14_0",
+            "label": "JavaScript",
+            "role": "dangerous"
+          },
+          {
+            "id": "9_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "9_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "11_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "13_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "13_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "15_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "16_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "17_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "18_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "19_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "20_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "21_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "22_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "23_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "24_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "25_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "26_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "27_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "28_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "29_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "30_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "31_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "32_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "21_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "33_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "23_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "34_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "25_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "35_0",
+            "label": "FontFile",
+            "role": "dict"
+          },
+          {
+            "id": "27_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          }
+        ],
+        "edges": [
+          {
+            "source": "1_0",
+            "target": "3_0"
+          },
+          {
+            "source": "3_0",
+            "target": "3_0:/Kids"
+          },
+          {
+            "source": "3_0:/Kids",
+            "target": "4_0"
+          },
+          {
+            "source": "3_0:/Kids",
+            "target": "5_0"
+          },
+          {
+            "source": "3_0:/Kids",
+            "target": "6_0"
+          },
+          {
+            "source": "4_0",
+            "target": "7_0"
+          },
+          {
+            "source": "4_0",
+            "target": "8_0"
+          },
+          {
+            "source": "4_0",
+            "target": "4_0:/MediaBox"
+          },
+          {
+            "source": "4_0",
+            "target": "3_0"
+          },
+          {
+            "source": "4_0",
+            "target": "9_0"
+          },
+          {
+            "source": "5_0",
+            "target": "10_0"
+          },
+          {
+            "source": "5_0",
+            "target": "5_0:/MediaBox"
+          },
+          {
+            "source": "5_0",
+            "target": "3_0"
+          },
+          {
+            "source": "5_0",
+            "target": "11_0"
+          },
+          {
+            "source": "6_0",
+            "target": "12_0"
+          },
+          {
+            "source": "6_0",
+            "target": "6_0:/MediaBox"
+          },
+          {
+            "source": "6_0",
+            "target": "3_0"
+          },
+          {
+            "source": "6_0",
+            "target": "13_0"
+          },
+          {
+            "source": "7_0",
+            "target": "14_0"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/Font"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/ProcSet"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/Font"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/ProcSet"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/Font"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/ProcSet"
+          },
+          {
+            "source": "9_0:/Font",
+            "target": "15_0"
+          },
+          {
+            "source": "9_0:/Font",
+            "target": "16_0"
+          },
+          {
+            "source": "9_0:/Font",
+            "target": "17_0"
+          },
+          {
+            "source": "9_0:/Font",
+            "target": "18_0"
+          },
+          {
+            "source": "11_0:/Font",
+            "target": "15_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "15_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "19_0"
+          },
+          {
+            "source": "13_0:/Font",
+            "target": "20_0"
+          },
+          {
+            "source": "15_0",
+            "target": "21_0"
+          },
+          {
+            "source": "15_0",
+            "target": "22_0"
+          },
+          {
+            "source": "16_0",
+            "target": "23_0"
+          },
+          {
+            "source": "16_0",
+            "target": "24_0"
+          },
+          {
+            "source": "17_0",
+            "target": "25_0"
+          },
+          {
+            "source": "17_0",
+            "target": "26_0"
+          },
+          {
+            "source": "18_0",
+            "target": "27_0"
+          },
+          {
+            "source": "18_0",
+            "target": "28_0"
+          },
+          {
+            "source": "19_0",
+            "target": "29_0"
+          },
+          {
+            "source": "19_0",
+            "target": "30_0"
+          },
+          {
+            "source": "20_0",
+            "target": "31_0"
+          },
+          {
+            "source": "20_0",
+            "target": "32_0"
+          },
+          {
+            "source": "21_0",
+            "target": "21_0:/FontBBox"
+          },
+          {
+            "source": "21_0",
+            "target": "33_0"
+          },
+          {
+            "source": "23_0",
+            "target": "23_0:/FontBBox"
+          },
+          {
+            "source": "23_0",
+            "target": "34_0"
+          },
+          {
+            "source": "25_0",
+            "target": "25_0:/FontBBox"
+          },
+          {
+            "source": "25_0",
+            "target": "35_0"
+          },
+          {
+            "source": "27_0",
+            "target": "27_0:/FontBBox"
+          }
+        ],
+        "danger": [
+          "14_0"
+        ],
+        "path": [
+          "1_0",
+          "3_0",
+          "3_0:/Kids",
+          "4_0",
+          "7_0",
+          "14_0"
+        ]
+      }
+    },
+    {
+      "name": "Weaponized \u00b7 chained",
+      "category": "weaponized",
+      "desc": "GoTo\u2192Next action chain reaches the payload at depth.",
+      "base": "pdflatex-4-pages.pdf",
+      "ember_score": 0.39936157463601946,
+      "ember_verdict": "benign",
+      "reach_verdict": "ACTIVE_ONOPEN",
+      "reach_capability": "javascript",
+      "reach_dangerous": true,
+      "evasion_sig": 1,
+      "n_objects": 35,
+      "graph": {
+        "nodes": [
+          {
+            "id": "14_0",
+            "label": "Catalog",
+            "role": "catalog"
+          },
+          {
+            "id": "17_0",
+            "label": "Action",
+            "role": "trigger"
+          },
+          {
+            "id": "5_0",
+            "label": "Pages",
+            "role": "pages"
+          },
+          {
+            "id": "16_0",
+            "label": "JavaScript",
+            "role": "dangerous"
+          },
+          {
+            "id": "5_0:/Kids",
+            "label": "Kids",
+            "role": "other"
+          },
+          {
+            "id": "3_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "7_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "9_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "11_0",
+            "label": "Page",
+            "role": "page"
+          },
+          {
+            "id": "18_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "3_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "2_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "20_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "7_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "6_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "21_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "9_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "8_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "22_0",
+            "label": "Contents",
+            "role": "dict"
+          },
+          {
+            "id": "11_0:/MediaBox",
+            "label": "MediaBox",
+            "role": "other"
+          },
+          {
+            "id": "10_0",
+            "label": "Resources",
+            "role": "dict"
+          },
+          {
+            "id": "2_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "2_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "6_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "6_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "8_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "8_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "10_0:/Font",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "10_0:/ProcSet",
+            "label": "ProcSet",
+            "role": "other"
+          },
+          {
+            "id": "4_0",
+            "label": "Font",
+            "role": "dict"
+          },
+          {
+            "id": "13_0",
+            "label": "FontDescriptor",
+            "role": "dict"
+          },
+          {
+            "id": "19_0",
+            "label": "ToUnicode",
+            "role": "dict"
+          },
+          {
+            "id": "12_0",
+            "label": "Widths",
+            "role": "other"
+          },
+          {
+            "id": "13_0:/FontBBox",
+            "label": "FontBBox",
+            "role": "other"
+          },
+          {
+            "id": "23_0",
+            "label": "FontFile",
+            "role": "dict"
+          }
+        ],
+        "edges": [
+          {
+            "source": "14_0",
+            "target": "17_0"
+          },
+          {
+            "source": "14_0",
+            "target": "5_0"
+          },
+          {
+            "source": "17_0",
+            "target": "16_0"
+          },
+          {
+            "source": "5_0",
+            "target": "5_0:/Kids"
+          },
+          {
+            "source": "5_0:/Kids",
+            "target": "3_0"
+          },
+          {
+            "source": "5_0:/Kids",
+            "target": "7_0"
+          },
+          {
+            "source": "5_0:/Kids",
+            "target": "9_0"
+          },
+          {
+            "source": "5_0:/Kids",
+            "target": "11_0"
+          },
+          {
+            "source": "3_0",
+            "target": "18_0"
+          },
+          {
+            "source": "3_0",
+            "target": "3_0:/MediaBox"
+          },
+          {
+            "source": "3_0",
+            "target": "5_0"
+          },
+          {
+            "source": "3_0",
+            "target": "2_0"
+          },
+          {
+            "source": "7_0",
+            "target": "20_0"
+          },
+          {
+            "source": "7_0",
+            "target": "7_0:/MediaBox"
+          },
+          {
+            "source": "7_0",
+            "target": "5_0"
+          },
+          {
+            "source": "7_0",
+            "target": "6_0"
+          },
+          {
+            "source": "9_0",
+            "target": "21_0"
+          },
+          {
+            "source": "9_0",
+            "target": "9_0:/MediaBox"
+          },
+          {
+            "source": "9_0",
+            "target": "5_0"
+          },
+          {
+            "source": "9_0",
+            "target": "8_0"
+          },
+          {
+            "source": "11_0",
+            "target": "22_0"
+          },
+          {
+            "source": "11_0",
+            "target": "11_0:/MediaBox"
+          },
+          {
+            "source": "11_0",
+            "target": "5_0"
+          },
+          {
+            "source": "11_0",
+            "target": "10_0"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/Font"
+          },
+          {
+            "source": "2_0",
+            "target": "2_0:/ProcSet"
+          },
+          {
+            "source": "6_0",
+            "target": "6_0:/Font"
+          },
+          {
+            "source": "6_0",
+            "target": "6_0:/ProcSet"
+          },
+          {
+            "source": "8_0",
+            "target": "8_0:/Font"
+          },
+          {
+            "source": "8_0",
+            "target": "8_0:/ProcSet"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/Font"
+          },
+          {
+            "source": "10_0",
+            "target": "10_0:/ProcSet"
+          },
+          {
+            "source": "2_0:/Font",
+            "target": "4_0"
+          },
+          {
+            "source": "6_0:/Font",
+            "target": "4_0"
+          },
+          {
+            "source": "8_0:/Font",
+            "target": "4_0"
+          },
+          {
+            "source": "10_0:/Font",
+            "target": "4_0"
+          },
+          {
+            "source": "4_0",
+            "target": "13_0"
+          },
+          {
+            "source": "4_0",
+            "target": "19_0"
+          },
+          {
+            "source": "4_0",
+            "target": "12_0"
+          },
+          {
+            "source": "13_0",
+            "target": "13_0:/FontBBox"
+          },
+          {
+            "source": "13_0",
+            "target": "23_0"
+          }
+        ],
+        "danger": [
+          "16_0"
+        ],
+        "path": [
+          "14_0",
+          "17_0",
+          "16_0"
+        ]
+      }
+    }
+  ],
+  "challenge_gallery": {
+    "benign_medians": {
+      "/FlateDecode": 37.0,
+      "javascript": 0.0,
+      "/URI": 0.0,
+      "entropy": 7.949592866102169,
+      "size": 541498.5,
+      "numstrings": 3382.0
+    },
+    "samples": [
+      {
+        "sha": "c00477137e",
+        "ember": 5.4457003877027456e-08,
+        "verdict": "missed",
+        "FlateDecode": 81,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.91,
+        "size": 319724,
+        "numstrings": 2214
+      },
+      {
+        "sha": "fdee125662",
+        "ember": 1.5609944755173326e-07,
+        "verdict": "missed",
+        "FlateDecode": 758,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 8.0,
+        "size": 13788088,
+        "numstrings": 69878
+      },
+      {
+        "sha": "fdac8695eb",
+        "ember": 3.109796467150104e-07,
+        "verdict": "missed",
+        "FlateDecode": 29,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.84,
+        "size": 131536,
+        "numstrings": 905
+      },
+      {
+        "sha": "49f33cf3b9",
+        "ember": 3.6015558447616215e-07,
+        "verdict": "missed",
+        "FlateDecode": 584,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.85,
+        "size": 8986303,
+        "numstrings": 40174
+      },
+      {
+        "sha": "d925e084d6",
+        "ember": 4.278706620126972e-07,
+        "verdict": "missed",
+        "FlateDecode": 19,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.97,
+        "size": 241571,
+        "numstrings": 1439
+      },
+      {
+        "sha": "bd6b9247a8",
+        "ember": 5.078471810469434e-07,
+        "verdict": "missed",
+        "FlateDecode": 17,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.96,
+        "size": 281474,
+        "numstrings": 1726
+      },
+      {
+        "sha": "56b569912a",
+        "ember": 6.030725371962172e-07,
+        "verdict": "missed",
+        "FlateDecode": 3,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.89,
+        "size": 2278637,
+        "numstrings": 6856
+      },
+      {
+        "sha": "910c1c01bd",
+        "ember": 6.96470816056403e-07,
+        "verdict": "missed",
+        "FlateDecode": 342,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 8.0,
+        "size": 4510352,
+        "numstrings": 22565
+      },
+      {
+        "sha": "4cb1c68e0d",
+        "ember": 7.39481705407702e-07,
+        "verdict": "missed",
+        "FlateDecode": 21,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.94,
+        "size": 219075,
+        "numstrings": 1533
+      },
+      {
+        "sha": "53e70d7207",
+        "ember": 8.125673088571089e-07,
+        "verdict": "missed",
+        "FlateDecode": 28,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.99,
+        "size": 193167,
+        "numstrings": 1056
+      },
+      {
+        "sha": "c19527f4be",
+        "ember": 8.824776301511594e-07,
+        "verdict": "missed",
+        "FlateDecode": 56,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.97,
+        "size": 185932,
+        "numstrings": 1148
+      },
+      {
+        "sha": "86b58314db",
+        "ember": 8.865340560585458e-07,
+        "verdict": "missed",
+        "FlateDecode": 375,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 8.0,
+        "size": 3341210,
+        "numstrings": 16922
+      },
+      {
+        "sha": "2cef840114",
+        "ember": 1.3565577531050937e-06,
+        "verdict": "missed",
+        "FlateDecode": 15,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.98,
+        "size": 166749,
+        "numstrings": 953
+      },
+      {
+        "sha": "dc57d1a093",
+        "ember": 1.4672452706650572e-06,
+        "verdict": "missed",
+        "FlateDecode": 66,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 8.0,
+        "size": 515807,
+        "numstrings": 2668
+      },
+      {
+        "sha": "e15b200048",
+        "ember": 1.5309090226355891e-06,
+        "verdict": "missed",
+        "FlateDecode": 30,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.98,
+        "size": 123095,
+        "numstrings": 775
+      },
+      {
+        "sha": "9d6f4e3809",
+        "ember": 1.8548432561810916e-06,
+        "verdict": "missed",
+        "FlateDecode": 119,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.73,
+        "size": 3390863,
+        "numstrings": 11911
+      },
+      {
+        "sha": "aaaca54ef5",
+        "ember": 2.458929612701377e-06,
+        "verdict": "missed",
+        "FlateDecode": 10,
+        "javascript": 0,
+        "URI": 5,
+        "entropy": 7.93,
+        "size": 204959,
+        "numstrings": 1225
+      },
+      {
+        "sha": "f20271e107",
+        "ember": 2.4900304951760563e-06,
+        "verdict": "missed",
+        "FlateDecode": 7,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.88,
+        "size": 33610,
+        "numstrings": 372
+      },
+      {
+        "sha": "64aff0e1f4",
+        "ember": 2.8568197278110785e-06,
+        "verdict": "missed",
+        "FlateDecode": 5,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.74,
+        "size": 39198,
+        "numstrings": 319
+      },
+      {
+        "sha": "e88ec7fe47",
+        "ember": 2.939929944497821e-06,
+        "verdict": "missed",
+        "FlateDecode": 0,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.81,
+        "size": 3293490,
+        "numstrings": 10489
+      },
+      {
+        "sha": "47c82b5e44",
+        "ember": 2.960956859480125e-06,
+        "verdict": "missed",
+        "FlateDecode": 12,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.92,
+        "size": 172328,
+        "numstrings": 1151
+      },
+      {
+        "sha": "333898ad61",
+        "ember": 2.9771051196657453e-06,
+        "verdict": "missed",
+        "FlateDecode": 131,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.99,
+        "size": 4838741,
+        "numstrings": 26018
+      },
+      {
+        "sha": "9833cbd22f",
+        "ember": 3.0008120526515824e-06,
+        "verdict": "missed",
+        "FlateDecode": 15,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.98,
+        "size": 145906,
+        "numstrings": 1110
+      },
+      {
+        "sha": "b5654553d5",
+        "ember": 3.2930544999755885e-06,
+        "verdict": "missed",
+        "FlateDecode": 24,
+        "javascript": 0,
+        "URI": 0,
+        "entropy": 7.98,
+        "size": 292843,
+        "numstrings": 1951
+      },
+      {
+        "sha": "b9caab1d4a",
+        "ember": 0.9999996576437722,
+        "verdict": "caught",
+        "FlateDecode": 11,
+        "javascript": 0,
+        "URI": 36,
+        "entropy": 7.89,
+        "size": 152913,
+        "numstrings": 961
+      },
+      {
+        "sha": "101cbeb33b",
+        "ember": 0.9999996641600448,
+        "verdict": "caught",
+        "FlateDecode": 12,
+        "javascript": 0,
+        "URI": 38,
+        "entropy": 7.91,
+        "size": 175558,
+        "numstrings": 1058
+      },
+      {
+        "sha": "9a30b3d153",
+        "ember": 0.9999996712873934,
+        "verdict": "caught",
+        "FlateDecode": 11,
+        "javascript": 0,
+        "URI": 38,
+        "entropy": 7.87,
+        "size": 141252,
+        "numstrings": 882
+      },
+      {
+        "sha": "a6ad8d7ed3",
+        "ember": 0.9999996728480145,
+        "verdict": "caught",
+        "FlateDecode": 13,
+        "javascript": 0,
+        "URI": 44,
+        "entropy": 7.87,
+        "size": 139448,
+        "numstrings": 915
+      },
+      {
+        "sha": "6e9af3b86f",
+        "ember": 0.9999996740647,
+        "verdict": "caught",
+        "FlateDecode": 11,
+        "javascript": 0,
+        "URI": 36,
+        "entropy": 7.89,
+        "size": 148596,
+        "numstrings": 903
+      },
+      {
+        "sha": "40aec5a2f5",
+        "ember": 0.999999684966131,
+        "verdict": "caught",
+        "FlateDecode": 11,
+        "javascript": 0,
+        "URI": 35,
+        "entropy": 7.85,
+        "size": 131364,
+        "numstrings": 826
+      },
+      {
+        "sha": "23342215e1",
+        "ember": 0.9999997238298323,
+        "verdict": "caught",
+        "FlateDecode": 13,
+        "javascript": 0,
+        "URI": 32,
+        "entropy": 7.9,
+        "size": 144197,
+        "numstrings": 883
+      },
+      {
+        "sha": "651f8da99a",
+        "ember": 0.9999997272952388,
+        "verdict": "caught",
+        "FlateDecode": 12,
+        "javascript": 0,
+        "URI": 40,
+        "entropy": 7.85,
+        "size": 139964,
+        "numstrings": 903
+      },
+      {
+        "sha": "ae0869d5dc",
+        "ember": 0.9999997327694362,
+        "verdict": "caught",
+        "FlateDecode": 11,
+        "javascript": 0,
+        "URI": 42,
+        "entropy": 7.86,
+        "size": 138759,
+        "numstrings": 880
+      },
+      {
+        "sha": "fe15cb84d7",
+        "ember": 0.9999997363281437,
+        "verdict": "caught",
+        "FlateDecode": 13,
+        "javascript": 0,
+        "URI": 38,
+        "entropy": 7.87,
+        "size": 140562,
+        "numstrings": 884
+      },
+      {
+        "sha": "a63b030585",
+        "ember": 0.9999997406841761,
+        "verdict": "caught",
+        "FlateDecode": 13,
+        "javascript": 0,
+        "URI": 40,
+        "entropy": 7.87,
+        "size": 143112,
+        "numstrings": 905
+      },
+      {
+        "sha": "cf8c5b4963",
+        "ember": 0.9999997704259104,
+        "verdict": "caught",
+        "FlateDecode": 13,
+        "javascript": 0,
+        "URI": 35,
+        "entropy": 7.88,
+        "size": 140569,
+        "numstrings": 894
+      }
+    ],
+    "n_total": 805
+  }
+}

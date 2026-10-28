@@ -184,6 +184,41 @@ td.mono,th.mono{font-family:var(--mono)}
 .track{height:18px;background:rgba(255,255,255,.04);border-radius:5px;overflow:hidden;border:1px solid var(--line)}
 .fill{height:100%;border-radius:5px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
 .val{font-family:var(--mono);font-size:11.5px;text-align:right;color:var(--ink)}
+/* live analysis */
+.specrow{display:flex;gap:9px;flex-wrap:wrap}
+.spec{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:11px 13px;border-radius:11px;
+  border:1px solid var(--line);background:rgba(255,255,255,.015);transition:.15s;min-width:150px}
+.spec:hover{border-color:var(--line2);background:rgba(255,255,255,.04)}
+.spec[aria-current="true"]{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal),0 10px 26px -14px rgba(45,212,191,.6);background:rgba(45,212,191,.06)}
+.spec.weaponized[aria-current="true"]{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 10px 26px -14px rgba(240,97,109,.5);background:rgba(240,97,109,.05)}
+.specn{font-size:12.5px;font-weight:500;color:var(--ink)}
+.spectag{font-family:var(--mono);font-size:9.5px;padding:2px 7px;border-radius:5px;align-self:flex-start}
+.tracebtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--teal);padding:6px 12px;
+  border:1px solid rgba(45,212,191,.35);border-radius:8px;background:rgba(45,212,191,.07);transition:.15s}
+.tracebtn:hover{background:rgba(45,212,191,.15);box-shadow:0 0 14px -2px rgba(45,212,191,.5)}
+.vduo{display:flex;align-items:center;gap:12px;margin-top:6px}
+.vcard{flex:1;min-width:0;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:11px;padding:14px}
+.vlbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.vval{font-size:21px;font-weight:700;margin-top:6px;text-transform:uppercase;letter-spacing:.01em}
+.vsub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+.vx{font-family:var(--mono);font-size:12px;color:var(--faint);flex:0 0 auto}
+.evbanner{margin-top:15px;padding:13px 15px;border-radius:11px;font-size:12.5px;line-height:1.55;
+  background:linear-gradient(100deg,rgba(240,97,109,.13),rgba(240,97,109,.02));border:1px solid rgba(240,97,109,.3);color:#ff9298}
+.evbanner b{color:#ff8088}
+.okbanner{margin-top:15px;padding:12px 15px;border-radius:11px;font-size:12.5px;color:var(--muted);
+  background:rgba(45,212,191,.05);border:1px solid rgba(45,212,191,.18)}
+.chiprow{display:flex;gap:7px;flex-wrap:wrap;max-height:116px;overflow:auto;padding:2px}
+.chal{all:unset;cursor:pointer;font-family:var(--mono);font-size:10.5px;color:var(--muted);padding:6px 9px;border-radius:7px;
+  border:1px solid var(--line);display:inline-flex;align-items:center;gap:6px;transition:.13s;background:rgba(255,255,255,.012)}
+.chal:hover{border-color:var(--line2);color:var(--ink)}
+.chal[aria-current="true"]{border-color:var(--teal);color:var(--ink);background:rgba(45,212,191,.08)}
+.cdot{width:6px;height:6px;border-radius:50%} .cdot.missed{background:var(--red)} .cdot.caught{background:var(--teal)}
+.fprow{display:grid;grid-template-columns:168px 1fr 78px;align-items:center;gap:12px;margin:8px 0}
+.fplab{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
+.fptrack{position:relative;height:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.fpmed{position:absolute;left:25%;top:-2px;bottom:-2px;width:2px;background:var(--faint);opacity:.7;z-index:2}
+.fpfill{height:100%;border-radius:5px;background:linear-gradient(90deg,rgba(245,177,76,.35),var(--amber));transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.fpval{font-family:var(--mono);font-size:11px;color:var(--ink);text-align:right}
 .fadein{animation:fade .5s ease both}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (max-width:980px){.app{grid-template-columns:1fr}.rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center}
@@ -268,7 +303,7 @@ function barH(id,items,color,fmt){ // items:[{name,v}]
 <script>
 const VIEWS=[['overview','Overview','grid'],['gap','The evasive gap','trend'],['realmal','Real evasive malware','dna'],
   ['evasion','Structural evasion','target'],['reach','Reachability graph','node'],['explain','Why they evade','radar'],
-  ['probe','Mimicry probe','probe'],['investigate','Investigate','search'],['about','Method & limits','doc']];
+  ['probe','Mimicry probe','probe'],['live','Live analysis','search'],['about','Method & limits','doc']];
 const ICON={grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
   trend:'M3 17l6-6 4 4 7-8M21 7v5M21 7h-5',dna:'M4 3c4 4 12 4 16 0M4 21c4-4 12-4 16 0M7 5v14M17 5v14',
   target:'M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0M12 11v2',
@@ -444,12 +479,29 @@ const R={
      <div class="panel fadein"><h3 class="t">Evasion cost distribution</h3><p class="d">Distinct fields changed to flip a caught sample.</p><div class="chart" id="pb_hist" style="height:220px"></div></div>
      <div class="panel fadein"><h3 class="t">Most fragile features</h3><p class="d">Share of successful evasions touching each feature.</p><div class="chart" id="pb_frag" style="height:220px"></div></div>
    </div>`;},
- investigate(){const names=Object.keys(D.examples);
-  return `<div class="eyebrow">Live analysis</div><h2 class="view">Investigate</h2>
-   <p class="lede">The engine runs the detector and reachability on a PDF and reconciles them. Four precomputed analyses —
-     the headline is what happens when the two signals disagree.</p>
-   <div class="seg" style="margin-bottom:15px" id="exseg">${names.map((n,i)=>`<button data-ex="${i}" aria-current="${i===0}">${n}</button>`).join('')}</div>
-   <div id="exbody"></div>`;},
+ live(){const L=D.live;if(!L)return '<h2 class="view">Live analysis</h2><p class="lede">Run export_specimens.py.</p>';
+  const chips=L.specimens.map((s,i)=>{const dis=s.ember_verdict==='benign'&&s.reach_dangerous;
+    return `<button class="spec ${s.category}" data-i="${i}">
+      <span class="specn">${s.name}</span>
+      <span class="spectag ${dis?'t-open':s.reach_dangerous?'t-int':'t-dorm'}">${dis?'EMBER fooled':s.reach_dangerous?'reachable':'clean'}</span></button>`}).join('');
+  return `<div class="eyebrow">Live analysis · EMBER vs PDFSentry</div><h2 class="view">Live specimen analyzer</h2>
+   <p class="lede">Click a specimen — the real EMBER model and the reachability engine both analyze it. Watch where they
+     disagree. Weaponized specimens are real PDFs carrying a harmless reachable payload; nothing is executed.</p>
+   <div class="specrow" id="specrow">${chips}</div>
+   <div class="grid c2" style="margin-top:15px;align-items:stretch">
+     <div class="panel fadein" id="verdictPanel" style="min-height:300px"></div>
+     <div class="panel fadein"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+       <h3 class="t">Object-reachability graph</h3><button class="tracebtn" id="traceBtn">▶ Trace attack path</button></div>
+       <div class="chart" id="specGraph" style="height:330px"></div>
+       <div class="legendrow"><span><i style="background:#cbd5e1"></i>catalog</span><span><i style="background:#5b94e8"></i>page</span>
+         <span><i style="background:var(--amber)"></i>trigger</span><span><i style="background:var(--red)"></i>dangerous</span></div></div>
+   </div>
+   <div class="panel fadein" style="margin-top:15px"><h3 class="t">Real EMBER evasive malware · ${L.challenge_gallery.n_total} challenge PDFs</h3>
+     <p class="d">Actual malware from the EMBER2024 challenge set (released as features — no raw file, so no object graph).
+       Click one to see EMBER's real verdict and its structural fingerprint against a benign baseline.</p>
+     <div class="chiprow" id="chalrow">${L.challenge_gallery.samples.map((s,i)=>
+       `<button class="chal ${s.verdict}" data-i="${i}">${s.sha}<span class="cdot ${s.verdict}"></span></button>`).join('')}</div>
+     <div id="fingerprint" style="margin-top:16px"></div></div>`;},
  about(){const cs=D.challenge_structure;
   return `<div class="eyebrow">Transparency</div><h2 class="view">Method &amp; limits</h2>
    <p class="lede">What is measured, on what data, and what remains unproven.</p>
@@ -527,27 +579,78 @@ const CI={ // chart initializers per view
      series:[{type:'bar',data:keys.map(k=>hist[k]),barWidth:'56%',
        itemStyle:{borderRadius:[5,5,0,0],color:new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:C.pink},{offset:1,color:'rgba(224,92,147,.25)'}])}}]});
    barH('pb_frag',eb.feature_fragility.slice(0,8).map(x=>({name:x.feature,v:x.used_in_evasions})),C.pink,v=>Math.round(v));},
- investigate(){bindEx();}
+ live(){initLive();}
 };
 
-function renderExample(i){const a=Object.values(D.examples)[i],body=document.getElementById('exbody');
-  if(a.error){body.innerHTML=`<div class="panel">Error: ${a.error}</div>`;return;}
-  const caps=a.reachability.capabilities.map(c=>{const v=VC[c.verdict]||['t-dorm',c.verdict];
-    return `<tr><td class="mono">${c.capability}</td><td><span class="tag ${v[0]}">${v[1]}</span></td>
-      <td class="mono tnum">${c.min_hops===null?'—':c.min_hops}</td><td class="mono tnum">${c.naive_count}</td>
-      <td style="font-size:11px;color:var(--muted)">${c.explanation}</td></tr>`}).join('')||'<tr><td colspan=5 style="color:var(--faint)">No dangerous capabilities detected.</td></tr>';
-  const m=a.model||{},ml=m.score!==undefined?`<span class="band b-${m.score>=.5?'ELEVATED':'LOW'}">${m.verdict} · ${m.score.toFixed(3)}</span>`:'unavailable';
-  body.innerHTML=`<div class="grid c3">
-    <div class="panel kpi fadein"><span class="glow" style="background:${a.risk_band==='HIGH'?C.red:a.risk_band==='LOW'?C.teal:C.amber}"></span>
-      <h3>Reconciled risk</h3><div style="margin-top:4px"><span class="band b-${a.risk_band}">${a.risk_band}</span></div><div class="sub">${a._source} · ${a.size_bytes} bytes</div></div>
-    <div class="panel fadein"><h3 style="font-size:11px;color:var(--muted)">Count-based model</h3><div style="margin-top:4px">${ml}</div><div class="sub">fragile signal</div></div>
-    <div class="panel kpi fadein"><h3>Objects parsed</h3><div class="num" style="font-size:24px">${a.n_objects}</div><div class="sub">${a.reachability.trigger_points.length} trigger points</div></div></div>
-    ${a.disagreement?`<div class="callout warn" style="margin-top:15px"><b>Signal disagreement.</b> ${a.disagreement}</div>`:''}
-    <div class="panel fadein" style="margin-top:15px"><h3 class="t">Reachability findings</h3>
-      <table><thead><tr><th>Capability</th><th>Verdict</th><th class="mono">Hops</th><th class="mono">Naive</th><th>Plain-language</th></tr></thead><tbody>${caps}</tbody></table>
-      <p class="note">${a.disclaimer}</p></div>`;}
-function bindEx(){renderExample(0);document.getElementById('exseg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-  document.querySelectorAll('#exseg button').forEach(x=>x.setAttribute('aria-current',x===b));renderExample(+b.dataset.ex);});}
+// ---- Live analysis interactions ----
+let GRAPH=null, GSPEC=null;
+const ROLECOL={catalog:'#cbd5e1',pages:'#5b94e8',page:'#7aa7ee',trigger:C.amber,action:C.amber,dangerous:C.red,dict:C.teal2,annot:C.pink,other:'#6b7788'};
+function drawGraph(id,g,traced){
+  const cats=[...new Set(g.nodes.map(n=>n.role))].map(r=>({name:r,itemStyle:{color:ROLECOL[r]||'#6b7788'}}));
+  const ci=Object.fromEntries(cats.map((c,i)=>[c.name,i]));
+  const pe=new Set(); if(traced&&g.path)for(let k=0;k<g.path.length-1;k++)pe.add(g.path[k]+'>'+g.path[k+1]);
+  const nodes=g.nodes.map(n=>({id:n.id,name:n.label,category:ci[n.role],
+    symbolSize:n.role==='dangerous'?40:n.role==='catalog'?30:n.role==='trigger'||n.role==='action'?22:n.role==='page'||n.role==='pages'?16:11,
+    itemStyle:n.role==='dangerous'?{color:C.red,shadowBlur:24,shadowColor:C.red}:(n.role==='trigger'||n.role==='action')?{shadowBlur:12,shadowColor:C.amber}:{},
+    label:{show:n.role!=='dict'&&n.role!=='other'}}));
+  const edges=g.edges.map(e=>{const on=pe.has(e.source+'>'+e.target);
+    return {source:e.source,target:e.target,lineStyle:on?{color:C.teal,width:2.8,opacity:.95,shadowBlur:8,shadowColor:C.teal}:{color:'rgba(150,170,200,.22)',width:1,curveness:.08}}});
+  GRAPH=mk(id,{tooltip:{backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11},formatter:p=>p.dataType==='node'?p.data.name:''},
+    series:[{type:'graph',layout:'force',roam:true,draggable:true,data:nodes,categories:cats,edges:edges,
+      force:{repulsion:140,edgeLength:[36,110],gravity:.12,friction:.22},
+      label:{color:C.muted,fontSize:9.5,fontFamily:'JetBrains Mono',position:'right'},
+      emphasis:{focus:'adjacency',scale:true,lineStyle:{color:C.teal,width:2.4}}}]});
+}
+function tracePath(){if(!GRAPH||!GSPEC||!GSPEC.graph.path.length)return;drawGraph('specGraph',GSPEC.graph,true);
+  const g=GSPEC.graph,idx=Object.fromEntries(g.nodes.map((n,i)=>[n.id,i]));
+  g.path.forEach((nid,k)=>setTimeout(()=>{try{GRAPH.dispatchAction({type:'highlight',seriesIndex:0,dataIndex:idx[nid]})}catch(e){}},k*360));}
+function selectSpecimen(i){const s=D.live.specimens[i];GSPEC=s;
+  document.querySelectorAll('#specrow .spec').forEach((b,j)=>b.setAttribute('aria-current',j===i));
+  const dis=s.ember_verdict==='benign'&&s.reach_dangerous;
+  const pv=s.reach_dangerous?'DANGEROUS':'SAFE', pc=s.reach_dangerous?C.red:C.teal;
+  const ev=s.ember_verdict, ec=ev==='malicious'?C.amber:C.teal;
+  document.getElementById('verdictPanel').innerHTML=`
+    <h3 class="t">${s.name}</h3><p class="d">${s.desc}</p>
+    <div class="vduo">
+      <div class="vcard"><div class="vlbl">EMBER2024 model</div><div class="vval" style="color:${ec}">${ev}</div>
+        <div class="vsub">score ${s.ember_score.toFixed(3)}</div></div>
+      <div class="vx">vs</div>
+      <div class="vcard"><div class="vlbl">PDFSentry · reachability</div><div class="vval" style="color:${pc}">${pv}</div>
+        <div class="vsub">${s.reach_verdict.replace(/_/g,' ').toLowerCase()}${s.reach_capability?' · '+s.reach_capability:''}</div></div>
+    </div>
+    ${dis?`<div class="evbanner">⚠ EVASION — EMBER rates this <b>benign</b>, but a dangerous action is reachable on open. PDFSentry catches what the byte/string model misses.</div>`
+      :s.reach_dangerous?`<div class="okbanner">Both signals flag a reachable action — agreement.</div>`
+      :`<div class="okbanner">No reachable dangerous action — both signals agree it is clean.</div>`}
+    <div class="note">${s.graph.nodes.length} objects parsed · ${s.graph.path.length?'reachable path depth '+(s.graph.path.length-1)+' hops':'no reachable dangerous path'}</div>`;
+  drawGraph('specGraph',s.graph,false);
+}
+const MET=[['Compression /FlateDecode','FlateDecode'],['Byte entropy','entropy'],['File size','size'],['String count','numstrings']];
+function selectChallenge(i){const L=D.live.challenge_gallery,s=L.samples[i],med=L.benign_medians;
+  document.querySelectorAll('#chalrow .chal').forEach((b,j)=>b.setAttribute('aria-current',j===i));
+  const bars=MET.map(([lab,k])=>{const sv=s[k],mv=med[k]||1,ratio=mv>0?sv/mv:0,w=Math.min(100,ratio/4*100);
+    return `<div class="fprow"><div class="fplab">${lab}</div>
+      <div class="fptrack"><div class="fpmed" title="benign median"></div><div class="fpfill" style="width:0%" data-w="${Math.max(2,w)}"></div></div>
+      <div class="fpval">${typeof sv==='number'&&sv>999?sv.toLocaleString():sv}</div></div>`}).join('');
+  const miss=s.verdict==='missed';
+  document.getElementById('fingerprint').innerHTML=`
+    <div class="vduo" style="margin-bottom:14px">
+      <div class="vcard"><div class="vlbl">sample</div><div class="vval mono" style="font-size:15px">${s.sha}…</div><div class="vsub">EMBER score ${s.ember.toFixed(3)}</div></div>
+      <div class="vx">→</div>
+      <div class="vcard"><div class="vlbl">EMBER verdict</div><div class="vval" style="color:${miss?C.red:C.teal}">${miss?'MISSED':'caught'}</div>
+        <div class="vsub">${miss?'scored benign — evaded':'flagged malicious'}</div></div>
+    </div>
+    <div class="note" style="margin:0 0 8px">Structural fingerprint vs benign median (dashed). Longer bar = more extreme.</div>
+    ${bars}
+    ${miss?`<div class="evbanner" style="margin-top:12px">⚠ Real evasive malware EMBER let through — note the elevated compression and entropy that a structural view keys on.</div>`:''}`;
+  requestAnimationFrame(()=>document.querySelectorAll('#fingerprint .fpfill').forEach(f=>{f.style.width=f.dataset.w+'%'}));
+}
+function initLive(){
+  document.getElementById('specrow').addEventListener('click',e=>{const b=e.target.closest('.spec');if(b)selectSpecimen(+b.dataset.i)});
+  document.getElementById('chalrow').addEventListener('click',e=>{const b=e.target.closest('.chal');if(b)selectChallenge(+b.dataset.i)});
+  document.getElementById('traceBtn').addEventListener('click',tracePath);
+  selectSpecimen(3); selectChallenge(0);
+}
+
 
 let cur='overview';
 function go(v){cur=v;clearCharts();
