@@ -53,7 +53,7 @@ HTML = r"""<meta name="claude:viewport-fit-sides" content="cover">
 <title>PDFSentry</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.1/echarts.min.js"></script>
+__ECHARTS__
 <style>
 /* Threat-intelligence console — deliberately dark single-world.
    chrome = silver gradient ink; teal=robust/reachability, amber=gap, red=evasion. */
@@ -219,8 +219,10 @@ const pct=(x,d=1)=>(x*100).toFixed(d)+'%'; const f4=x=>x.toFixed(4); const f3=x=
 const C={teal:'#2dd4bf',teal2:'#17b3a0',amber:'#f5b14c',red:'#f0616d',pink:'#e05c93',blue:'#5b94e8',
   ink:'#e9eef5',muted:'#97a3b4',faint:'#5a6676',line:'rgba(255,255,255,.09)'};
 let CHARTS=[]; const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function mk(id,opt){const el=document.getElementById(id);if(!el)return;const c=echarts.init(el,null,{renderer:'canvas'});
-  opt.animationDuration=reduce?0:900;opt.textStyle={fontFamily:'JetBrains Mono,monospace',color:C.muted};c.setOption(opt);CHARTS.push(c);return c;}
+function mk(id,opt){try{const el=document.getElementById(id);if(!el||typeof echarts==='undefined')return;
+  const c=echarts.init(el,null,{renderer:'canvas'});
+  opt.animationDuration=reduce?0:900;opt.textStyle={fontFamily:'JetBrains Mono,monospace',color:C.muted};
+  c.setOption(opt);CHARTS.push(c);return c;}catch(e){console.error('chart '+id,e);}}
 function clearCharts(){CHARTS.forEach(c=>{try{c.dispose()}catch(e){}});CHARTS=[]}
 addEventListener('resize',()=>CHARTS.forEach(c=>c.resize()));
 function countUp(){document.querySelectorAll('[data-to]').forEach(el=>{
@@ -341,12 +343,16 @@ const R={
      ${kpi('Compression in misses',num(12,0)+' <small>vs 7</small>','median /FlateDecode, missed vs caught',C.teal,1)}
      ${kpi('Significance',"p&lt;10⁻¹⁵",'Mann–Whitney, missed vs caught',C.ink,0)}
    </div>
-   <div class="panel fadein" style="margin-top:15px"><h3 class="t">Missed vs caught evasive malware — structure (real data)</h3>
-     <p class="d">Per-sample values from EMBER's released features. Misses are significantly more compressed,
-       higher-entropy and larger — measured on real evasive samples.</p>
-     <table><thead><tr><th>Structural metric</th><th class="mono">missed (median)</th><th class="mono">caught (median)</th><th class="mono">p-value</th></tr></thead><tbody>${rows}</tbody></table>
+   <div class="grid c2" style="margin-top:15px"><div class="panel fadein"><h3 class="t">Missed vs caught — structure (real data)</h3>
+     <p class="d">Per-sample medians from EMBER's released features.</p>
+     <table><thead><tr><th>Metric</th><th class="mono">missed</th><th class="mono">caught</th><th class="mono">p</th></tr></thead><tbody>${rows}</tbody></table>
      <p class="note">≈99% of all evasive PDFs carry zero visible JavaScript strings — they hide the payload behind
        compression, which is why they defeat EMBER's string-based view.</p></div>
+     <div class="panel fadein"><h3 class="t">How much more, in the misses</h3>
+       <p class="d">Ratio of missed-median to caught-median — above 1× means the malware EMBER misses scores higher
+         on that axis (more compression, bulk, obfuscation).</p>
+       <div class="chart" id="rm_fold" style="height:250px"></div></div>
+   </div>
    <div class="callout"><b>This is the real-malware link.</b> The evasion mechanism in our study isn't hypothetical —
      the evasive malware EMBER actually misses is measurably more compressed and obfuscated.</div>`;},
  evasion(){const se=D.structural_evasion,mech=D.mechanism||[],g=D.evasion_generality;
@@ -471,6 +477,17 @@ const CI={ // chart initializers per view
  gap(){const o=D.ember.ordinary.curves.pr,c=D.ember.challenge.curves.pr;
    prChart('gap_o',[{name:'ordinary',color:C.teal,pts:o.recall.map((r,i)=>[r,o.precision[i]])}]);
    prChart('gap_c',[{name:'evasive',color:C.amber,pts:c.recall.map((r,i)=>[r,c.precision[i]])}]);},
+ realmal(){const c=D.challenge_structure.metric_comparison_missed_vs_caught;
+   const spec=[['/FlateDecode','/FlateDecode'],['file size','size'],['string count','numstrings'],['byte entropy','entropy']];
+   const items=spec.map(([l,k])=>({name:l,v:c[k].caught_median>0?c[k].missed_median/c[k].caught_median:0}))
+     .filter(i=>i.v>0).sort((a,b)=>a.v-b.v);
+   mk('rm_fold',{grid:{left:4,right:52,top:10,bottom:24,containLabel:true},
+     tooltip:{trigger:'axis',axisPointer:{type:'shadow'},backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11},valueFormatter:v=>v.toFixed(2)+'×'},
+     xAxis:{type:'value',...AX,axisLabel:{color:C.faint,fontSize:10,formatter:'{value}×'},splitLine:{lineStyle:{color:'rgba(255,255,255,.04)'}}},
+     yAxis:{type:'category',data:items.map(i=>i.name),axisLine:{show:false},axisTick:{show:false},axisLabel:{color:C.muted,fontSize:10.5,fontFamily:'JetBrains Mono'}},
+     series:[{type:'bar',data:items.map(i=>i.v),barWidth:'58%',markLine:{silent:true,symbol:'none',data:[{xAxis:1}],lineStyle:{color:C.faint,type:'dashed'},label:{show:false}},
+       itemStyle:{borderRadius:[0,5,5,0],color:new echarts.graphic.LinearGradient(0,0,1,0,[{offset:0,color:'rgba(45,212,191,.3)'},{offset:1,color:C.teal}])},
+       label:{show:true,position:'right',color:C.ink,fontFamily:'JetBrains Mono',fontSize:11,formatter:p=>p.value.toFixed(2)+'×'}}]});},
  evasion(){const se=D.structural_evasion;
    gauge('ev_g1',se.ember_evasion_rate,'score < 0.5',C.red);
    gauge('ev_g2',se.reachability_detection_rate,'flagged',C.teal);
@@ -537,7 +554,7 @@ function go(v){cur=v;clearCharts();
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v));
   document.getElementById('crumb').textContent=v;
   document.getElementById('view').innerHTML=R[v]();
-  countUp(); (CI[v]||(()=>{}))();
+  countUp(); try{(CI[v]||(()=>{}))();}catch(e){console.error('view charts '+v,e);}
   if(location.hash.slice(1)!==v)history.replaceState(null,'','#'+v);
   window.scrollTo(0,0);}
 document.getElementById('nav').innerHTML=
@@ -555,6 +572,9 @@ go(R[location.hash.slice(1)]?location.hash.slice(1):'overview');
 </script>
 """
 
+echarts_src = (ROOT / "frontend" / "vendor" / "echarts.min.js").read_text()
+html = HTML.replace("__ECHARTS__", "<script>" + echarts_src + "</script>")
+html = html.replace("__DATA__", DATA)
 out = ROOT / "frontend" / "dashboard.html"
-out.write_text(HTML.replace("__DATA__", DATA))
-print("wrote", out, out.stat().st_size, "bytes")
+out.write_text(html)
+print("wrote", out, round(out.stat().st_size / 1024), "KB (echarts inlined)")
