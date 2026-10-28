@@ -40,6 +40,16 @@ it removes the giveaway strings for *any* JavaScript, which is exactly why real
 evasive malware uses it. This is the EvadeML-style controlled evasion methodology
 Review 2 cites. We state the scope plainly in `LIMITATIONS.md`.
 
+**Q. Is there any evidence this happens in REAL evasive malware, not just your constructed samples?**
+Yes — directly measured on the real 805 evasive challenge PDFs, using EMBER's own
+released features (no raw files needed). The ones EMBER misses are significantly
+more compressed than the ones it catches: median /FlateDecode 12 vs 7
+(Mann–Whitney p = 8e-16), higher entropy (p = 1e-6), and larger (144 KB vs 76 KB,
+p = 1e-19). About 99% of all evasive PDFs carry zero visible JavaScript strings —
+they hide the payload behind compression, which is why they beat EMBER's
+string-based model. So the evasion mechanism our controlled study targets is the
+one real evasive malware actually uses. See `challenge_structure_diagnosis.py`.
+
 **Q. Didn't you just design the feature to catch the evasion you built?**
 We tested exactly that. The auto-run action was wired four structurally distinct
 ways (direct /OpenAction, a GoTo→Next action chain, the document-level

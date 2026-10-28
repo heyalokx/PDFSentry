@@ -1,0 +1,69 @@
+{
+  "n_evasive_pdf": 805,
+  "ember_caught": 450,
+  "ember_missed": 355,
+  "ember_recall_on_challenge": 0.5590062111801242,
+  "metric_comparison_missed_vs_caught": {
+    "/FlateDecode": {
+      "missed_median": 12.0,
+      "caught_median": 7.0,
+      "missed_mean": 42.43943661971831,
+      "caught_mean": 9.846666666666666,
+      "mannwhitney_p": 8.096400559766274e-16
+    },
+    "javascript": {
+      "missed_median": 0.0,
+      "caught_median": 0.0,
+      "missed_mean": 0.005633802816901409,
+      "caught_mean": 0.0022222222222222222,
+      "mannwhitney_p": 0.866446627371049
+    },
+    "/EmbeddedFile": {
+      "missed_median": 0.0,
+      "caught_median": 0.0,
+      "missed_mean": 0.030985915492957747,
+      "caught_mean": 0.0044444444444444444,
+      "mannwhitney_p": 0.47213542590618596
+    },
+    "/URI": {
+      "missed_median": 0.0,
+      "caught_median": 2.0,
+      "missed_mean": 5.670422535211268,
+      "caught_mean": 9.991111111111111,
+      "mannwhitney_p": 5.948514495510299e-26
+    },
+    "entropy": {
+      "missed_median": 7.926688890656863,
+      "caught_median": 7.871360289287237,
+      "missed_mean": 7.810828831553952,
+      "caught_mean": 7.766741300719858,
+      "mannwhitney_p": 9.586332569758368e-07
+    },
+    "str_entropy": {
+      "missed_median": 5.73019912226058,
+      "caught_median": 5.641042232513428,
+      "missed_mean": 5.6581692966481745,
+      "caught_mean": 5.686203530033794,
+      "mannwhitney_p": 0.9370997035089365
+    },
+    "size": {
+      "missed_median": 143934.0,
+      "caught_median": 75771.5,
+      "missed_mean": 533759.7014084507,
+      "caught_mean": 95460.20222222223,
+      "mannwhitney_p": 1.4584263874849523e-19
+    },
+    "numstrings": {
+      "missed_median": 969.0,
+      "caught_median": 572.0,
+      "missed_mean": 3167.261971830986,
+      "caught_mean": 646.8866666666667,
+      "mannwhitney_p": 6.547657605285142e-22
+    }
+  },
+  "token_hiding_signature": {
+    "definition": "/FlateDecode present AND zero visible 'javascript' strings",
+    "rate_in_missed": 0.9859154929577465,
+    "rate_in_caught": 0.9955555555555555
+  }
+}

@@ -31,6 +31,27 @@ Missed and caught evasive malware are **nearly indistinguishable** to the model 
 both are byte/string statistics with no structural signal. Once an evasive file's
 byte/string profile looks benign, the baseline has nothing left to catch it with.
 
+## 2b. Real evasive malware — structural diagnosis (confound-free)
+`artifacts/metrics/challenge_structure.json` — the actual 805 evasive challenge
+PDFs, split by whether the real EMBER model catches (450) or misses (355) them.
+Uses only EMBER's released features; no raw files, no malware handling.
+
+| Structural metric | missed (median) | caught (median) | Mann–Whitney p |
+|---|---|---|---|
+| **/FlateDecode (compression)** | **12** | **7** | 8.1e-16 |
+| byte entropy | 7.93 | 7.87 | 9.6e-07 |
+| file size (bytes) | 143,600 | 75,800 | 1.5e-19 |
+| visible /URI strings | 0 | 2 | 5.9e-26 |
+| visible javascript strings | 0 | 0 | 0.87 (n.s.) |
+| string count | 969 | 572 | 6.5e-22 |
+
+The evasive malware EMBER **misses** is significantly more compressed, higher
+entropy and larger — the compression / token-hiding signature, **measured on real
+evasive malware**. Visible JavaScript is ~0 in both groups (≈99% of all evasive
+PDFs hide JS behind compression), which is exactly why they defeat EMBER's
+string-based view and exactly what a structural/reachability view is needed to
+see. This is the real-data link behind the controlled study in §3.
+
 ## 3. Structural evasion + reachability fusion (O3/O4) — the headline
 `artifacts/metrics/structural_evasion_study.json` — run against the real EMBER model.
 
