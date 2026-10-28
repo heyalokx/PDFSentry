@@ -219,6 +219,15 @@ td.mono,th.mono{font-family:var(--mono)}
 .fpmed{position:absolute;left:25%;top:-2px;bottom:-2px;width:2px;background:var(--faint);opacity:.7;z-index:2}
 .fpfill{height:100%;border-radius:5px;background:linear-gradient(90deg,rgba(245,177,76,.35),var(--amber));transition:width .9s cubic-bezier(.2,.8,.2,1)}
 .fpval{font-family:var(--mono);font-size:11px;color:var(--ink);text-align:right}
+.mtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
+.mtile{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:10px;padding:10px 12px;animation:fade .45s ease both}
+.mlbl{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.mnum{font-family:var(--mono);font-size:19px;font-weight:600;margin-top:5px}
+.demobtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;color:#04120f;background:linear-gradient(180deg,var(--teal),var(--teal2));padding:8px 15px;border-radius:9px;font-weight:600;box-shadow:0 8px 20px -10px rgba(45,212,191,.7);transition:.15s}
+.demobtn:hover{filter:brightness(1.08)} .demobtn.on{background:linear-gradient(180deg,var(--amber),#d9922f)}
+.demobtn .dps{margin-right:4px}
+.gcap{font-family:var(--mono);font-size:9.5px;color:var(--faint);text-align:center;margin-top:-8px}
+@media (max-width:560px){.mtiles{grid-template-columns:repeat(2,1fr)}}
 .fadein{animation:fade .5s ease both}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (max-width:980px){.app{grid-template-columns:1fr}.rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center}
@@ -255,12 +264,14 @@ const C={teal:'#2dd4bf',teal2:'#17b3a0',amber:'#f5b14c',red:'#f0616d',pink:'#e05
   ink:'#e9eef5',muted:'#97a3b4',faint:'#5a6676',line:'rgba(255,255,255,.09)'};
 let CHARTS=[]; const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function mk(id,opt){try{const el=document.getElementById(id);if(!el||typeof echarts==='undefined')return;
+  const ex=echarts.getInstanceByDom(el);if(ex)ex.dispose();
   const c=echarts.init(el,null,{renderer:'canvas'});
   opt.animationDuration=reduce?0:900;opt.textStyle={fontFamily:'JetBrains Mono,monospace',color:C.muted};
   c.setOption(opt);CHARTS.push(c);return c;}catch(e){console.error('chart '+id,e);}}
 function clearCharts(){CHARTS.forEach(c=>{try{c.dispose()}catch(e){}});CHARTS=[]}
-addEventListener('resize',()=>CHARTS.forEach(c=>c.resize()));
-function countUp(){document.querySelectorAll('[data-to]').forEach(el=>{
+addEventListener('resize',()=>CHARTS.forEach(c=>{try{if(c&&!c.isDisposed())c.resize()}catch(e){}}));
+function tile(lab,v,dec,suf,col){return `<div class="mtile"><div class="mlbl">${lab}</div><div class="mnum tnum" data-to="${v}" data-dec="${dec||0}" data-suf="${suf||''}" style="color:${col||'var(--ink)'}">0</div></div>`}
+function countUp(root){(root||document).querySelectorAll('[data-to]').forEach(el=>{
   const to=+el.dataset.to,dec=+(el.dataset.dec||0),suf=el.dataset.suf||'';
   if(reduce){el.textContent=to.toFixed(dec)+suf;return;}
   const t0=performance.now(),dur=900;
@@ -480,28 +491,39 @@ const R={
      <div class="panel fadein"><h3 class="t">Most fragile features</h3><p class="d">Share of successful evasions touching each feature.</p><div class="chart" id="pb_frag" style="height:220px"></div></div>
    </div>`;},
  live(){const L=D.live;if(!L)return '<h2 class="view">Live analysis</h2><p class="lede">Run export_specimens.py.</p>';
+  const cg=L.challenge_gallery;
   const chips=L.specimens.map((s,i)=>{const dis=s.ember_verdict==='benign'&&s.reach_dangerous;
     return `<button class="spec ${s.category}" data-i="${i}">
       <span class="specn">${s.name}</span>
       <span class="spectag ${dis?'t-open':s.reach_dangerous?'t-int':'t-dorm'}">${dis?'EMBER fooled':s.reach_dangerous?'reachable':'clean'}</span></button>`}).join('');
-  return `<div class="eyebrow">Live analysis · EMBER vs PDFSentry</div><h2 class="view">Live specimen analyzer</h2>
-   <p class="lede">Click a specimen — the real EMBER model and the reachability engine both analyze it. Watch where they
-     disagree. Weaponized specimens are real PDFs carrying a harmless reachable payload; nothing is executed.</p>
+  return `<div class="eyebrow">Live analysis · EMBER vs PDFSentry</div>
+   <div class="vhead"><h2 class="view">Live specimen analyzer</h2>
+     <button class="demobtn" id="demoBtn"><span class="dps">▶</span> Demo mode</button></div>
+   <p class="lede">Click a specimen — the real EMBER model and the reachability engine both analyze it, and the metrics
+     come alive. Weaponized specimens are real PDFs carrying a harmless reachable payload; nothing is executed.</p>
    <div class="specrow" id="specrow">${chips}</div>
    <div class="grid c2" style="margin-top:15px;align-items:stretch">
-     <div class="panel fadein" id="verdictPanel" style="min-height:300px"></div>
+     <div class="panel fadein" id="verdictPanel" style="min-height:330px"></div>
      <div class="panel fadein"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
        <h3 class="t">Object-reachability graph</h3><button class="tracebtn" id="traceBtn">▶ Trace attack path</button></div>
-       <div class="chart" id="specGraph" style="height:330px"></div>
+       <div class="chart" id="specGraph" style="height:300px"></div>
        <div class="legendrow"><span><i style="background:#cbd5e1"></i>catalog</span><span><i style="background:#5b94e8"></i>page</span>
-         <span><i style="background:var(--amber)"></i>trigger</span><span><i style="background:var(--red)"></i>dangerous</span></div></div>
+         <span><i style="background:var(--amber)"></i>trigger</span><span><i style="background:var(--red)"></i>dangerous</span></div>
+       <div class="mtiles" id="specTiles"></div></div>
    </div>
-   <div class="panel fadein" style="margin-top:15px"><h3 class="t">Real EMBER evasive malware · ${L.challenge_gallery.n_total} challenge PDFs</h3>
+   <div class="panel fadein" style="margin-top:15px">
+     <div class="vhead"><h3 class="t">Real EMBER evasive malware · ${cg.n_total} challenge PDFs</h3>
+       <div class="seg" id="chalFilter"><button data-f="missed" aria-current="true">missed (${cg.n_missed})</button>
+         <button data-f="caught">caught (${cg.n_total-cg.n_missed})</button><button data-f="all">all ${cg.n_total}</button></div></div>
      <p class="d">Actual malware from the EMBER2024 challenge set (released as features — no raw file, so no object graph).
-       Click one to see EMBER's real verdict and its structural fingerprint against a benign baseline.</p>
-     <div class="chiprow" id="chalrow">${L.challenge_gallery.samples.map((s,i)=>
-       `<button class="chal ${s.verdict}" data-i="${i}">${s.sha}<span class="cdot ${s.verdict}"></span></button>`).join('')}</div>
-     <div id="fingerprint" style="margin-top:16px"></div></div>`;},
+       Click any sample; its full structural fingerprint animates in against a benign baseline.</p>
+     <div class="chiprow" id="chalrow"></div>
+     <div class="grid c2" style="margin-top:16px;align-items:stretch">
+       <div id="chalVerdict"></div>
+       <div class="panel" style="background:rgba(255,255,255,.015)"><h3 class="t" style="font-size:12px;color:var(--muted)">Structural fingerprint vs benign</h3><div class="chart" id="chalRadar" style="height:250px"></div></div>
+     </div>
+     <div class="mtiles" id="chalTiles" style="margin-top:14px"></div>
+     <div id="chalBanner"></div></div>`;},
  about(){const cs=D.challenge_structure;
   return `<div class="eyebrow">Transparency</div><h2 class="view">Method &amp; limits</h2>
    <p class="lede">What is measured, on what data, and what remains unproven.</p>
@@ -608,7 +630,7 @@ function selectSpecimen(i){const s=D.live.specimens[i];GSPEC=s;
   document.querySelectorAll('#specrow .spec').forEach((b,j)=>b.setAttribute('aria-current',j===i));
   const dis=s.ember_verdict==='benign'&&s.reach_dangerous;
   const pv=s.reach_dangerous?'DANGEROUS':'SAFE', pc=s.reach_dangerous?C.red:C.teal;
-  const ev=s.ember_verdict, ec=ev==='malicious'?C.amber:C.teal;
+  const ev=s.ember_verdict, ec=ev==='malicious'?C.amber:C.teal, m=s.metrics;
   document.getElementById('verdictPanel').innerHTML=`
     <h3 class="t">${s.name}</h3><p class="d">${s.desc}</p>
     <div class="vduo">
@@ -620,40 +642,73 @@ function selectSpecimen(i){const s=D.live.specimens[i];GSPEC=s;
     </div>
     ${dis?`<div class="evbanner">⚠ EVASION — EMBER rates this <b>benign</b>, but a dangerous action is reachable on open. PDFSentry catches what the byte/string model misses.</div>`
       :s.reach_dangerous?`<div class="okbanner">Both signals flag a reachable action — agreement.</div>`
-      :`<div class="okbanner">No reachable dangerous action — both signals agree it is clean.</div>`}
-    <div class="note">${s.graph.nodes.length} objects parsed · ${s.graph.path.length?'reachable path depth '+(s.graph.path.length-1)+' hops':'no reachable dangerous path'}</div>`;
+      :`<div class="okbanner">No reachable dangerous action — both signals agree it is clean.</div>`}`;
+  document.getElementById('specTiles').innerHTML=
+    tile('objects',m.objects,0,'',C.ink)+tile('triggers',m.triggers,0,'',C.amber)+
+    tile('path depth',m.path_depth,0,' hops',C.teal)+tile('active on-open',m.active_onopen,0,'',C.red)+
+    tile('obj streams',m.obj_streams,0,'',C.blue)+tile('naive tokens',m.naive_tokens,0,'',C.muted);
+  countUp(document.getElementById('specTiles'));
   drawGraph('specGraph',s.graph,false);
 }
-const MET=[['Compression /FlateDecode','FlateDecode'],['Byte entropy','entropy'],['File size','size'],['String count','numstrings']];
 function selectChallenge(i){const L=D.live.challenge_gallery,s=L.samples[i],med=L.benign_medians;
-  document.querySelectorAll('#chalrow .chal').forEach((b,j)=>b.setAttribute('aria-current',j===i));
-  const bars=MET.map(([lab,k])=>{const sv=s[k],mv=med[k]||1,ratio=mv>0?sv/mv:0,w=Math.min(100,ratio/4*100);
-    return `<div class="fprow"><div class="fplab">${lab}</div>
-      <div class="fptrack"><div class="fpmed" title="benign median"></div><div class="fpfill" style="width:0%" data-w="${Math.max(2,w)}"></div></div>
-      <div class="fpval">${typeof sv==='number'&&sv>999?sv.toLocaleString():sv}</div></div>`}).join('');
-  const miss=s.verdict==='missed';
-  document.getElementById('fingerprint').innerHTML=`
-    <div class="vduo" style="margin-bottom:14px">
-      <div class="vcard"><div class="vlbl">sample</div><div class="vval mono" style="font-size:15px">${s.sha}…</div><div class="vsub">EMBER score ${s.ember.toFixed(3)}</div></div>
-      <div class="vx">→</div>
-      <div class="vcard"><div class="vlbl">EMBER verdict</div><div class="vval" style="color:${miss?C.red:C.teal}">${miss?'MISSED':'caught'}</div>
-        <div class="vsub">${miss?'scored benign — evaded':'flagged malicious'}</div></div>
-    </div>
-    <div class="note" style="margin:0 0 8px">Structural fingerprint vs benign median (dashed). Longer bar = more extreme.</div>
-    ${bars}
-    ${miss?`<div class="evbanner" style="margin-top:12px">⚠ Real evasive malware EMBER let through — note the elevated compression and entropy that a structural view keys on.</div>`:''}`;
-  requestAnimationFrame(()=>document.querySelectorAll('#fingerprint .fpfill').forEach(f=>{f.style.width=f.dataset.w+'%'}));
+  document.querySelectorAll('#chalrow .chal').forEach(b=>b.setAttribute('aria-current',+b.dataset.i===i));
+  const miss=s.verdict==='missed', vc=miss?C.red:C.teal;
+  document.getElementById('chalVerdict').innerHTML=`<div class="panel" style="background:rgba(255,255,255,.015);height:100%">
+    <div class="vlbl">sample</div><div class="mono" style="font-size:15px;margin:3px 0 10px">${s.sha}…</div>
+    <div class="vval" style="color:${vc};font-size:26px">${miss?'MISSED':'CAUGHT'}</div>
+    <div class="vsub" style="margin-bottom:10px">${miss?'EMBER scored it benign — evaded':'EMBER flagged it'}</div>
+    <div class="grid c2" style="gap:6px">
+      <div><div class="chart" id="chalG1" style="height:120px"></div><div class="gcap">EMBER score</div></div>
+      <div><div class="chart" id="chalG2" style="height:120px"></div><div class="gcap">structural flags /4</div></div>
+    </div></div>`;
+  // radar: sample vs benign median (ratio, capped)
+  const RM=[['/FlateDecode','FlateDecode'],['entropy','entropy'],['size','size'],['strings','numstrings'],['printables','printables'],['avg len','avlength']];
+  const ind=RM.map(([n])=>({name:n,max:4})), sv=RM.map(([n,k])=>Math.min(4,(s[k]||0)/(med[k]||1))), bv=RM.map(()=>1);
+  mk('chalRadar',{legend:{bottom:0,textStyle:{color:C.muted,fontSize:9.5},data:[{name:'this sample'},{name:'benign median'}]},
+    tooltip:{backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11}},
+    radar:{indicator:ind,radius:'62%',axisName:{color:C.muted,fontSize:9.5,fontFamily:'JetBrains Mono'},
+      splitLine:{lineStyle:{color:'rgba(255,255,255,.07)'}},splitArea:{areaStyle:{color:['rgba(255,255,255,.015)','transparent']}},axisLine:{lineStyle:{color:'rgba(255,255,255,.08)'}}},
+    series:[{type:'radar',data:[
+      {value:sv,name:'this sample',lineStyle:{color:vc,width:2},areaStyle:{color:'rgba('+hx(vc)+',.18)'},itemStyle:{color:vc}},
+      {value:bv,name:'benign median',lineStyle:{color:C.teal,width:1.4,type:'dashed'},itemStyle:{color:C.teal}}]}]});
+  gauge('chalG1',s.ember,'',vc); gauge('chalG2',s.flags,'',s.flags>=3?C.red:s.flags>=1?C.amber:C.teal,4);
+  document.getElementById('chalTiles').innerHTML=
+    tile('/FlateDecode',s.FlateDecode,0,'',C.teal)+tile('javascript',s.javascript,0,'',C.amber)+
+    tile('/URI',s.URI,0,'',C.blue)+tile('/EmbeddedFile',s.EmbeddedFile,0,'',C.pink)+
+    tile('byte entropy',s.entropy,2,'',C.ink)+tile('file size',s.size,0,'',C.ink)+
+    tile('strings',s.numstrings,0,'',C.muted)+tile('printables',s.printables,0,'',C.muted);
+  countUp(document.getElementById('chalTiles'));
+  document.getElementById('chalBanner').innerHTML=miss
+    ?`<div class="evbanner" style="margin-top:14px">⚠ Real evasive malware EMBER let through (score ${s.ember.toFixed(3)}). ${s.flags}/4 structural flags raised — elevated compression, entropy or bulk that a structural view keys on.</div>`
+    :`<div class="okbanner" style="margin-top:14px">EMBER caught this one (score ${s.ember.toFixed(3)}).</div>`;
 }
+let CHALF='missed';
+function renderChal(filter){CHALF=filter;const S=D.live.challenge_gallery.samples;
+  const list=S.map((s,i)=>({s,i})).filter(o=>filter==='all'||o.s.verdict===filter);
+  document.getElementById('chalrow').innerHTML=list.map(o=>
+    `<button class="chal ${o.s.verdict}" data-i="${o.i}">${o.s.sha}<span class="cdot ${o.s.verdict}"></span></button>`).join('');
+  document.querySelectorAll('#chalFilter button').forEach(b=>b.setAttribute('aria-current',b.dataset.f===filter));
+  if(list.length)selectChallenge(list[0].i);
+}
+let DEMO=null;
+function stopDemo(){if(DEMO){clearInterval(DEMO);DEMO=null;const b=document.getElementById('demoBtn');if(b){b.classList.remove('on');b.querySelector('.dps').textContent='▶';}}}
+function toggleDemo(){const b=document.getElementById('demoBtn');if(DEMO){stopDemo();return;}
+  b.classList.add('on');b.querySelector('.dps').textContent='⏸';
+  const W=D.live.specimens.map((s,i)=>i).filter(i=>D.live.specimens[i].reach_dangerous);let k=0;
+  const step=()=>{const i=W[k%W.length];selectSpecimen(i);setTimeout(()=>{if(DEMO)tracePath()},1000);k++;};
+  step();DEMO=setInterval(step,4000);}
 function initLive(){
-  document.getElementById('specrow').addEventListener('click',e=>{const b=e.target.closest('.spec');if(b)selectSpecimen(+b.dataset.i)});
+  document.getElementById('specrow').addEventListener('click',e=>{const b=e.target.closest('.spec');if(b){stopDemo();selectSpecimen(+b.dataset.i)}});
   document.getElementById('chalrow').addEventListener('click',e=>{const b=e.target.closest('.chal');if(b)selectChallenge(+b.dataset.i)});
-  document.getElementById('traceBtn').addEventListener('click',tracePath);
-  selectSpecimen(3); selectChallenge(0);
+  document.getElementById('chalFilter').addEventListener('click',e=>{const b=e.target.closest('button');if(b)renderChal(b.dataset.f)});
+  document.getElementById('traceBtn').addEventListener('click',()=>{stopDemo();tracePath()});
+  document.getElementById('demoBtn').addEventListener('click',toggleDemo);
+  selectSpecimen(6); renderChal('missed');
 }
 
 
 let cur='overview';
-function go(v){cur=v;clearCharts();
+function go(v){cur=v;if(typeof stopDemo==='function')stopDemo();clearCharts();
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v));
   document.getElementById('crumb').textContent=v;
   document.getElementById('view').innerHTML=R[v]();
