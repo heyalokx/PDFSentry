@@ -4,27 +4,35 @@ const R='REVIEW 3 · FINAL';
 
 T.cover(p,{eyebrow:'REVIEW 3 — FINAL DEFENCE', title:'PDFSentry',
   subtitle:'Explainable, Drift-Resilient Static Detection of Malicious PDF Files',
+  tagline:'Reachability over recognition — reading what a PDF will do, not just what it contains.',
   team:['Alok Singh  23BCI0158','Mrinali Charhate  23BCI0073','Aarya Ashish Nagvekar  23BCI0061'],
   guide:'BCSE321L — Malware Analysis · Vellore Institute of Technology'});
 
-T.bullets(p,{title:'The problem, in one slide',right:R,bullets:[
+T.bullets(p,{title:'The problem, in one slide',right:R,eb:'MOTIVATION',bullets:[
   ['The gap','EMBER2024, a state-of-the-art PDF detector, drops from PR-AUC 0.9933 (ordinary) to 0.7864 (evasive) on its own challenge set.'],
-  ['Why','It reads byte and string statistics — it is blind to structure and auto-execution.'],
+  ['Why','It reads byte and string statistics — it is structurally blind to auto-execution.'],
   ['Cost','355 of 805 real evasive PDFs slip through — exactly the malware that already beat antivirus.'],
   ['Our idea','Recognition asks “does this look like malware?”  Reachability asks “can an auto-trigger reach a dangerous action?”'],
 ],lede:'Great benchmark numbers hide a blind spot on the malware that matters most.',
   img:A+'dash_overview.jpg',imgW:5.0,imgY:3.3,caption:'Reproduced in the live dashboard'});
 
-T.imageSlide(p,{title:'Final methodology',right:R,img:A+'arch.png',ratio:0.317,
-  caption:'The PDFSentry pipeline — static throughout; the fusion node combines structural reachability with the EMBER score.'});
+T.imageSlide(p,{title:'Final methodology',right:R,eb:'METHODOLOGY',img:A+'arch.png',ratio:0.317,
+  caption:'The PDFSentry pipeline — static throughout; the fusion node combines structural reachability with the EMBER score into a typed, witnessed verdict.'});
 
-T.numbered(p,{title:'Three pillars of the result',right:R,items:[
+T.numbered(p,{title:'Reachability verdict taxonomy',right:R,eb:'TAXONOMY',items:[
+  ['ABSENT','No dangerous capability present in the document at all.'],
+  ['PRESENT_DORMANT','A dangerous capability exists but no trigger can reach it — inert.'],
+  ['ACTIVE_ONINTERACT','Reachable only on user interaction (e.g. a clickable link) — a capability, not an auto-threat.'],
+  ['ACTIVE_ONOPEN','A dangerous action auto-fires on open — the threat class we are built to catch.'],
+],card:{head:'CAPABILITY ≠ INTENT',body:'The four states are what let PDFSentry separate a benign clickable link from a weaponised auto-run payload — and report exactly which it found.',h:4.6},fs:15});
+
+T.numbered(p,{title:'Three pillars of the result',right:R,eb:'RESULTS OVERVIEW',items:[
   ['01 · Detection','Reachability over recognition — fusion lifts controlled ROC-AUC 0.649 → 0.998.'],
   ['02 · Robustness','Semantic stability — verdict invariant to lossless obfuscation (SSI 1.000 vs 0.216).'],
   ['03 · Assurance','Verifiable verdicts — 0/285 false positives, 1-hop witnesses, deterministic, training-free.'],
-],card:{head:'THE ARC',body:'Not one metric, but a complete argument: it works, it holds under attack, and you can verify it by hand.',h:3.2},fs:15});
+],card:{head:'THE ARC',body:'Not one metric, but a complete argument: it works, it holds under attack, and you can verify it by hand.',h:3.3},fs:15});
 
-T.chartSlide(p,{title:'Pillar 01 · Detection',right:R,
+T.chartSlide(p,{title:'Pillar 01 · Detection',right:R,eb:'DETECTION',
   lede:'On controlled structural evasions, EMBER alone is near-blind; adding reachability makes it near-perfect.',
   type:CT.bar,legend:false,
   data:[{name:'ROC-AUC',labels:['EMBER score alone','EMBER + reachability'],values:[0.649,0.998]}],
@@ -32,7 +40,7 @@ T.chartSlide(p,{title:'Pillar 01 · Detection',right:R,
     showValue:true,dataLabelPosition:'outEnd',dataLabelColor:C.GRAPH,dataLabelFontFace:'Calibri',dataLabelFontSize:12,dataLabelFormatCode:'0.000'},
   stats:[['+0.349','ROC-AUC from the structural signal',C.TEAL],['100%','reachability recall on reachable threats',C.INK],['0','false positives on 285 benign',C.INK]]});
 
-T.chartSlide(p,{title:'Pillar 02 · Robustness',right:R,
+T.chartSlide(p,{title:'Pillar 02 · Robustness',right:R,eb:'ROBUSTNESS',
   lede:'Same malicious behaviour, eight lossless re-saves. EMBER’s score swings across the scale; reachability never moves.',
   type:CT.bar,legend:false,
   data:[{name:'EMBER score',labels:['baseline','recompress','decompress','objstm+','objstm−','normalize','linearize','encrypt'],
@@ -41,21 +49,22 @@ T.chartSlide(p,{title:'Pillar 02 · Robustness',right:R,
     valAxisMinVal:0,valAxisMaxVal:1,showValue:true,dataLabelPosition:'outEnd',dataLabelColor:C.GRAPH,dataLabelFontFace:'Calibri',dataLabelFontSize:9,dataLabelFormatCode:'0.00'},
   stats:[['78.4%','of docs get BOTH EMBER verdicts',C.RED],['1.000','reachability stability index',C.TEAL],['0.216','EMBER stability index',C.AMBER]]});
 
-T.imageSlide(p,{title:'Pillar 03 · Assurance',right:R,img:A+'dash_assurance.jpg',ratio:0.573,notes:[
+T.imageSlide(p,{title:'Pillar 03 · Assurance',right:R,eb:'ASSURANCE',img:A+'dash_assurance.jpg',ratio:0.573,notes:[
   ['Certificate','Every alarm ships a minimal witness: catalog → trigger → dangerous node.'],
   ['0 / 285','false positives on the benign corpus (auto-exec gate).'],
   ['Deterministic','identical verdict + path over repeated runs; no training data.'],
   ['Fast','~1.2 ms median per document — gateway-deployable.'],
 ]});
 
-T.bullets(p,{title:'Malware characteristics',right:R,bullets:[
+T.bullets(p,{title:'Malware characteristics',right:R,eb:'CHARACTERISTICS',bullets:[
   ['Auto-execution','A dangerous action (JavaScript, Launch, EmbeddedFile) wired to fire on open via /OpenAction, /AA or /Names.'],
   ['Concealment','The payload hidden inside a compressed object stream — present in behaviour, invisible to a token count.'],
   ['Byte camouflage','Elevated /FlateDecode and entropy make the file read as “just compressed” to a statistical model.'],
   ['Indirection','Action chains (GoTo → Next) reach the payload at depth, defeating shallow pattern checks.'],
-],lede:'What evasive PDFs do to survive: automate, conceal, and camouflage as ordinary compression.'});
+],lede:'What evasive PDFs do to survive: automate, conceal, and camouflage as ordinary compression.',
+  metrics:[['entropy > 7.9','byte camouflage',C.INK],['naive = 0','hidden auto-run payload',C.RED],['depth','chained indirection',C.INK]]});
 
-T.bullets(p,{title:'Indicators of Compromise (IoCs)',right:R,bullets:[
+T.bullets(p,{title:'Indicators of Compromise (IoCs)',right:R,eb:'IOCs',bullets:[
   ['Reachable auto-trigger','/OpenAction | /AA | /Names/JavaScript with a path to /JS, /Launch or /EmbeddedFile → ACTIVE_ONOPEN.'],
   ['Hidden-gap signature','An ACTIVE capability whose naive token count is 0 — a contradiction only concealment produces.'],
   ['Object-stream hiding','JavaScript wrapped in an ObjStm; /FlateDecode count far above the benign median (≈ 12 vs 7).'],
@@ -63,7 +72,7 @@ T.bullets(p,{title:'Indicators of Compromise (IoCs)',right:R,bullets:[
   ['Deep action chains','GoTo → Next sequences terminating at a dangerous node.'],
 ],lede:'Structural, checkable indicators — each maps to a reachability feature, not a fragile byte signature.'});
 
-T.tableSlide(p,{title:'Comparison / results',right:R,
+T.tableSlide(p,{title:'Comparison / results',right:R,eb:'COMPARISON',
   headers:['Property','EMBER2024','Hidost','PDFSentry'],highlightCol:3,
   rows:[
    ['Reads what the file DOES','No (bytes/strings)','Partial (static paths)','Yes (reachability)'],
@@ -71,21 +80,22 @@ T.tableSlide(p,{title:'Comparison / results',right:R,
    ['Obfuscation-invariant','No — SSI 0.22','Not reported','Yes — SSI 1.00'],
    ['Cost to evade','Free re-save','Low–medium','Must disarm payload'],
    ['Training data needed','Yes','Yes','No (deterministic)'],
-  ],note:'Honest scope: the 0.78 EMBER benchmark is NOT improved (no raw evasive files to retrain). The 0.998 is a controlled result that isolates the mechanism.'});
+  ],lede:'PDFSentry against the byte-ML baseline and a classic structural-path detector.',
+  note:'Honest scope: the 0.78 EMBER benchmark is NOT improved (no raw evasive files to retrain). The 0.998 is a controlled result that isolates the mechanism.'});
 
-T.bullets(p,{title:'Honest scope & limitations',right:R,bullets:[
+T.bullets(p,{title:'Honest scope & limitations',right:R,eb:'LIMITATIONS',bullets:[
   ['Benchmark not beaten','We did NOT raise EMBER’s 0.78 evasive score — retraining needs raw evasive PDFs we could not obtain.'],
   ['Controlled mechanism','The 0.998 fusion is on controlled weaponized twins; it isolates the signal, it is not a benchmark claim.'],
   ['Capability ≠ intent','Reachability flags a reachable dangerous capability; a benign PDF that genuinely auto-runs JS would be flagged too.'],
   ['Static only','No dynamic cross-validation — by design, for safety and reproducibility.'],
 ],lede:'Stated plainly so the contribution is credible: what is proven, and what is projected.'});
 
-T.bullets(p,{title:'Conclusion & future work',right:R,bullets:[
+T.bullets(p,{title:'Conclusion & future work',right:R,eb:'CONCLUSION',bullets:[
   ['New idea, built','Reachability over recognition — a static detector that reads what a PDF will do, not just what it contains.'],
   ['Three results','Detection (0.649→0.998 controlled), Robustness (SSI 1.000 vs 0.216), Assurance (0/285 FP, verifiable).'],
-  ['Next · raw evasive','Retrain a reachability-augmented model on raw evasive PDFs to test the 0.78 directly.'],
+  ['Next · raw evasive','Retrain a reachability-augmented model on raw evasive PDFs to test the 0.78 benchmark directly.'],
   ['Next · deploy','~1.2 ms/file makes an email / browser gateway pre-filter realistic; extend to Office OOXML.'],
-]});
+],metrics:[['0.998','detection (controlled ROC-AUC)',C.TEAL],['1.000','robustness (stability index)',C.TEAL],['0 / 285','assurance (false positives)',C.TEAL]]});
 
 T.closing(p,{eyebrow:'PROJECT DEMONSTRATION',title:'Detection. Robustness. Assurance.',
   lines:['Live dashboard — 11 interactive views, every number traceable.','GitHub — full code, scripts, tests and stored artifacts.','Static throughout — nothing is ever executed.'],
