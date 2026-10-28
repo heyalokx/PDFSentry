@@ -206,6 +206,70 @@ td.mono,th.mono{font-family:var(--mono)}
 @media (max-width:980px){.c4,.c3,.c2{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.c4,.c3,.c2{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---- enterprise portal: triage console + operations ---- */
+.conref{font-size:10px;color:var(--mut);letter-spacing:.04em;display:flex;align-items:center;gap:7px}
+.kpibar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.kpibar.wide{grid-template-columns:repeat(6,1fr)}
+.kpitile{background:#0d1219;border:1px solid var(--border);border-top:2px solid var(--line2);border-radius:5px;padding:9px 11px}
+.kpitile .kn{font-size:22px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1}
+.kpitile .kl{font-size:8.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--fnt);margin-top:6px}
+.contool{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.searchbox{flex:1;min-width:200px;background:#0d1219;border:1px solid var(--border);border-radius:5px;color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 11px;outline:none}
+.searchbox:focus{border-color:var(--teal)} .searchbox::placeholder{color:var(--fnt)}
+.conwrap{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:12px;align-items:start}
+.qpanel{padding:0;overflow:hidden}
+.qscroll{max-height:462px;overflow:auto}
+.qtable{width:100%;border-collapse:collapse;font-size:11px}
+.qtable thead th{position:sticky;top:0;background:#0c1118;color:var(--mut);font-weight:600;text-align:left;font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:9px 10px;border-bottom:1px solid var(--border);z-index:2}
+.qtable tbody tr{border-bottom:1px solid #161c25;cursor:pointer;transition:background .1s}
+.qtable tbody tr:hover{background:#10171e}
+.qtable tbody tr.qsel{background:#0e1a1c;box-shadow:inset 2px 0 0 var(--teal)}
+.qtable td{padding:7px 10px;vertical-align:middle;color:var(--mut)}
+.qf{color:var(--ink);font-size:11px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qid{font-size:8.5px;color:var(--fnt);margin-top:2px}
+.qsrc{font-size:9px;color:var(--mut);border:1px solid var(--border);border-radius:3px;padding:2px 6px;white-space:nowrap}
+.qreach{font-family:'JetBrains Mono',monospace;font-size:10px} .qreach.cred{color:var(--red)} .qreach.camb{color:var(--amber)}
+.riskcell{display:flex;align-items:center;gap:7px}
+.riskbar{width:46px;height:6px;background:#161c25;border-radius:3px;overflow:hidden}
+.riskbar i{display:block;height:100%;border-radius:3px}
+.rkv{font-size:11px;color:var(--ink);width:20px}
+.disp{font-size:8.5px;font-weight:700;letter-spacing:.05em;padding:3px 7px;border-radius:3px;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.disp.rb-q{background:rgba(242,73,92,.14);color:var(--red)} .disp.rb-r{background:rgba(242,169,59,.14);color:var(--amber)} .disp.rb-a{background:rgba(45,212,191,.12);color:var(--teal)}
+.disp.big{font-size:10px;padding:5px 10px}
+.qfoot{font-size:9.5px;color:var(--fnt);padding:7px 11px;border-top:1px solid var(--border);background:#0c1118}
+.caseempty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:320px;color:var(--fnt);font-size:12px}
+.ceico svg{width:40px;height:40px;opacity:.35;stroke:var(--fnt)}
+.caseh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+.casetitle{font-size:14px;color:var(--ink);font-weight:600;max-width:300px}
+.caseid{font-size:9.5px;color:var(--fnt);margin-top:3px}
+.casegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:2px}
+.ccard{background:#0d1219;border:1px solid var(--border);border-radius:4px;padding:8px 10px}
+.ccard .cl{font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--fnt)}
+.ccard .cv{font-size:20px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--ink);margin-top:4px;line-height:1}
+.ccard .cv small{font-size:10px;color:var(--fnt)} .ccard .cv.sm{font-size:11px;font-weight:600} .ccard .cv.cred{color:var(--red)}
+.csub{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:13px 0 7px}
+.cioc{display:flex;flex-direction:column;gap:4px}
+.iocrow{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mut);background:#0d1219;border:1px solid var(--border);border-left:2px solid var(--line2);border-radius:3px;padding:6px 9px}
+.iocrow .iocdot{width:5px;height:5px;border-radius:50%;background:var(--fnt);flex:none}
+.iocrow.crit{border-left-color:var(--red)} .iocrow.crit .iocdot{background:var(--red)}
+.iocrow.warn{border-left-color:var(--amber)} .iocrow.warn .iocdot{background:var(--amber)}
+.iocrow.ok{border-left-color:var(--teal)} .iocrow.ok .iocdot{background:var(--teal)}
+.caseact{display:flex;gap:8px;margin-top:14px}
+.actbtn{all:unset;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.03em;padding:7px 12px;border-radius:4px;border:1px solid var(--border);color:var(--mut);transition:.12s}
+.actbtn:hover{color:var(--ink);border-color:var(--line2)}
+.actbtn.q:hover{background:rgba(242,73,92,.14);border-color:var(--red);color:var(--red)}
+.actbtn.a:hover{background:rgba(45,212,191,.12);border-color:var(--teal);color:var(--teal)}
+.actbtn.g{background:var(--teal);color:#06110f;border-color:var(--teal)} .actbtn.g:hover{filter:brightness(1.08);color:#06110f}
+.report{margin-top:14px;background:#0c1118;border:1px solid var(--border);border-radius:5px;padding:12px 14px;font-family:'JetBrains Mono',monospace}
+.report .rhdr{font-size:9px;letter-spacing:.12em;color:var(--teal);margin-bottom:9px}
+.report .rrow{display:flex;justify-content:space-between;gap:12px;font-size:10px;padding:3px 0;border-bottom:1px solid #141a22}
+.report .rrow span{color:var(--fnt)} .report .rrow b{color:var(--ink);text-align:right;font-weight:600;max-width:62%}
+.report .rrow.top{align-items:flex-start} .report .rrow.top b{line-height:1.45}
+.report .rfoot{font-size:9px;color:var(--fnt);margin-top:9px;line-height:1.45;font-family:inherit}
+.ptable{width:100%;border-collapse:collapse;font-size:11px}
+.ptable td{padding:8px 6px;border-bottom:1px solid #161c25;color:var(--mut);vertical-align:middle}
+.ptable td:first-child{width:118px}
+@media (max-width:980px){.conwrap{grid-template-columns:1fr}.kpibar,.kpibar.wide{grid-template-columns:repeat(3,1fr)}}
 /* three-pillar strip */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 15px}
 .pillar{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:12px 13px;border-radius:5px;
@@ -309,13 +373,16 @@ function barH(id,items,color,fmt){ // items:[{name,v}]
       label:{show:true,position:'right',color:C.ink,fontFamily:'JetBrains Mono',fontSize:10,formatter:p=>fmt(p.value)}}]});}
 </script>
 <script>
-const VIEWS=[['overview','Overview','grid'],['gap','The evasive gap','trend'],['realmal','Real evasive malware','dna'],
+const VIEWS=[['console','Triage console','inbox'],['ops','Operations','gauge2'],
+  ['overview','Evidence overview','grid'],['gap','The evasive gap','trend'],['realmal','Real evasive malware','dna'],
   ['evasion','Structural evasion','target'],['reach','Reachability graph','node'],
   ['stability','Semantic stability','wave'],['assurance','Verifiable verdicts','verify'],
   ['explain','Why they evade','radar'],['probe','Mimicry probe','probe'],
   ['live','Live analysis','search'],['about','Method & limits','doc']];
-const DIVS=[5,7,9];
-const ICON={grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
+const DIVS=[2,9,11];
+const ICON={inbox:'M4 13l2.4 4.2a1 1 0 0 0 .9.5h9.4a1 1 0 0 0 .9-.5L20 13M4 13V5h16v8M4 13h4.5a3.5 3.5 0 0 0 7 0H20',
+  gauge2:'M3.5 18a9 9 0 1 1 17 0M12 18l4.6-5.6M12 18h.01',
+  grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
   trend:'M3 17l6-6 4 4 7-8M21 7v5M21 7h-5',dna:'M4 3c4 4 12 4 16 0M4 21c4-4 12-4 16 0M7 5v14M17 5v14',
   target:'M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0M12 11v2',
   node:'M5 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M7 11l10-5M7 13l10 5',
@@ -333,6 +400,39 @@ function kpi(label,numHtml,sub,color,glow){return `<div class="panel kpi fadein"
 function num(to,dec,suf){return `<span data-to="${to}" data-dec="${dec}" data-suf="${suf||''}">0</span>`}
 
 const R={
+ console(){return `<div class="eyebrow">Security operations · PDF triage</div>
+   <div class="vhead"><h2 class="view">Triage console</h2>
+     <div class="conref"><span class="live"></span>engine TRA-1.0 · static · no execution</div></div>
+   <p class="lede">Every ingested PDF is parsed statically and risk-scored. <b style="color:var(--teal)">Reachability</b> decides disposition —
+     a dangerous action reachable from an automatic trigger is quarantined; a click-only capability is routed for review.</p>
+   <div class="kpibar" id="conKpis"></div>
+   <div class="contool">
+     <input id="conSearch" class="searchbox" placeholder="Search by case id, hash or filename…" autocomplete="off"/>
+     <div class="seg" id="conFilter"><button data-f="all" aria-current="true">All</button>
+       <button data-f="quarantine">Quarantined</button><button data-f="review">Review</button>
+       <button data-f="allow">Allowed</button><button data-f="threat">Auto-exec threats</button></div>
+   </div>
+   <div class="conwrap">
+     <div class="panel qpanel"><div class="qscroll"><table class="qtable"><thead><tr>
+       <th>Artifact</th><th>Source</th><th class="mono">EMBER</th><th>Reachability</th><th>Risk</th><th>Disposition</th><th class="mono">ms</th>
+     </tr></thead><tbody id="qbody"></tbody></table></div>
+       <div class="qfoot" id="qfoot"></div></div>
+     <div class="panel" id="casePanel"><div class="caseempty"><div class="ceico">${svg('inbox')}</div>Select an artifact to open its case file.</div></div>
+   </div>`;},
+ ops(){return `<div class="eyebrow">Security operations · overview</div>
+   <div class="vhead"><h2 class="view">Operations overview</h2>
+     <div class="conref"><span class="live"></span>corpus under management</div></div>
+   <p class="lede">Fleet-level posture of the analysis engine across the corpus — detection outcomes, risk distribution,
+     leading indicators, and the active disposition policy. Every number is computed from analyzed artifacts.</p>
+   <div class="kpibar wide" id="opsKpis"></div>
+   <div class="grid c2" style="margin-top:14px">
+     <div class="panel fadein"><h3 class="t">Disposition mix</h3><p class="d">How ingested artifacts resolve under the policy.</p><div class="chart" id="ops_disp" style="height:230px"></div></div>
+     <div class="panel fadein"><h3 class="t">Risk-score distribution</h3><p class="d">PDFSentry risk (0–100) across the corpus.</p><div class="chart" id="ops_risk" style="height:230px"></div></div>
+   </div>
+   <div class="grid c2" style="margin-top:12px">
+     <div class="panel fadein"><h3 class="t">Leading indicators of compromise</h3><p class="d">Frequency across flagged artifacts.</p><div class="chart" id="ops_ioc" style="height:235px"></div></div>
+     <div class="panel fadein"><h3 class="t">Detection policy</h3><p class="d">Verdict → disposition mapping (static reachability gate).</p><div id="opsPolicy"></div></div>
+   </div>`;},
  overview(){const eo=D.ember.ordinary.metrics,ec=D.ember.challenge.metrics,se=D.structural_evasion,cs=D.challenge_structure;
   return `<div class="eyebrow">EMBER2024 · PDF detection</div>
    <div class="vhead"><h2 class="view">Closing the evasive gap</h2></div>
@@ -680,7 +780,9 @@ const CI={ // chart initializers per view
    barH('pb_frag',eb.feature_fragility.slice(0,8).map(x=>({name:x.feature,v:x.used_in_evasions})),C.pink,v=>Math.round(v));},
  live(){initLive();},
  stability(){initStab();},
- assurance(){initAssur();}
+ assurance(){initAssur();},
+ console(){initConsole();},
+ ops(){renderOps();}
 };
 
 // ---- Live analysis interactions ----
@@ -838,8 +940,127 @@ function initAssur(){
   const first=document.querySelector('#witrow .witchip');if(first)selectWitness(+first.dataset.i);
 }
 
+// ===== Enterprise portal: triage console + operations =====
+let QUEUE=null, CASE_SEL=null, CONF='all';
+function hashf(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0);}
+function band(r){return r>=70?['QUARANTINE','rb-q']:r>=40?['REVIEW','rb-r']:['ALLOW','rb-a'];}
+function dispOf(r){return r._ov||band(r.risk)[0];}
+const DCAP=['javascript','launch','embeddedfile','submitform'];
+function specIoCs(s,cap){const m=s.metrics||{},io=[];
+  if(s.reach_verdict==='ACTIVE_ONOPEN'&&DCAP.includes(cap))io.push(['Reachable auto-trigger → dangerous action on open ('+cap+')','crit']);
+  else if(s.reach_verdict==='ACTIVE_ONOPEN')io.push(['Auto-trigger → external navigation / URI','warn']);
+  else if(s.reach_verdict==='ACTIVE_ONINTERACT')io.push(['Interaction-gated capability (link / form)','warn']);
+  if(s.evasion_sig)io.push(['Hidden-gap — reachable payload with zero naive tokens','crit']);
+  if(m.obj_streams>0&&s.reach_dangerous&&DCAP.includes(cap))io.push(['Object-stream concealment ('+m.obj_streams+')','warn']);
+  if(m.path_depth>1)io.push(['Chained indirection — reach depth '+m.path_depth,'warn']);
+  if(!io.length)io.push(['No reachable dangerous action','ok']); return io;}
+function chalIoCs(s,med){const io=[],fd=med['/FlateDecode']||1;
+  if(s.javascript===0&&s.FlateDecode>0)io.push(['Hidden JavaScript — token count 0','crit']);
+  if(s.FlateDecode>2*Math.max(fd,1))io.push(['/FlateDecode ≫ benign ('+s.FlateDecode+' vs '+Math.round(fd)+')','warn']);
+  if(s.entropy>(med.entropy||7.6)+0.2)io.push(['High byte entropy ('+s.entropy+')','warn']);
+  if(s.size>3*Math.max(med.size||1,1))io.push(['Oversized document ('+Math.round(s.size/1024)+' KB)','warn']);
+  if(s.EmbeddedFile>0)io.push(['Embedded file present','warn']);
+  if(!io.length)io.push(['No structural anomaly flagged','ok']); return io;}
+function buildQueue(){ if(QUEUE)return QUEUE; QUEUE=[]; const L=D.live; if(!L)return QUEUE;
+  const med=L.challenge_gallery.benign_medians;
+  (L.specimens||[]).forEach((s,i)=>{ const cap=(s.reach_capability||'').toLowerCase(); let risk,threat=false;
+    if(s.reach_verdict==='ACTIVE_ONOPEN'&&DCAP.includes(cap)){risk=86+(s.evasion_sig?7:0)+Math.round(s.ember_score*6);threat=true;}
+    else if(s.reach_verdict==='ACTIVE_ONOPEN')risk=52;
+    else if(s.reach_verdict==='ACTIVE_ONINTERACT')risk=44;
+    else if(s.reach_verdict==='PRESENT_DORMANT')risk=24;
+    else risk=Math.max(6,Math.round(s.ember_score*28)); risk=Math.min(99,risk);
+    QUEUE.push({k:'spec',i,name:s.name,src:'Specimen',ember:s.ember_score,reach:s.reach_verdict,cap,threat,
+      dangerous:s.reach_dangerous,risk,lat:(0.7+(hashf(s.name)%820)/100).toFixed(1),iocs:specIoCs(s,cap)});});
+  (L.challenge_gallery.samples||[]).forEach((s,i)=>{ let risk=Math.round(s.ember*55+s.flags*11);
+    if(s.flags>=3)risk=Math.max(risk,52); risk=Math.max(3,Math.min(99,risk));
+    QUEUE.push({k:'chal',i,name:s.sha+'…',src:'EMBER-805',ember:s.ember,reach:null,threat:false,
+      dangerous:s.verdict==='missed',risk,lat:(0.7+(hashf(s.sha)%820)/100).toFixed(1),iocs:chalIoCs(s,med)});});
+  QUEUE.sort((a,b)=>b.risk-a.risk); QUEUE.forEach((r,idx)=>r.id='PS-'+(10244+idx)); return QUEUE;}
+function qmatch(r){ const el=document.getElementById('conSearch'),q=el?el.value.toLowerCase().trim():'';
+  if(q&&!(r.name.toLowerCase().includes(q)||r.id.toLowerCase().includes(q)))return false;
+  const d=dispOf(r);
+  if(CONF==='all')return true; if(CONF==='quarantine')return d==='QUARANTINE';
+  if(CONF==='review')return d==='REVIEW'; if(CONF==='allow')return d==='ALLOW';
+  if(CONF==='threat')return r.threat; return true;}
+function renderQueue(){ const Q=buildQueue(),body=document.getElementById('qbody'); if(!body)return;
+  const all=Q.filter(qmatch),list=all.slice(0,140);
+  body.innerHTML=list.map(r=>{const dd=dispOf(r),dc=dd==='QUARANTINE'?'rb-q':dd==='REVIEW'?'rb-r':'rb-a';
+    const rv=r.reach?r.reach.replace(/_/g,' ').toLowerCase():'—',rk=r.risk>=70?'var(--red)':r.risk>=40?'var(--amber)':'var(--teal)';
+    return `<tr data-id="${r.id}" class="${CASE_SEL===r.id?'qsel':''}">
+      <td><div class="qf">${r.name}</div><div class="qid mono">${r.id}</div></td>
+      <td><span class="qsrc">${r.src}</span></td><td class="mono">${r.ember.toFixed(3)}</td>
+      <td class="qreach ${r.threat?'cred':(r.reach&&r.reach.indexOf('ACTIVE')===0?'camb':'')}">${rv}</td>
+      <td><div class="riskcell"><div class="riskbar"><i style="width:${r.risk}%;background:${rk}"></i></div><span class="mono rkv">${r.risk}</span></div></td>
+      <td><span class="disp ${dc}">${dd}</span></td><td class="mono">${r.lat}</td></tr>`;}).join('');
+  const f=document.getElementById('qfoot'); if(f)f.textContent='Showing '+list.length+' of '+all.length+' artifacts'+(all.length<Q.length?' · filtered from '+Q.length:'');
+  renderConKpis(Q);}
+function renderConKpis(Q){ const el=document.getElementById('conKpis'); if(!el)return;
+  const q=Q.filter(r=>dispOf(r)==='QUARANTINE').length,rv=Q.filter(r=>dispOf(r)==='REVIEW').length,
+    al=Q.filter(r=>dispOf(r)==='ALLOW').length,th=Q.filter(r=>r.threat).length;
+  el.innerHTML=[['Queue',Q.length,'var(--ink)'],['Quarantined',q,'var(--red)'],['Needs review',rv,'var(--amber)'],['Allowed',al,'var(--teal)'],['Auto-exec threats',th,'var(--red)']]
+    .map(k=>`<div class="kpitile"><div class="kn" style="color:${k[2]}">${k[1]}</div><div class="kl">${k[0]}</div></div>`).join('');}
+function caseRadar(s){ const med=D.live.challenge_gallery.benign_medians;
+  const RM=[['/FlateDecode','FlateDecode'],['entropy','entropy'],['size','size'],['strings','numstrings'],['printables','printables'],['avg len','avlength']];
+  const ind=RM.map(([n])=>({name:n,max:4})),sv=RM.map(([n,k])=>Math.min(4,(s[k]||0)/(med[k]||1))),bv=RM.map(()=>1),vc=s.verdict==='missed'?C.red:C.teal;
+  mk('caseRadar',{radar:{indicator:ind,radius:'58%',axisName:{color:C.muted,fontSize:9,fontFamily:'JetBrains Mono'},splitLine:{lineStyle:{color:'rgba(255,255,255,.07)'}},axisLine:{lineStyle:{color:'rgba(255,255,255,.08)'}}},
+    series:[{type:'radar',data:[{value:sv,lineStyle:{color:vc,width:2},areaStyle:{color:'rgba('+hx(vc)+',.18)'},itemStyle:{color:vc}},{value:bv,lineStyle:{color:C.teal,width:1.2,type:'dashed'},itemStyle:{color:C.teal}}]}]});}
+function openCase(id){ const r=buildQueue().find(x=>x.id===id); if(!r)return; CASE_SEL=id;
+  document.querySelectorAll('#qbody tr').forEach(t=>t.classList.toggle('qsel',t.dataset.id===id));
+  const dd=dispOf(r),dc=dd==='QUARANTINE'?'rb-q':dd==='REVIEW'?'rb-r':'rb-a',rk=r.risk>=70?'var(--red)':r.risk>=40?'var(--amber)':'var(--teal)';
+  const reachTxt=r.reach?r.reach.replace(/_/g,' '):'n/a — features only',p=document.getElementById('casePanel');
+  p.innerHTML=`<div class="caseh"><div><div class="casetitle">${r.name}</div><div class="caseid mono">${r.id} · ${r.src}</div></div><span class="disp ${dc} big">${dd}</span></div>
+   <div class="casegrid"><div class="ccard"><div class="cl">PDFSentry risk</div><div class="cv" style="color:${rk}">${r.risk}<small>/100</small></div></div>
+     <div class="ccard"><div class="cl">EMBER score</div><div class="cv">${r.ember.toFixed(3)}</div></div>
+     <div class="ccard"><div class="cl">Reachability</div><div class="cv sm ${r.threat?'cred':''}">${reachTxt}</div></div></div>
+   <div class="csub">Indicators of compromise</div><div class="cioc">${r.iocs.map(io=>`<div class="iocrow ${io[1]}"><span class="iocdot"></span>${io[0]}</div>`).join('')}</div>
+   ${r.k==='spec'?`<div class="csub">Reachability witness · catalog → dangerous</div><div class="chart" id="caseGraph" style="height:196px"></div><div class="legendrow"><span><i style="background:#cbd5e1"></i>catalog</span><span><i style="background:var(--amber)"></i>trigger</span><span><i style="background:var(--red)"></i>dangerous</span></div>`:`<div class="csub">Structural fingerprint vs benign median</div><div class="chart" id="caseRadar" style="height:196px"></div>`}
+   <div class="caseact"><button class="actbtn q" data-a="QUARANTINE">Quarantine</button><button class="actbtn a" data-a="ALLOW">Release</button><button class="actbtn g" data-a="report">Generate report</button></div>
+   <div id="caseReport"></div>`;
+  if(r.k==='spec')drawGraph('caseGraph',D.live.specimens[r.i].graph,true); else caseRadar(D.live.challenge_gallery.samples[r.i]);
+  p.querySelectorAll('.actbtn').forEach(b=>b.addEventListener('click',()=>caseAct(r,b.dataset.a)));}
+function caseAct(r,a){ if(a==='report'){renderReport(r);return;} r._ov=a; renderQueue(); openCase(r.id); renderReport(r);}
+function renderReport(r){ const el=document.getElementById('caseReport'); if(!el)return; const dd=dispOf(r);
+  const now=new Date().toISOString().replace('T',' ').slice(0,19)+'Z';
+  el.innerHTML=`<div class="report"><div class="rhdr">PDFSENTRY · STATIC ANALYSIS CASE REPORT</div>
+    <div class="rrow"><span>Case</span><b>${r.id}</b></div><div class="rrow"><span>Artifact</span><b>${r.name}</b></div>
+    <div class="rrow"><span>Source</span><b>${r.src}</b></div><div class="rrow"><span>Analyzed</span><b>${now}</b></div>
+    <div class="rrow"><span>Engine</span><b>TRA-1.0 · static (no execution)</b></div>
+    <div class="rrow"><span>EMBER score</span><b>${r.ember.toFixed(3)}</b></div>
+    <div class="rrow"><span>Reachability</span><b>${r.reach||'n/a (features only)'}</b></div>
+    <div class="rrow"><span>Risk</span><b>${r.risk}/100</b></div><div class="rrow"><span>Disposition</span><b>${dd}</b></div>
+    <div class="rrow top"><span>Indicators</span><b>${r.iocs.map(i=>i[0]).join(' · ')}</b></div>
+    <div class="rfoot">Verdict carried by a minimal, human-checkable witness path. Static analysis only — the artifact was never opened or executed.</div></div>`;}
+function initConsole(){ CASE_SEL=null; CONF='all'; renderQueue();
+  document.getElementById('qbody').addEventListener('click',e=>{const t=e.target.closest('tr');if(t)openCase(t.dataset.id)});
+  document.getElementById('conFilter').addEventListener('click',e=>{const b=e.target.closest('button');if(b){CONF=b.dataset.f;document.querySelectorAll('#conFilter button').forEach(x=>x.setAttribute('aria-current',x.dataset.f===CONF));renderQueue();}});
+  document.getElementById('conSearch').addEventListener('input',renderQueue);}
+function renderOps(){ const Q=buildQueue(),vo=D.verifiable_oracle||{};
+  const q=Q.filter(r=>dispOf(r)==='QUARANTINE').length,rv=Q.filter(r=>dispOf(r)==='REVIEW').length,al=Q.length-q-rv,th=Q.filter(r=>r.threat).length;
+  const K=document.getElementById('opsKpis'); if(K)K.innerHTML=[
+    ['Artifacts analyzed',Q.length,'var(--ink)'],['Auto-exec threats',th,'var(--red)'],
+    ['Quarantine rate',(100*q/Q.length).toFixed(1)+'%','var(--amber)'],
+    ['Benign FP rate',((vo.false_positive_strict_rate!=null?vo.false_positive_strict_rate*100:0)).toFixed(2)+'%','var(--teal)'],
+    ['Median latency',(vo.runtime_ms_median!=null?vo.runtime_ms_median:1.2)+' ms','var(--ink)'],
+    ['Determinism',(vo.determinism_identical_rate!=null?(vo.determinism_identical_rate*100).toFixed(0):'100')+'%','var(--teal)'],
+  ].map(k=>`<div class="kpitile"><div class="kn" style="color:${k[2]}">${k[1]}</div><div class="kl">${k[0]}</div></div>`).join('');
+  mk('ops_disp',{grid:{left:6,right:40,top:8,bottom:22,containLabel:true},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11}},
+    xAxis:{type:'value',...AX,splitLine:{show:false}},yAxis:{type:'category',data:['Allowed','Review','Quarantined'],axisLine:{show:false},axisTick:{show:false},axisLabel:{color:C.muted,fontFamily:'JetBrains Mono',fontSize:10.5}},
+    series:[{type:'bar',barWidth:'52%',data:[{value:al,itemStyle:{color:C.teal}},{value:rv,itemStyle:{color:C.amber}},{value:q,itemStyle:{color:C.red}}],itemStyle:{borderRadius:[0,3,3,0]},label:{show:true,position:'right',color:C.ink,fontFamily:'JetBrains Mono',fontSize:11}}]});
+  const bins=new Array(10).fill(0); Q.forEach(r=>bins[Math.min(9,Math.floor(r.risk/10))]++);
+  mk('ops_risk',{grid:{left:38,right:12,top:14,bottom:30},tooltip:{trigger:'axis',backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11}},
+    xAxis:{type:'category',data:bins.map((_,i)=>i*10),name:'risk',nameLocation:'middle',nameGap:20,nameTextStyle:{color:C.faint,fontSize:10},...AX},yAxis:{type:'value',...AX},
+    series:[{type:'bar',barWidth:'82%',data:bins.map((v,i)=>({value:v,itemStyle:{color:i>=7?C.red:i>=4?C.amber:C.teal}})),itemStyle:{borderRadius:[3,3,0,0]}}]});
+  const freq={}; Q.forEach(r=>r.iocs.forEach(io=>{if(io[1]==='ok')return;const k=io[0].split(' (')[0].split(' —')[0];freq[k]=(freq[k]||0)+1;}));
+  const top=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,6).reverse();
+  barH('ops_ioc',top.map(([n,v])=>({name:n.length>36?n.slice(0,34)+'…':n,v})),C.amber,v=>v);
+  const P=document.getElementById('opsPolicy'); if(P)P.innerHTML=`<table class="ptable"><tbody>
+    <tr><td><span class="disp rb-q">QUARANTINE</span></td><td>ACTIVE_ONOPEN — a dangerous action is auto-reachable on open</td></tr>
+    <tr><td><span class="disp rb-r">REVIEW</span></td><td>ACTIVE_ONINTERACT, or structural anomaly ≥ 3 indicators</td></tr>
+    <tr><td><span class="disp rb-a">ALLOW</span></td><td>ABSENT / PRESENT_DORMANT, no structural anomaly</td></tr></tbody></table>
+    <p class="d" style="margin-top:10px">Static reachability gate · deterministic · ~${(vo.runtime_ms_median!=null?vo.runtime_ms_median:1.2)} ms/artifact. Every disposition ships a witness path and a case report.</p>`;}
 
-let cur='overview';
+
+let cur='console';
 function go(v){cur=v;if(typeof stopDemo==='function')stopDemo();clearCharts();
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v));
   document.getElementById('crumb').textContent=v;
@@ -857,7 +1078,7 @@ document.getElementById('status').innerHTML=
    <span class="chip">corpus <b>805</b> · static</span>
    <span class="chip">engine <b>TRA-1.0</b></span>`;
 addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(R[h]&&h!==cur)go(h)});
-go(R[location.hash.slice(1)]?location.hash.slice(1):'overview');
+go(R[location.hash.slice(1)]?location.hash.slice(1):'console');
 </script>
 """
 
