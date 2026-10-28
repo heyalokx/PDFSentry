@@ -123,9 +123,9 @@ function tableSlide(p,o){ const s=newslide(p); s.background={path:A+'bg_content.
   if(o.lede) s.addText(o.lede,{x:0.6,y:o.eb?1.95:1.72,w:11.9,h:0.5,isTextBox:true,margin:0,fontFace:BODY,fontSize:15,color:C.GRAPH});
   const rows=[]; const hdr=o.headers.map((h,i)=>({text:h,options:{bold:true,color:'ffffff',fill:{color:C.INK},align:i?'center':'left',fontFace:BODY,fontSize:13,valign:'middle'}}));
   rows.push(hdr);
-  o.rows.forEach((r,ri)=>{ rows.push(r.map((cval,ci)=>{ const hl=(o.highlightCol!=null&&ci===o.highlightCol);
+  o.rows.forEach((r,ri)=>{ const hr=(o.highlightRow===ri); rows.push(r.map((cval,ci)=>{ const hl=(o.highlightCol!=null&&ci===o.highlightCol)||hr;
     return {text:String(cval),options:{color:hl?C.TEAL:(ci===0?C.INK:C.GRAPH),bold:ci===0||hl,align:ci?'center':'left',
-      fill:{color:ri%2? 'ffffff':'f1f3f5'},fontFace:BODY,fontSize:12.5,valign:'middle'}}; })); });
+      fill:{color:hr?'e3f0ed':(ri%2? 'ffffff':'f1f3f5')},fontFace:BODY,fontSize:12,valign:'middle'}}; })); });
   const cw=[3.6]; const rest=(11.9-3.6)/(o.headers.length-1); for(let i=1;i<o.headers.length;i++)cw.push(rest);
   const rh=o.rows.length>5?0.5:0.56;
   s.addTable(rows,{x:0.6,y:o.lede?(o.eb?2.75:2.5):2.15,w:11.9,colW:cw,rowH:rh,border:{type:'solid',color:'dde1e6',pt:0.75},margin:5});
