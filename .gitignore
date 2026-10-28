@@ -32,3 +32,7 @@ deck/test_deck.*
 # Large binary artifacts (regenerable)
 artifacts/**/*.npz
 *.npz
+
+# Local distribution artifact (not part of the project)
+PDFSentry.bundle
+*.bundle
