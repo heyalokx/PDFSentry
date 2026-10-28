@@ -1,12 +1,34 @@
+# Large datasets — not redistributed (see README for sources)
+data/
+
+# Regenerable / large artifacts (dashboard embeds its own copy)
+artifacts/metrics/dashboard_data.json
+artifacts/metrics/live_analysis.json
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
 .venv/
-artifacts/models/*.txt
-artifacts/**/*.npz
-data/raw/*.zip
-*.dat
+venv/
+*.egg-info/
 .pytest_cache/
 
-data/ember/
-data/benign_corpus/
-*.model
+# Node
+node_modules/
+package-lock.json
+
+# Deck build intermediates (keep the .pptx and sources)
+deck/*.pdf
+deck/cons-*.jpg
+deck/r3-*.jpg
+deck/slide-*.jpg
+deck/test_deck.*
+
+# OS / misc
+.DS_Store
+*.log
+
+# Large binary artifacts (regenerable)
+artifacts/**/*.npz
+*.npz

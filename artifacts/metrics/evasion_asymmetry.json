@@ -1,0 +1,232 @@
+{
+  "n_armed_docs": 32,
+  "reachability_deescalates_on_disarm": 0.875,
+  "capability_bytes_remain_after_disarm": 0.0,
+  "interpretation": "EMBER is evaded by a cosmetic lossless re-save that leaves the payload fully functional (see semantic_stability: 78.4%% verdict flips). Reachability can be evaded ONLY by severing the trigger->action path, which removes the dangerous capability itself (ACTIVE->ABSENT in 87.5%% of cases). The asymmetry: evading the byte detector costs nothing; evading reachability costs the attack.",
+  "rows": [
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ABSENT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "openaction",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ACTIVE_ONINTERACT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "names_js",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ACTIVE_ONINTERACT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "page_aa",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ACTIVE_ONINTERACT",
+      "js_bytes_present_after_disarm": false
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "action_chain",
+      "armed": "ACTIVE_ONOPEN",
+      "disarmed": "ACTIVE_ONINTERACT",
+      "js_bytes_present_after_disarm": false
+    }
+  ]
+}

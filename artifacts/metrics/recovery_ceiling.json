@@ -1,0 +1,30 @@
+{
+  "n_evasive": 805,
+  "ember_caught": 450,
+  "ember_missed": 355,
+  "base_recall": 0.5590062111801242,
+  "n_benign": 6000,
+  "rules": [
+    {
+      "threshold": 1,
+      "recovered_of_missed": 352,
+      "recovery_pct": 0.9915492957746479,
+      "combined_recall": 0.9962732919254659,
+      "benign_fp_rate": 0.9753333333333334
+    },
+    {
+      "threshold": 2,
+      "recovered_of_missed": 47,
+      "recovery_pct": 0.1323943661971831,
+      "combined_recall": 0.6173913043478261,
+      "benign_fp_rate": 0.372
+    },
+    {
+      "threshold": 3,
+      "recovered_of_missed": 18,
+      "recovery_pct": 0.05070422535211268,
+      "combined_recall": 0.5813664596273292,
+      "benign_fp_rate": 0.17733333333333334
+    }
+  ]
+}

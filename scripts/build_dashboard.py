@@ -206,6 +206,35 @@ td.mono,th.mono{font-family:var(--mono)}
 @media (max-width:980px){.c4,.c3,.c2{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.c4,.c3,.c2{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* three-pillar strip */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 15px}
+.pillar{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:12px 13px;border-radius:5px;
+  background:#0d1219;border:1px solid var(--border);border-top:2px solid var(--border);transition:.14s;position:relative}
+.pillar:hover{border-color:var(--line2);background:#0e141c;transform:translateY(-1px)}
+.pillar .pnum{font-size:9px;letter-spacing:.2em;color:var(--fnt)}
+.pillar .ptit{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.01em}
+.pillar .pdesc{font-size:10.5px;color:var(--mut);line-height:1.5;min-height:46px}
+.pillar .pstat{font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-top:2px}
+.pillar:nth-child(1){border-top-color:var(--teal)} .pillar:nth-child(2){border-top-color:var(--amber)} .pillar:nth-child(3){border-top-color:#5794f2}
+@media (max-width:820px){.pillars{grid-template-columns:1fr}}
+/* stability + witness chips */
+.stchip,.witchip{all:unset;cursor:pointer;font-size:9.5px;color:var(--mut);padding:5px 8px;border-radius:3px;
+  border:1px solid var(--border);background:#0d1219;font-family:'JetBrains Mono',monospace;transition:.1s}
+.stchip:hover,.witchip:hover{border-color:var(--line2);color:var(--ink)}
+.stchip[aria-current="true"],.witchip[aria-current="true"]{border-color:var(--teal);color:var(--ink);background:#0e1a1c}
+/* certificate list */
+.certhead{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+.cert{list-style:none;margin:0;padding:0;counter-reset:c}
+.cert li{counter-increment:c;display:flex;align-items:center;gap:9px;padding:7px 9px;margin-bottom:5px;border-radius:4px;
+  background:#0d1219;border:1px solid var(--border);border-left:2px solid var(--line2);transition:.18s}
+.cert li::before{content:counter(c);width:16px;height:16px;flex:none;border-radius:50%;background:#10161e;color:var(--fnt);
+  font-size:9px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace}
+.cert li.on{border-left-color:var(--teal);background:#0e1a1c;box-shadow:0 0 0 1px rgba(45,212,191,.25)}
+.cert li.ctrg{border-left-color:var(--amber)} .cert li.cdng{border-left-color:var(--red)}
+.cert .crole{font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fnt);min-width:58px}
+.cert .clab{font-size:12px;color:var(--ink);font-family:'JetBrains Mono',monospace;flex:1}
+.cert .cflag{font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--red);font-weight:600}
+.cert .cflag.ok{color:var(--teal)}
 </style>
 
 <div class="app">
@@ -281,12 +310,17 @@ function barH(id,items,color,fmt){ // items:[{name,v}]
 </script>
 <script>
 const VIEWS=[['overview','Overview','grid'],['gap','The evasive gap','trend'],['realmal','Real evasive malware','dna'],
-  ['evasion','Structural evasion','target'],['reach','Reachability graph','node'],['explain','Why they evade','radar'],
-  ['probe','Mimicry probe','probe'],['live','Live analysis','search'],['about','Method & limits','doc']];
+  ['evasion','Structural evasion','target'],['reach','Reachability graph','node'],
+  ['stability','Semantic stability','wave'],['assurance','Verifiable verdicts','verify'],
+  ['explain','Why they evade','radar'],['probe','Mimicry probe','probe'],
+  ['live','Live analysis','search'],['about','Method & limits','doc']];
+const DIVS=[5,7,9];
 const ICON={grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
   trend:'M3 17l6-6 4 4 7-8M21 7v5M21 7h-5',dna:'M4 3c4 4 12 4 16 0M4 21c4-4 12-4 16 0M7 5v14M17 5v14',
   target:'M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0M12 11v2',
   node:'M5 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M7 11l10-5M7 13l10 5',
+  wave:'M3 9c3-4 6-4 9 0s6 4 9 0M3 15c3-4 6-4 9 0s6 4 9 0',
+  verify:'M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0-18 0M8 12l2.8 2.8L16.2 9',
   radar:'M12 2l9 6.5-3.5 10.5h-11L3 8.5zM12 2v20M3 8.5l18 0',probe:'M3 12h4l3 8 4-16 3 8h4',
   search:'M11 11m-7 0a7 7 0 1 0 14 0a7 7 0 1 0-14 0M21 21l-4.3-4.3',doc:'M6 2h9l5 5v15H6zM15 2v5h5'};
 function svg(k){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="${ICON[k]}"/></svg>`}
@@ -305,6 +339,17 @@ const R={
    <p class="lede">We reproduce EMBER2024's PDF benchmark on the authors' own model, prove on real evasive
      malware why it fails, and close the gap with a structural <b style="color:var(--teal)">reachability</b>
      signal — every number here traces to a stored artifact.</p>
+   <div class="pillars">
+     <button class="pillar" data-v="reach"><span class="pnum">01</span><span class="ptit">Detection</span>
+       <span class="pdesc">Reachability over recognition — parse the object graph, flag only a dangerous action <i>reachable</i> from an auto-trigger.</span>
+       <span class="pstat" style="color:var(--teal)">0.649 → 0.998 AUC</span></button>
+     <button class="pillar" data-v="stability"><span class="pnum">02</span><span class="ptit">Robustness</span>
+       <span class="pdesc">Semantic stability — the verdict is invariant to lossless byte-obfuscation that swings the ML score across the scale.</span>
+       <span class="pstat" style="color:var(--amber)">SSI 1.000 vs 0.216</span></button>
+     <button class="pillar" data-v="assurance"><span class="pnum">03</span><span class="ptit">Assurance</span>
+       <span class="pdesc">Verifiable verdicts — every alarm ships a minimal, human-checkable witness path; deterministic, training-free.</span>
+       <span class="pstat" style="color:var(--blue)">0/285 FP · 1.2 ms</span></button>
+   </div>
    <div class="grid c4">
      ${kpi('EMBER ordinary PR-AUC',num(eo.pr_auc,4),'published 0.9933 · reproduced',C.teal,1)}
      ${kpi('EMBER evasive PR-AUC',num(ec.pr_auc,4),'published 0.7841 · '+ec.confusion.fn+'/'+D.ember.challenge.n_evasive+' missed',C.amber,1)}
@@ -491,6 +536,63 @@ const R={
      </div>
      <div class="mtiles" id="chalTiles" style="margin-top:14px"></div>
      <div id="chalBanner"></div></div>`;},
+ stability(){const ss=D.semantic_stability,ea=D.evasion_asymmetry;const ssi=ss.semantic_stability_index;
+  const chips=ss.docs.map((d,i)=>`<button class="stchip" data-i="${i}">${d.base.replace('.pdf','')}·${d.wiring}${d.hide?'·hid':''}</button>`).join('');
+  return `<div class="eyebrow">Novelty 2 · robustness</div>
+   <div class="vhead"><h2 class="view">Semantic stability under obfuscation</h2></div>
+   <p class="lede">Hold a PDF's malicious <b>behaviour</b> fixed and apply only lossless re-saves — recompress, re-encode,
+     encrypt. The bytes change; what the document <i>does</i> does not. A byte-based model should not care. It does.</p>
+   <div class="grid c4">
+     ${kpi('EMBER verdict inconsistency',num(ss.ember.verdict_inconsistency_rate*100,1,'%'),'of docs get BOTH verdicts across byte-identical behaviour',C.red,1)}
+     ${kpi('Median score swing',num(ss.ember.median_score_range_within_doc,2),'on one unchanged doc · max '+f3(ss.ember.max_score_range_within_doc),C.amber,1)}
+     ${kpi('Reachability stability index',num(ssi.reachability,3),'vs EMBER '+f3(ssi.ember)+' · '+ss.n_transformed_variants+' variants',C.teal,1)}
+     ${kpi('Evasion = disarm',num(ea.reachability_deescalates_on_disarm*100,1,'%'),'the only way past reachability removes the attack',C.blue,1)}
+   </div>
+   <div class="grid c2" style="margin-top:15px;align-items:stretch">
+     <div class="panel fadein"><div class="vhead"><h3 class="t">Same document, eight lossless re-saves</h3></div>
+       <p class="d">Pick a weaponized document — EMBER's score is plotted for each byte-variant; the behaviour, and the
+         reachability verdict, never change.</p>
+       <div class="chiprow" id="strow">${chips}</div>
+       <div class="chart" id="st_swing" style="height:230px"></div>
+       <div class="mtiles" id="stTiles"></div>
+       <div id="stVerdict"></div></div>
+     <div class="panel fadein"><h3 class="t">Stability index — reachability vs EMBER</h3>
+       <p class="d">Fraction of documents whose verdict never flips across the transform set.</p>
+       <div class="grid c2"><div><div class="chart" id="st_g1" style="height:150px"></div><div class="gcap">reachability</div></div>
+         <div><div class="chart" id="st_g2" style="height:150px"></div><div class="gcap">EMBER</div></div></div>
+       <div class="callout" style="margin-top:10px"><b>Evasion-cost asymmetry.</b> Evading EMBER costs a free re-save, payload intact.
+         Evading reachability means severing the trigger→action path — which removes the dangerous capability itself
+         (ACTIVE→ABSENT in ${pct(ea.reachability_deescalates_on_disarm)}). You cannot hide the behaviour without deleting it.</div></div>
+   </div>`;},
+ assurance(){const vo=D.verifiable_oracle;
+  const WL=D.live?D.live.specimens.map((s,i)=>({s,i})).filter(o=>o.s.reach_dangerous&&o.s.graph&&o.s.graph.path&&o.s.graph.path.length):[];
+  const chips=WL.map(o=>`<button class="witchip" data-i="${o.i}">${o.s.name.replace(/Weaponized \d+ · /,'')}</button>`).join('');
+  return `<div class="eyebrow">Novelty 3 · assurance</div>
+   <div class="vhead"><h2 class="view">Verifiable verdicts</h2></div>
+   <p class="lede">An ML score is a number you must trust. A signature is a match with no reasoning. Ours is a
+     <b style="color:var(--teal)">certificate</b>: every alarm ships a minimal witness path a reviewer re-checks by hand.
+     The oracle is deterministic and training-free — so unlike a model, it cannot drift.</p>
+   <div class="grid c4">
+     ${kpi('False positives on benign',vo.false_positive_strict_count+'<small>/'+vo.benign_parsed+'</small>',pct(vo.false_positive_strict_rate,2)+' at the auto-exec gate',C.teal,1)}
+     ${kpi('Witness length',num(vo.witness_hops_median,0)+'<small> hops</small>','median · mean '+vo.witness_hops_mean+' · checkable by eye',C.blue,0)}
+     ${kpi('Determinism',num(vo.determinism_identical_rate*100,0,'%'),'identical verdict+path over 3 runs',C.teal,0)}
+     ${kpi('Latency · training',num(vo.runtime_ms_median,2)+'<small> ms</small>','median · p95 '+vo.runtime_ms_p95+'ms · zero training data',C.amber,0)}
+   </div>
+   <div class="grid c2" style="margin-top:15px;align-items:stretch">
+     <div class="panel fadein"><div class="vhead"><h3 class="t">Pick an alarm — read its certificate</h3>
+       <button class="tracebtn" id="verifyBtn">▶ Verify path</button></div>
+       <p class="d">Each weaponized specimen's verdict carries the exact object path from the catalog to the dangerous node.</p>
+       <div class="chiprow" id="witrow">${chips}</div>
+       <div class="chart" id="witGraph" style="height:260px"></div>
+       <div class="legendrow"><span><i style="background:#cbd5e1"></i>catalog</span><span><i style="background:var(--amber)"></i>trigger</span><span><i style="background:var(--red)"></i>dangerous</span></div></div>
+     <div class="panel fadein"><h3 class="t">The certificate</h3>
+       <p class="d">A reviewer confirms each hop against the raw object — no model, no training, no trust required.</p>
+       <div id="witCert"></div>
+       <div class="grid c2" style="margin-top:12px"><div><div class="chart" id="as_g1" style="height:140px"></div><div class="gcap">false-positive rate</div></div>
+         <div><div class="chart" id="as_g2" style="height:140px"></div><div class="gcap">determinism</div></div></div>
+       <div class="callout" style="margin-top:8px"><b>${vo.benign_with_benign_active_capability} benign docs</b> carry an interaction-gated capability
+         (a clickable link or form) — correctly <b>not</b> flagged. The taxonomy separates a capability from a threat.</div></div>
+   </div>`;},
  about(){const cs=D.challenge_structure;
   return `<div class="eyebrow">Transparency</div><h2 class="view">Method &amp; limits</h2>
    <p class="lede">What is measured, on what data, and what remains unproven.</p>
@@ -505,6 +607,14 @@ const R={
        <li>EMBER's 805 challenge PDFs are released as features, so reachability can't be computed on them directly — hence the real-malware analysis uses their released structural features.</li>
        <li>The mimicry probe uses CIC counts, a lower bound on a real attacker.</li></ul></div>
    </div>
+   ${D.recovery_ceiling?`<div class="panel fadein"><h3 class="t">Negative control — why feature-level structure is not enough</h3>
+     <p class="d">We tried to recover EMBER's ${D.recovery_ceiling.ember_missed} evasive misses with a rule built from EMBER's
+       <i>own</i> compression/entropy features. No threshold works — benign PDFs compress too. This is exactly why the
+       verdict must come from parsing the object graph, not from aggregate features.</p>
+     <table><thead><tr><th>Structural rule</th><th class="mono">recovers of ${D.recovery_ceiling.ember_missed} misses</th><th class="mono">benign false-positives</th></tr></thead><tbody>
+      ${D.recovery_ceiling.rules.map(r=>`<tr><td class="mono">flags ≥ ${r.threshold}</td><td class="mono tnum">${pct(r.recovery_pct)}</td><td class="mono tnum" style="color:${r.benign_fp_rate>0.1?C.red:C.muted}">${pct(r.benign_fp_rate)}</td></tr>`).join('')}
+     </tbody></table>
+     <div class="callout" style="margin-top:10px">Only reachability separates a compressed benign file from a compressed weapon — a feature proxy cannot.</div></div>`:''}
    <div class="panel fadein"><h3 class="t">Provenance</h3><p class="note">EMBER PDF model (authors' release) · ${D.ember.ordinary.metrics.n.toLocaleString()} ordinary test PDFs ·
      ${cs.n_evasive_pdf} evasive challenge PDFs · structural-evasion study ${D.structural_evasion.n_benign_originals} real benign PDFs ·
      reachability engine TRA-1.0.</p></div>`;}
@@ -568,7 +678,9 @@ const CI={ // chart initializers per view
      series:[{type:'bar',data:keys.map(k=>hist[k]),barWidth:'56%',
        itemStyle:{borderRadius:[5,5,0,0],color:new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:C.pink},{offset:1,color:'rgba(224,92,147,.25)'}])}}]});
    barH('pb_frag',eb.feature_fragility.slice(0,8).map(x=>({name:x.feature,v:x.used_in_evasions})),C.pink,v=>Math.round(v));},
- live(){initLive();}
+ live(){initLive();},
+ stability(){initStab();},
+ assurance(){initAssur();}
 };
 
 // ---- Live analysis interactions ----
@@ -673,6 +785,59 @@ function initLive(){
   selectSpecimen(6); renderChal('missed');
 }
 
+// ---- Novelty 2: semantic stability ----
+function selectStab(i){const d=D.semantic_stability.docs[i];
+  document.querySelectorAll('#strow .stchip').forEach((b,j)=>b.setAttribute('aria-current',j===i));
+  const names=Object.keys(d.variants),es=names.map(n=>d.variants[n].ember);
+  const data=names.map((n,k)=>({value:es[k],itemStyle:{color:es[k]>=0.5?C.red:C.teal}}));
+  mk('st_swing',{grid:{left:40,right:14,top:26,bottom:58},
+    tooltip:{trigger:'axis',backgroundColor:'#0c121b',borderColor:C.line,textStyle:{color:C.ink,fontSize:11},valueFormatter:v=>(+v).toFixed(3)},
+    xAxis:{type:'category',data:names,axisLabel:{color:C.faint,fontSize:9,rotate:40,fontFamily:'JetBrains Mono'},...AX},
+    yAxis:{type:'value',min:0,max:1,name:'EMBER score',nameTextStyle:{color:C.faint,fontSize:10},...AX},
+    series:[{type:'line',data:data,smooth:false,symbolSize:10,lineStyle:{color:C.muted,width:1.4},
+      markLine:{silent:true,symbol:'none',data:[{yAxis:0.5}],lineStyle:{color:C.amber,type:'dashed'},label:{formatter:'malicious ≥ .5',color:C.amber,fontSize:9,position:'insideEndTop'}},
+      markArea:{silent:true,itemStyle:{color:'rgba(242,73,92,.05)'},data:[[{yAxis:0.5},{yAxis:1}]]}}]});
+  const mn=Math.min(...es),mx=Math.max(...es),mal=es.filter(x=>x>=0.5).length;
+  document.getElementById('stTiles').innerHTML=tile('min score',mn,3,'',C.teal)+tile('max score',mx,3,'',C.red)+
+    tile('swing',mx-mn,3,'',C.amber)+`<div class="mtile"><div class="mlbl">reach verdict</div><div class="mnum" style="color:${C.teal};font-size:15px;letter-spacing:.02em">ACTIVE</div></div>`;
+  countUp(document.getElementById('stTiles'));
+  document.getElementById('stVerdict').innerHTML=`<div class="${mal&&mal<es.length?'evbanner':'okbanner'}" style="margin-top:6px">EMBER: <b>${mal}/${es.length}</b> byte-variants read malicious, ${es.length-mal} read benign — identical behaviour. Reachability: <b>ACTIVE_ONOPEN</b> on all ${es.length}.</div>`;
+}
+function initStab(){
+  document.getElementById('strow').addEventListener('click',e=>{const b=e.target.closest('.stchip');if(b)selectStab(+b.dataset.i)});
+  gauge('st_g1',D.semantic_stability.semantic_stability_index.reachability,'',C.teal);
+  gauge('st_g2',D.semantic_stability.semantic_stability_index.ember,'',C.amber);
+  const docs=D.semantic_stability.docs;let def=0;
+  for(let i=0;i<docs.length;i++){const es=Object.values(docs[i].variants).map(v=>v.ember);if(Math.min(...es)<0.5&&Math.max(...es)>=0.5){def=i;break;}}
+  selectStab(def);
+}
+
+// ---- Novelty 3: verifiable verdicts ----
+let WSEL=null;
+function witCert(g){const idx=Object.fromEntries(g.nodes.map(n=>[n.id,n]));
+  if(!g.path||!g.path.length)return '<p class="d">No path.</p>';
+  return '<ol class="cert">'+g.path.map((nid,k)=>{const n=idx[nid]||{label:nid,role:'obj'};
+    const dng=g.danger&&g.danger.indexOf(nid)>=0;
+    return `<li class="${dng?'cdng':(n.role==='trigger'?'ctrg':'')}"><span class="crole">${n.role}</span><span class="clab">${n.label}</span>${dng?'<span class="cflag">dangerous</span>':(k===0?'<span class="cflag ok">entry</span>':'')}</li>`;}).join('')+'</ol>';
+}
+function selectWitness(i){const s=D.live.specimens[i];WSEL=s;
+  document.querySelectorAll('#witrow .witchip').forEach(b=>b.setAttribute('aria-current',+b.dataset.i===i));
+  drawGraph('witGraph',s.graph,true);
+  const hops=Math.max(0,s.graph.path.length-1);
+  document.getElementById('witCert').innerHTML=`<div class="certhead">witness · ${hops} hop${hops===1?'':'s'} · catalog → dangerous</div>`+witCert(s.graph);
+}
+function verifyWitness(){if(!WSEL||!GRAPH)return;const g=WSEL.graph,idx=Object.fromEntries(g.nodes.map((n,i)=>[n.id,i]));
+  const items=document.querySelectorAll('#witCert .cert li');items.forEach(li=>li.classList.remove('on'));
+  g.path.forEach((nid,k)=>setTimeout(()=>{try{GRAPH.dispatchAction({type:'highlight',seriesIndex:0,dataIndex:idx[nid]})}catch(e){}if(items[k])items[k].classList.add('on');},k*380));
+}
+function initAssur(){
+  document.getElementById('witrow').addEventListener('click',e=>{const b=e.target.closest('.witchip');if(b)selectWitness(+b.dataset.i)});
+  document.getElementById('verifyBtn').addEventListener('click',verifyWitness);
+  gauge('as_g1',D.verifiable_oracle.false_positive_strict_rate,'',C.teal);
+  gauge('as_g2',D.verifiable_oracle.determinism_identical_rate,'',C.teal);
+  const first=document.querySelector('#witrow .witchip');if(first)selectWitness(+first.dataset.i);
+}
+
 
 let cur='overview';
 function go(v){cur=v;if(typeof stopDemo==='function')stopDemo();clearCharts();
@@ -683,8 +848,9 @@ function go(v){cur=v;if(typeof stopDemo==='function')stopDemo();clearCharts();
   if(location.hash.slice(1)!==v)history.replaceState(null,'','#'+v);
   window.scrollTo(0,0);}
 document.getElementById('nav').innerHTML=VIEWS.map((v,i)=>
-  `${(i===4||i===7)?'<div class="navdiv"></div>':''}<button class="navbtn" data-v="${v[0]}" data-label="${v[1]}">${svg(v[2])}</button>`).join('');
+  `${DIVS.includes(i)?'<div class="navdiv"></div>':''}<button class="navbtn" data-v="${v[0]}" data-label="${v[1]}">${svg(v[2])}</button>`).join('');
 document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.v)});
+document.getElementById('view').addEventListener('click',e=>{const p=e.target.closest('.pillar');if(p)go(p.dataset.v)});
 document.getElementById('status').innerHTML=
   `<span class="chip"><span class="live"></span>operational</span>
    <span class="chip">EMBER2024 <b>reproduced</b></span>

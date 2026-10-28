@@ -1,0 +1,20 @@
+{
+  "benign_corpus_size": 285,
+  "benign_parsed": 285,
+  "false_positive_strict_count": 0,
+  "false_positive_strict_rate": 0.0,
+  "false_positive_strict_examples": [],
+  "benign_with_benign_active_capability": 55,
+  "benign_capability_note": "interaction-gated URI/form capabilities in benign docs; correctly NOT flagged as threats by the auto-trigger gate",
+  "weaponized_positives": 40,
+  "witness_coverage": 0.95,
+  "valid_witness_rate": 0.95,
+  "witness_hops_mean": 2.03,
+  "witness_hops_median": 1.0,
+  "witness_hops_max": 5,
+  "determinism_files": 21,
+  "determinism_identical_rate": 1.0,
+  "runtime_ms_median": 1.17,
+  "runtime_ms_p95": 8.41,
+  "training_free": true
+}

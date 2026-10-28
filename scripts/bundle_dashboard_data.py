@@ -29,6 +29,11 @@ bundle = {
     "challenge_structure": L("challenge_structure.json"),
     "object_graph": L("object_graph.json"),
     "live": L("live_analysis.json"),
+    # Review-3 additions: three-pillar evidence
+    "semantic_stability": L("semantic_stability.json"),
+    "evasion_asymmetry": L("evasion_asymmetry.json"),
+    "verifiable_oracle": L("verifiable_oracle.json"),
+    "recovery_ceiling": L("recovery_ceiling.json"),
 }
 out = art("metrics", "dashboard_data.json")
 json.dump(bundle, open(out, "w"))

@@ -1,0 +1,4596 @@
+{
+  "n_docs": 88,
+  "n_transformed_variants": 704,
+  "n_transforms_each": 8,
+  "ember": {
+    "verdict_inconsistency_rate": 0.7841,
+    "mean_score_range_within_doc": 0.7158,
+    "median_score_range_within_doc": 0.809,
+    "max_score_range_within_doc": 0.9882
+  },
+  "reachability": {
+    "verdict_inconsistency_rate": 0.0
+  },
+  "semantic_stability_index": {
+    "reachability": 1.0,
+    "ember": 0.2159
+  },
+  "docs": [
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0038,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48492
+        },
+        "recompress": {
+          "ember": 0.0841,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48611
+        },
+        "decompress": {
+          "ember": 0.0145,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74229
+        },
+        "objstm_gen": {
+          "ember": 0.0038,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48492
+        },
+        "objstm_off": {
+          "ember": 0.8094,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56425
+        },
+        "normalize": {
+          "ember": 0.0041,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 63358
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50226
+        },
+        "encrypt_rc4": {
+          "ember": 0.0248,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49174
+        },
+        "encrypt_aes": {
+          "ember": 0.3198,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49472
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.7959,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56425
+        },
+        "recompress": {
+          "ember": 0.5672,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56547
+        },
+        "decompress": {
+          "ember": 0.0166,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76056
+        },
+        "objstm_gen": {
+          "ember": 0.0043,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48496
+        },
+        "objstm_off": {
+          "ember": 0.7959,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56425
+        },
+        "normalize": {
+          "ember": 0.0684,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 71291
+        },
+        "linearize": {
+          "ember": 0.7271,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 57102
+        },
+        "encrypt_rc4": {
+          "ember": 0.9848,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60911
+        },
+        "encrypt_aes": {
+          "ember": 0.9811,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61211
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0063,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48535
+        },
+        "recompress": {
+          "ember": 0.0369,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48655
+        },
+        "decompress": {
+          "ember": 0.0136,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74346
+        },
+        "objstm_gen": {
+          "ember": 0.0063,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48535
+        },
+        "objstm_off": {
+          "ember": 0.6876,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56586
+        },
+        "normalize": {
+          "ember": 0.0039,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 63401
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50278
+        },
+        "encrypt_rc4": {
+          "ember": 0.0145,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49207
+        },
+        "encrypt_aes": {
+          "ember": 0.2074,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49501
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.7543,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56586
+        },
+        "recompress": {
+          "ember": 0.6804,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56708
+        },
+        "decompress": {
+          "ember": 0.0152,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76217
+        },
+        "objstm_gen": {
+          "ember": 0.0062,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48554
+        },
+        "objstm_off": {
+          "ember": 0.7543,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56586
+        },
+        "normalize": {
+          "ember": 0.1798,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 71452
+        },
+        "linearize": {
+          "ember": 0.9129,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 57264
+        },
+        "encrypt_rc4": {
+          "ember": 0.984,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61125
+        },
+        "encrypt_aes": {
+          "ember": 0.9944,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61425
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0113,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48519
+        },
+        "recompress": {
+          "ember": 0.0393,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48637
+        },
+        "decompress": {
+          "ember": 0.0136,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74316
+        },
+        "objstm_gen": {
+          "ember": 0.0113,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48519
+        },
+        "objstm_off": {
+          "ember": 0.7076,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56555
+        },
+        "normalize": {
+          "ember": 0.0057,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 63385
+        },
+        "linearize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50269
+        },
+        "encrypt_rc4": {
+          "ember": 0.2944,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49190
+        },
+        "encrypt_aes": {
+          "ember": 0.048,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49486
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.7297,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56555
+        },
+        "recompress": {
+          "ember": 0.671,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56677
+        },
+        "decompress": {
+          "ember": 0.0127,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76186
+        },
+        "objstm_gen": {
+          "ember": 0.0119,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48541
+        },
+        "objstm_off": {
+          "ember": 0.7297,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56555
+        },
+        "normalize": {
+          "ember": 0.1241,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 71421
+        },
+        "linearize": {
+          "ember": 0.8936,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 57240
+        },
+        "encrypt_rc4": {
+          "ember": 0.9834,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61041
+        },
+        "encrypt_aes": {
+          "ember": 0.9701,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61341
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0153,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48506
+        },
+        "recompress": {
+          "ember": 0.0527,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48627
+        },
+        "decompress": {
+          "ember": 0.0142,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74284
+        },
+        "objstm_gen": {
+          "ember": 0.0153,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48506
+        },
+        "objstm_off": {
+          "ember": 0.6787,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56504
+        },
+        "normalize": {
+          "ember": 0.0046,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 63372
+        },
+        "linearize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50247
+        },
+        "encrypt_rc4": {
+          "ember": 0.0247,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49190
+        },
+        "encrypt_aes": {
+          "ember": 0.1394,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49486
+        }
+      }
+    },
+    {
+      "base": "pdflatex-outline.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.6246,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56504
+        },
+        "recompress": {
+          "ember": 0.602,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56626
+        },
+        "decompress": {
+          "ember": 0.0161,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76135
+        },
+        "objstm_gen": {
+          "ember": 0.0073,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 48514
+        },
+        "objstm_off": {
+          "ember": 0.6246,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56504
+        },
+        "normalize": {
+          "ember": 0.0801,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 71370
+        },
+        "linearize": {
+          "ember": 0.6789,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 57179
+        },
+        "encrypt_rc4": {
+          "ember": 0.9825,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60990
+        },
+        "encrypt_aes": {
+          "ember": 0.979,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61290
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0042,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78542
+        },
+        "recompress": {
+          "ember": 0.0044,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78651
+        },
+        "decompress": {
+          "ember": 0.1704,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 96313
+        },
+        "objstm_gen": {
+          "ember": 0.0042,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78542
+        },
+        "objstm_off": {
+          "ember": 0.1841,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83132
+        },
+        "normalize": {
+          "ember": 0.0023,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 88905
+        },
+        "linearize": {
+          "ember": 0.0,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79734
+        },
+        "encrypt_rc4": {
+          "ember": 0.0449,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79167
+        },
+        "encrypt_aes": {
+          "ember": 0.0241,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79467
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1841,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83132
+        },
+        "recompress": {
+          "ember": 0.0801,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83241
+        },
+        "decompress": {
+          "ember": 0.1015,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 96975
+        },
+        "objstm_gen": {
+          "ember": 0.0072,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78536
+        },
+        "objstm_off": {
+          "ember": 0.1841,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83132
+        },
+        "normalize": {
+          "ember": 0.0828,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 93495
+        },
+        "linearize": {
+          "ember": 0.1817,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83708
+        },
+        "encrypt_rc4": {
+          "ember": 0.9884,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 84870
+        },
+        "encrypt_aes": {
+          "ember": 0.9747,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 85170
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0043,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78579
+        },
+        "recompress": {
+          "ember": 0.0021,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78688
+        },
+        "decompress": {
+          "ember": 0.1472,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 96397
+        },
+        "objstm_gen": {
+          "ember": 0.0043,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78579
+        },
+        "objstm_off": {
+          "ember": 0.0771,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83262
+        },
+        "normalize": {
+          "ember": 0.0017,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 88942
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79788
+        },
+        "encrypt_rc4": {
+          "ember": 0.0239,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79210
+        },
+        "encrypt_aes": {
+          "ember": 0.2178,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79510
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.0818,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83262
+        },
+        "recompress": {
+          "ember": 0.0753,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83371
+        },
+        "decompress": {
+          "ember": 0.0678,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 97105
+        },
+        "objstm_gen": {
+          "ember": 0.0075,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78575
+        },
+        "objstm_off": {
+          "ember": 0.0818,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83262
+        },
+        "normalize": {
+          "ember": 0.0804,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 93625
+        },
+        "linearize": {
+          "ember": 0.3051,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83838
+        },
+        "encrypt_rc4": {
+          "ember": 0.9552,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 85053
+        },
+        "encrypt_aes": {
+          "ember": 0.9613,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 85353
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0022,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78553
+        },
+        "recompress": {
+          "ember": 0.0014,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78662
+        },
+        "decompress": {
+          "ember": 0.1689,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 96334
+        },
+        "objstm_gen": {
+          "ember": 0.0022,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78553
+        },
+        "objstm_off": {
+          "ember": 0.1796,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83176
+        },
+        "normalize": {
+          "ember": 0.0032,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 88916
+        },
+        "linearize": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79750
+        },
+        "encrypt_rc4": {
+          "ember": 0.0682,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79164
+        },
+        "encrypt_aes": {
+          "ember": 0.0474,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79464
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1533,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83176
+        },
+        "recompress": {
+          "ember": 0.0706,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83285
+        },
+        "decompress": {
+          "ember": 0.0902,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 97019
+        },
+        "objstm_gen": {
+          "ember": 0.003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78552
+        },
+        "objstm_off": {
+          "ember": 0.1533,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83176
+        },
+        "normalize": {
+          "ember": 0.0797,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 93539
+        },
+        "linearize": {
+          "ember": 0.3242,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83757
+        },
+        "encrypt_rc4": {
+          "ember": 0.9905,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 84914
+        },
+        "encrypt_aes": {
+          "ember": 0.9838,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 85214
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0062,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78560
+        },
+        "recompress": {
+          "ember": 0.0009,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78669
+        },
+        "decompress": {
+          "ember": 0.1775,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 96368
+        },
+        "objstm_gen": {
+          "ember": 0.0062,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78560
+        },
+        "objstm_off": {
+          "ember": 0.1115,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83210
+        },
+        "normalize": {
+          "ember": 0.0019,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 88923
+        },
+        "linearize": {
+          "ember": 0.0,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79761
+        },
+        "encrypt_rc4": {
+          "ember": 0.0136,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79183
+        },
+        "encrypt_aes": {
+          "ember": 0.0423,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 79482
+        }
+      }
+    },
+    {
+      "base": "multicolumn.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1357,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83210
+        },
+        "recompress": {
+          "ember": 0.0762,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83319
+        },
+        "decompress": {
+          "ember": 0.0869,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 97053
+        },
+        "objstm_gen": {
+          "ember": 0.0051,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 78556
+        },
+        "objstm_off": {
+          "ember": 0.1357,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83210
+        },
+        "normalize": {
+          "ember": 0.0915,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 93573
+        },
+        "linearize": {
+          "ember": 0.1047,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 83786
+        },
+        "encrypt_rc4": {
+          "ember": 0.9712,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 84948
+        },
+        "encrypt_aes": {
+          "ember": 0.9729,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 85248
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.598,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29197
+        },
+        "recompress": {
+          "ember": 0.328,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29713
+        },
+        "decompress": {
+          "ember": 0.9278,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49912
+        },
+        "objstm_gen": {
+          "ember": 0.598,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29197
+        },
+        "objstm_off": {
+          "ember": 0.6064,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34417
+        },
+        "normalize": {
+          "ember": 0.0006,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30712
+        },
+        "linearize": {
+          "ember": 0.0539,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30355
+        },
+        "encrypt_rc4": {
+          "ember": 0.0694,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30300
+        },
+        "encrypt_aes": {
+          "ember": 0.3828,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30603
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.5849,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34417
+        },
+        "recompress": {
+          "ember": 0.6169,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34934
+        },
+        "decompress": {
+          "ember": 0.8965,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50792
+        },
+        "objstm_gen": {
+          "ember": 0.6974,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29177
+        },
+        "objstm_off": {
+          "ember": 0.5849,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34417
+        },
+        "normalize": {
+          "ember": 0.2816,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35932
+        },
+        "linearize": {
+          "ember": 0.5815,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34932
+        },
+        "encrypt_rc4": {
+          "ember": 0.6484,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38070
+        },
+        "encrypt_aes": {
+          "ember": 0.7139,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38370
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.5107,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29254
+        },
+        "recompress": {
+          "ember": 0.4656,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29771
+        },
+        "decompress": {
+          "ember": 0.9082,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50033
+        },
+        "objstm_gen": {
+          "ember": 0.5107,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29254
+        },
+        "objstm_off": {
+          "ember": 0.548,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34587
+        },
+        "normalize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30768
+        },
+        "linearize": {
+          "ember": 0.0593,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30443
+        },
+        "encrypt_rc4": {
+          "ember": 0.049,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30368
+        },
+        "encrypt_aes": {
+          "ember": 0.0341,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30672
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.5674,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34587
+        },
+        "recompress": {
+          "ember": 0.6721,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35104
+        },
+        "decompress": {
+          "ember": 0.8726,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50962
+        },
+        "objstm_gen": {
+          "ember": 0.6475,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29239
+        },
+        "objstm_off": {
+          "ember": 0.5674,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34587
+        },
+        "normalize": {
+          "ember": 0.3072,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 36102
+        },
+        "linearize": {
+          "ember": 0.4859,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35106
+        },
+        "encrypt_rc4": {
+          "ember": 0.6801,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38293
+        },
+        "encrypt_aes": {
+          "ember": 0.8747,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38593
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.4584,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29227
+        },
+        "recompress": {
+          "ember": 0.3949,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29743
+        },
+        "decompress": {
+          "ember": 0.9179,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49971
+        },
+        "objstm_gen": {
+          "ember": 0.4584,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29227
+        },
+        "objstm_off": {
+          "ember": 0.6382,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34501
+        },
+        "normalize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30742
+        },
+        "linearize": {
+          "ember": 0.0694,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30406
+        },
+        "encrypt_rc4": {
+          "ember": 0.0781,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30336
+        },
+        "encrypt_aes": {
+          "ember": 0.0525,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30642
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.6318,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34501
+        },
+        "recompress": {
+          "ember": 0.6698,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35018
+        },
+        "decompress": {
+          "ember": 0.8996,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50876
+        },
+        "objstm_gen": {
+          "ember": 0.7761,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29209
+        },
+        "objstm_off": {
+          "ember": 0.6318,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34501
+        },
+        "normalize": {
+          "ember": 0.3174,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 36016
+        },
+        "linearize": {
+          "ember": 0.601,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35016
+        },
+        "encrypt_rc4": {
+          "ember": 0.9168,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38154
+        },
+        "encrypt_aes": {
+          "ember": 0.7997,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38454
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.7103,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29217
+        },
+        "recompress": {
+          "ember": 0.5759,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29730
+        },
+        "decompress": {
+          "ember": 0.9122,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 49966
+        },
+        "objstm_gen": {
+          "ember": 0.7103,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29217
+        },
+        "objstm_off": {
+          "ember": 0.5699,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34495
+        },
+        "normalize": {
+          "ember": 0.0005,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30730
+        },
+        "linearize": {
+          "ember": 0.0947,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30380
+        },
+        "encrypt_rc4": {
+          "ember": 0.2998,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30318
+        },
+        "encrypt_aes": {
+          "ember": 0.0213,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30622
+        }
+      }
+    },
+    {
+      "base": "libreoffice-form.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.5993,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34495
+        },
+        "recompress": {
+          "ember": 0.6306,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35012
+        },
+        "decompress": {
+          "ember": 0.8992,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50870
+        },
+        "objstm_gen": {
+          "ember": 0.7624,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 29192
+        },
+        "objstm_off": {
+          "ember": 0.5993,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 34495
+        },
+        "normalize": {
+          "ember": 0.3377,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 36010
+        },
+        "linearize": {
+          "ember": 0.4676,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 35010
+        },
+        "encrypt_rc4": {
+          "ember": 0.7839,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38148
+        },
+        "encrypt_aes": {
+          "ember": 0.8793,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 38448
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0029,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50409
+        },
+        "recompress": {
+          "ember": 0.0029,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50409
+        },
+        "decompress": {
+          "ember": 0.0128,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 77777
+        },
+        "objstm_gen": {
+          "ember": 0.0029,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50409
+        },
+        "objstm_off": {
+          "ember": 0.1824,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60662
+        },
+        "normalize": {
+          "ember": 0.0016,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 65253
+        },
+        "linearize": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52418
+        },
+        "encrypt_rc4": {
+          "ember": 0.0152,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50636
+        },
+        "encrypt_aes": {
+          "ember": 0.0062,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50934
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1893,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60662
+        },
+        "recompress": {
+          "ember": 0.1893,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60662
+        },
+        "decompress": {
+          "ember": 0.0071,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80171
+        },
+        "objstm_gen": {
+          "ember": 0.0092,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50404
+        },
+        "objstm_off": {
+          "ember": 0.1893,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60662
+        },
+        "normalize": {
+          "ember": 0.0346,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75504
+        },
+        "linearize": {
+          "ember": 0.4552,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61389
+        },
+        "encrypt_rc4": {
+          "ember": 0.925,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 66838
+        },
+        "encrypt_aes": {
+          "ember": 0.8908,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 67138
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0081,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50449
+        },
+        "recompress": {
+          "ember": 0.0081,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50449
+        },
+        "decompress": {
+          "ember": 0.0102,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 77902
+        },
+        "objstm_gen": {
+          "ember": 0.0081,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50449
+        },
+        "objstm_off": {
+          "ember": 0.543,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60836
+        },
+        "normalize": {
+          "ember": 0.0016,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 65293
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52463
+        },
+        "encrypt_rc4": {
+          "ember": 0.017,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50686
+        },
+        "encrypt_aes": {
+          "ember": 0.0554,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50986
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.5288,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60836
+        },
+        "recompress": {
+          "ember": 0.5288,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60836
+        },
+        "decompress": {
+          "ember": 0.0106,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80345
+        },
+        "objstm_gen": {
+          "ember": 0.0137,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50454
+        },
+        "objstm_off": {
+          "ember": 0.5288,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60836
+        },
+        "normalize": {
+          "ember": 0.0379,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75678
+        },
+        "linearize": {
+          "ember": 0.3363,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61556
+        },
+        "encrypt_rc4": {
+          "ember": 0.8895,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 67065
+        },
+        "encrypt_aes": {
+          "ember": 0.9565,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 67365
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0055,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50441
+        },
+        "recompress": {
+          "ember": 0.0055,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50441
+        },
+        "decompress": {
+          "ember": 0.0145,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 77872
+        },
+        "objstm_gen": {
+          "ember": 0.0053,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50441
+        },
+        "objstm_off": {
+          "ember": 0.2551,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60802
+        },
+        "normalize": {
+          "ember": 0.0013,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 65285
+        },
+        "linearize": {
+          "ember": 0.0004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52451
+        },
+        "encrypt_rc4": {
+          "ember": 0.0121,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50686
+        },
+        "encrypt_aes": {
+          "ember": 0.1679,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50986
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.263,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60802
+        },
+        "recompress": {
+          "ember": 0.263,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60802
+        },
+        "decompress": {
+          "ember": 0.0097,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80311
+        },
+        "objstm_gen": {
+          "ember": 0.0107,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50444
+        },
+        "objstm_off": {
+          "ember": 0.263,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60802
+        },
+        "normalize": {
+          "ember": 0.0358,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75644
+        },
+        "linearize": {
+          "ember": 0.516,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61538
+        },
+        "encrypt_rc4": {
+          "ember": 0.9549,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 66978
+        },
+        "encrypt_aes": {
+          "ember": 0.9709,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 67278
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0075,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50418
+        },
+        "recompress": {
+          "ember": 0.0075,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50418
+        },
+        "decompress": {
+          "ember": 0.015,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 77834
+        },
+        "objstm_gen": {
+          "ember": 0.0075,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50418
+        },
+        "objstm_off": {
+          "ember": 0.3397,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60747
+        },
+        "normalize": {
+          "ember": 0.0013,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 65261
+        },
+        "linearize": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52432
+        },
+        "encrypt_rc4": {
+          "ember": 0.0558,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50655
+        },
+        "encrypt_aes": {
+          "ember": 0.0584,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50954
+        }
+      }
+    },
+    {
+      "base": "mistitled_outlines_example.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.3711,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60747
+        },
+        "recompress": {
+          "ember": 0.3711,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60747
+        },
+        "decompress": {
+          "ember": 0.0068,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80256
+        },
+        "objstm_gen": {
+          "ember": 0.0063,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 50427
+        },
+        "objstm_off": {
+          "ember": 0.3711,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 60747
+        },
+        "normalize": {
+          "ember": 0.0379,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75589
+        },
+        "linearize": {
+          "ember": 0.6278,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 61469
+        },
+        "encrypt_rc4": {
+          "ember": 0.8882,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 66923
+        },
+        "encrypt_aes": {
+          "ember": 0.8904,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 67223
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308601
+        },
+        "recompress": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 306586
+        },
+        "decompress": {
+          "ember": 0.621,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 808570
+        },
+        "objstm_gen": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308601
+        },
+        "objstm_off": {
+          "ember": 0.2012,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313757
+        },
+        "normalize": {
+          "ember": 0.0006,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308572
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 310544
+        },
+        "encrypt_rc4": {
+          "ember": 0.0026,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308899
+        },
+        "encrypt_aes": {
+          "ember": 0.0004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 309197
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1844,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313757
+        },
+        "recompress": {
+          "ember": 0.2916,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 311742
+        },
+        "decompress": {
+          "ember": 0.5784,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 809701
+        },
+        "objstm_gen": {
+          "ember": 0.0008,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308596
+        },
+        "objstm_off": {
+          "ember": 0.1844,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313757
+        },
+        "normalize": {
+          "ember": 0.1784,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313728
+        },
+        "linearize": {
+          "ember": 0.062,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 314412
+        },
+        "encrypt_rc4": {
+          "ember": 0.6784,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315301
+        },
+        "encrypt_aes": {
+          "ember": 0.8094,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315601
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308645
+        },
+        "recompress": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 306631
+        },
+        "decompress": {
+          "ember": 0.5721,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 808682
+        },
+        "objstm_gen": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308645
+        },
+        "objstm_off": {
+          "ember": 0.1221,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313920
+        },
+        "normalize": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308616
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 310620
+        },
+        "encrypt_rc4": {
+          "ember": 0.0004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308968
+        },
+        "encrypt_aes": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 309268
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1318,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313920
+        },
+        "recompress": {
+          "ember": 0.2195,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 311905
+        },
+        "decompress": {
+          "ember": 0.5179,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 809864
+        },
+        "objstm_gen": {
+          "ember": 0.0005,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308638
+        },
+        "objstm_off": {
+          "ember": 0.1318,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313920
+        },
+        "normalize": {
+          "ember": 0.121,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313891
+        },
+        "linearize": {
+          "ember": 0.0416,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 314575
+        },
+        "encrypt_rc4": {
+          "ember": 0.6105,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315517
+        },
+        "encrypt_aes": {
+          "ember": 0.2934,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315817
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0005,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308616
+        },
+        "recompress": {
+          "ember": 0.0004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 306603
+        },
+        "decompress": {
+          "ember": 0.6109,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 808619
+        },
+        "objstm_gen": {
+          "ember": 0.0005,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308616
+        },
+        "objstm_off": {
+          "ember": 0.1729,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313829
+        },
+        "normalize": {
+          "ember": 0.0004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308587
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 310585
+        },
+        "encrypt_rc4": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308924
+        },
+        "encrypt_aes": {
+          "ember": 0.0008,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 309222
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1675,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313829
+        },
+        "recompress": {
+          "ember": 0.2879,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 311814
+        },
+        "decompress": {
+          "ember": 0.5561,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 809773
+        },
+        "objstm_gen": {
+          "ember": 0.0009,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308617
+        },
+        "objstm_off": {
+          "ember": 0.1675,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313829
+        },
+        "normalize": {
+          "ember": 0.1448,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313800
+        },
+        "linearize": {
+          "ember": 0.0593,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 314480
+        },
+        "encrypt_rc4": {
+          "ember": 0.618,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315373
+        },
+        "encrypt_aes": {
+          "ember": 0.6646,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315673
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308618
+        },
+        "recompress": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 306605
+        },
+        "decompress": {
+          "ember": 0.6121,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 808625
+        },
+        "objstm_gen": {
+          "ember": 0.0007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308618
+        },
+        "objstm_off": {
+          "ember": 0.1769,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313835
+        },
+        "normalize": {
+          "ember": 0.0006,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308589
+        },
+        "linearize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 310569
+        },
+        "encrypt_rc4": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308929
+        },
+        "encrypt_aes": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 309229
+        }
+      }
+    },
+    {
+      "base": "ocg_map_test.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.1715,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313835
+        },
+        "recompress": {
+          "ember": 0.2959,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 311820
+        },
+        "decompress": {
+          "ember": 0.5818,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 809779
+        },
+        "objstm_gen": {
+          "ember": 0.0012,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 308614
+        },
+        "objstm_off": {
+          "ember": 0.1715,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313835
+        },
+        "normalize": {
+          "ember": 0.1744,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 313806
+        },
+        "linearize": {
+          "ember": 0.0519,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 314495
+        },
+        "encrypt_rc4": {
+          "ember": 0.6308,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315379
+        },
+        "encrypt_aes": {
+          "ember": 0.5352,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 315679
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.1852,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24531
+        },
+        "recompress": {
+          "ember": 0.5813,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24607
+        },
+        "decompress": {
+          "ember": 0.4586,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 55696
+        },
+        "objstm_gen": {
+          "ember": 0.1852,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24531
+        },
+        "objstm_off": {
+          "ember": 0.7897,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26139
+        },
+        "normalize": {
+          "ember": 0.0167,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52809
+        },
+        "linearize": {
+          "ember": 0.0161,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25723
+        },
+        "encrypt_rc4": {
+          "ember": 0.3945,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25079
+        },
+        "encrypt_aes": {
+          "ember": 0.421,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25380
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.7897,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26139
+        },
+        "recompress": {
+          "ember": 0.8751,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26216
+        },
+        "decompress": {
+          "ember": 0.5266,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56041
+        },
+        "objstm_gen": {
+          "ember": 0.2474,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24519
+        },
+        "objstm_off": {
+          "ember": 0.7897,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26139
+        },
+        "normalize": {
+          "ember": 0.5765,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 54417
+        },
+        "linearize": {
+          "ember": 0.9304,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26693
+        },
+        "encrypt_rc4": {
+          "ember": 0.9912,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27337
+        },
+        "encrypt_aes": {
+          "ember": 0.9972,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27637
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0549,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24565
+        },
+        "recompress": {
+          "ember": 0.437,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24643
+        },
+        "decompress": {
+          "ember": 0.4817,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 55780
+        },
+        "objstm_gen": {
+          "ember": 0.0549,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24565
+        },
+        "objstm_off": {
+          "ember": 0.7911,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26269
+        },
+        "normalize": {
+          "ember": 0.0171,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52845
+        },
+        "linearize": {
+          "ember": 0.0082,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25775
+        },
+        "encrypt_rc4": {
+          "ember": 0.3027,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25107
+        },
+        "encrypt_aes": {
+          "ember": 0.1815,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25406
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.77,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26269
+        },
+        "recompress": {
+          "ember": 0.8381,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26346
+        },
+        "decompress": {
+          "ember": 0.5512,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56171
+        },
+        "objstm_gen": {
+          "ember": 0.2419,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24552
+        },
+        "objstm_off": {
+          "ember": 0.77,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26269
+        },
+        "normalize": {
+          "ember": 0.6023,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 54547
+        },
+        "linearize": {
+          "ember": 0.8857,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26824
+        },
+        "encrypt_rc4": {
+          "ember": 0.9912,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27520
+        },
+        "encrypt_aes": {
+          "ember": 0.9972,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27820
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0953,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24542
+        },
+        "recompress": {
+          "ember": 0.411,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24619
+        },
+        "decompress": {
+          "ember": 0.4754,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 55718
+        },
+        "objstm_gen": {
+          "ember": 0.0953,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24542
+        },
+        "objstm_off": {
+          "ember": 0.8448,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26183
+        },
+        "normalize": {
+          "ember": 0.0167,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52820
+        },
+        "linearize": {
+          "ember": 0.0173,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25737
+        },
+        "encrypt_rc4": {
+          "ember": 0.7413,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25077
+        },
+        "encrypt_aes": {
+          "ember": 0.6076,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25376
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.8515,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26183
+        },
+        "recompress": {
+          "ember": 0.81,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26260
+        },
+        "decompress": {
+          "ember": 0.5348,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56085
+        },
+        "objstm_gen": {
+          "ember": 0.3371,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24529
+        },
+        "objstm_off": {
+          "ember": 0.8515,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26183
+        },
+        "normalize": {
+          "ember": 0.6325,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 54461
+        },
+        "linearize": {
+          "ember": 0.9227,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26744
+        },
+        "encrypt_rc4": {
+          "ember": 0.9966,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27381
+        },
+        "encrypt_aes": {
+          "ember": 0.9941,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27681
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.3848,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24548
+        },
+        "recompress": {
+          "ember": 0.6941,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24624
+        },
+        "decompress": {
+          "ember": 0.4775,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 55752
+        },
+        "objstm_gen": {
+          "ember": 0.3848,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24548
+        },
+        "objstm_off": {
+          "ember": 0.8187,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26217
+        },
+        "normalize": {
+          "ember": 0.0159,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 52827
+        },
+        "linearize": {
+          "ember": 0.0164,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25748
+        },
+        "encrypt_rc4": {
+          "ember": 0.8553,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25095
+        },
+        "encrypt_aes": {
+          "ember": 0.6139,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25394
+        }
+      }
+    },
+    {
+      "base": "pdflatex-4-pages.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.8344,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26217
+        },
+        "recompress": {
+          "ember": 0.9012,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26294
+        },
+        "decompress": {
+          "ember": 0.5982,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 56119
+        },
+        "objstm_gen": {
+          "ember": 0.0935,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24539
+        },
+        "objstm_off": {
+          "ember": 0.8344,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26217
+        },
+        "normalize": {
+          "ember": 0.6219,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 54495
+        },
+        "linearize": {
+          "ember": 0.9455,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 26771
+        },
+        "encrypt_rc4": {
+          "ember": 0.9979,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27415
+        },
+        "encrypt_aes": {
+          "ember": 0.9952,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 27715
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.3612,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74279
+        },
+        "recompress": {
+          "ember": 0.2909,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76173
+        },
+        "decompress": {
+          "ember": 0.0611,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 292500
+        },
+        "objstm_gen": {
+          "ember": 0.3612,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74279
+        },
+        "objstm_off": {
+          "ember": 0.0861,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80667
+        },
+        "normalize": {
+          "ember": 0.0,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 104498
+        },
+        "linearize": {
+          "ember": 0.0382,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75429
+        },
+        "encrypt_rc4": {
+          "ember": 0.218,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75314
+        },
+        "encrypt_aes": {
+          "ember": 0.4272,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75613
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.0871,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80667
+        },
+        "recompress": {
+          "ember": 0.0475,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82563
+        },
+        "decompress": {
+          "ember": 0.05,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 293235
+        },
+        "objstm_gen": {
+          "ember": 0.3093,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74260
+        },
+        "objstm_off": {
+          "ember": 0.0871,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80667
+        },
+        "normalize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 110886
+        },
+        "linearize": {
+          "ember": 0.1319,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 81262
+        },
+        "encrypt_rc4": {
+          "ember": 0.4804,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82268
+        },
+        "encrypt_aes": {
+          "ember": 0.7106,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82568
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.2718,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74310
+        },
+        "recompress": {
+          "ember": 0.3138,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76205
+        },
+        "decompress": {
+          "ember": 0.0619,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 292584
+        },
+        "objstm_gen": {
+          "ember": 0.2718,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74310
+        },
+        "objstm_off": {
+          "ember": 0.0684,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80797
+        },
+        "normalize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 104529
+        },
+        "linearize": {
+          "ember": 0.0491,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75477
+        },
+        "encrypt_rc4": {
+          "ember": 0.1224,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75341
+        },
+        "encrypt_aes": {
+          "ember": 0.4922,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75639
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.0718,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80797
+        },
+        "recompress": {
+          "ember": 0.0286,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82693
+        },
+        "decompress": {
+          "ember": 0.0538,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 293365
+        },
+        "objstm_gen": {
+          "ember": 0.3354,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74291
+        },
+        "objstm_off": {
+          "ember": 0.0718,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80797
+        },
+        "normalize": {
+          "ember": 0.0002,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 111016
+        },
+        "linearize": {
+          "ember": 0.1112,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 81393
+        },
+        "encrypt_rc4": {
+          "ember": 0.5038,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82451
+        },
+        "encrypt_aes": {
+          "ember": 0.4741,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82751
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.3235,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74287
+        },
+        "recompress": {
+          "ember": 0.262,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76181
+        },
+        "decompress": {
+          "ember": 0.0743,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 292521
+        },
+        "objstm_gen": {
+          "ember": 0.3235,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74287
+        },
+        "objstm_off": {
+          "ember": 0.0756,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80711
+        },
+        "normalize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 104505
+        },
+        "linearize": {
+          "ember": 0.0315,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75442
+        },
+        "encrypt_rc4": {
+          "ember": 0.4459,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75311
+        },
+        "encrypt_aes": {
+          "ember": 0.0657,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75610
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.0844,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80711
+        },
+        "recompress": {
+          "ember": 0.075,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82607
+        },
+        "decompress": {
+          "ember": 0.0535,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 293279
+        },
+        "objstm_gen": {
+          "ember": 0.5201,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74267
+        },
+        "objstm_off": {
+          "ember": 0.0844,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80711
+        },
+        "normalize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 110930
+        },
+        "linearize": {
+          "ember": 0.1513,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 81311
+        },
+        "encrypt_rc4": {
+          "ember": 0.625,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82312
+        },
+        "encrypt_aes": {
+          "ember": 0.5647,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82612
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.3153,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74296
+        },
+        "recompress": {
+          "ember": 0.2787,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 76191
+        },
+        "decompress": {
+          "ember": 0.0663,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 292555
+        },
+        "objstm_gen": {
+          "ember": 0.3153,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74296
+        },
+        "objstm_off": {
+          "ember": 0.0806,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80745
+        },
+        "normalize": {
+          "ember": 0.0001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 104515
+        },
+        "linearize": {
+          "ember": 0.0202,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75455
+        },
+        "encrypt_rc4": {
+          "ember": 0.1466,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75330
+        },
+        "encrypt_aes": {
+          "ember": 0.1779,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 75630
+        }
+      }
+    },
+    {
+      "base": "google-doc-document.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.0887,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80745
+        },
+        "recompress": {
+          "ember": 0.0522,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82641
+        },
+        "decompress": {
+          "ember": 0.0562,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 293313
+        },
+        "objstm_gen": {
+          "ember": 0.2546,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 74275
+        },
+        "objstm_off": {
+          "ember": 0.0887,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 80745
+        },
+        "normalize": {
+          "ember": 0.0003,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 110964
+        },
+        "linearize": {
+          "ember": 0.1015,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 81340
+        },
+        "encrypt_rc4": {
+          "ember": 0.3959,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82346
+        },
+        "encrypt_aes": {
+          "ember": 0.5935,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 82646
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0688,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24756
+        },
+        "recompress": {
+          "ember": 0.0549,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24781
+        },
+        "decompress": {
+          "ember": 0.3395,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30717
+        },
+        "objstm_gen": {
+          "ember": 0.0688,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24756
+        },
+        "objstm_off": {
+          "ember": 0.9784,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28120
+        },
+        "normalize": {
+          "ember": 0.0193,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24753
+        },
+        "linearize": {
+          "ember": 0.005,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25748
+        },
+        "encrypt_rc4": {
+          "ember": 0.2437,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25378
+        },
+        "encrypt_aes": {
+          "ember": 0.0196,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25677
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9746,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28120
+        },
+        "recompress": {
+          "ember": 0.9226,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28146
+        },
+        "decompress": {
+          "ember": 0.4259,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 31305
+        },
+        "objstm_gen": {
+          "ember": 0.0457,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24747
+        },
+        "objstm_off": {
+          "ember": 0.9746,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28120
+        },
+        "normalize": {
+          "ember": 0.9899,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28116
+        },
+        "linearize": {
+          "ember": 0.884,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28645
+        },
+        "encrypt_rc4": {
+          "ember": 0.9955,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30379
+        },
+        "encrypt_aes": {
+          "ember": 0.9937,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30679
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0365,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24803
+        },
+        "recompress": {
+          "ember": 0.0367,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24828
+        },
+        "decompress": {
+          "ember": 0.3676,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30830
+        },
+        "objstm_gen": {
+          "ember": 0.0365,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24803
+        },
+        "objstm_off": {
+          "ember": 0.9247,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28283
+        },
+        "normalize": {
+          "ember": 0.0142,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24799
+        },
+        "linearize": {
+          "ember": 0.0022,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25808
+        },
+        "encrypt_rc4": {
+          "ember": 0.0206,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25409
+        },
+        "encrypt_aes": {
+          "ember": 0.0536,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25709
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9175,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28283
+        },
+        "recompress": {
+          "ember": 0.9717,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28309
+        },
+        "decompress": {
+          "ember": 0.5429,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 31468
+        },
+        "objstm_gen": {
+          "ember": 0.0685,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24794
+        },
+        "objstm_off": {
+          "ember": 0.9175,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28283
+        },
+        "normalize": {
+          "ember": 0.9869,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28279
+        },
+        "linearize": {
+          "ember": 0.8665,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28808
+        },
+        "encrypt_rc4": {
+          "ember": 0.9911,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30595
+        },
+        "encrypt_aes": {
+          "ember": 0.9862,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30895
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0447,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24790
+        },
+        "recompress": {
+          "ember": 0.0447,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24815
+        },
+        "decompress": {
+          "ember": 0.4587,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30800
+        },
+        "objstm_gen": {
+          "ember": 0.0447,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24790
+        },
+        "objstm_off": {
+          "ember": 0.9523,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28253
+        },
+        "normalize": {
+          "ember": 0.0056,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24786
+        },
+        "linearize": {
+          "ember": 0.0068,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25802
+        },
+        "encrypt_rc4": {
+          "ember": 0.0613,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25409
+        },
+        "encrypt_aes": {
+          "ember": 0.0149,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25709
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9393,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28253
+        },
+        "recompress": {
+          "ember": 0.9659,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28279
+        },
+        "decompress": {
+          "ember": 0.5443,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 31438
+        },
+        "objstm_gen": {
+          "ember": 0.0381,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24783
+        },
+        "objstm_off": {
+          "ember": 0.9393,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28253
+        },
+        "normalize": {
+          "ember": 0.9812,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28249
+        },
+        "linearize": {
+          "ember": 0.938,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28783
+        },
+        "encrypt_rc4": {
+          "ember": 0.9853,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30512
+        },
+        "encrypt_aes": {
+          "ember": 0.9952,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30812
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.1084,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24773
+        },
+        "recompress": {
+          "ember": 0.0751,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24797
+        },
+        "decompress": {
+          "ember": 0.3695,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30771
+        },
+        "objstm_gen": {
+          "ember": 0.1084,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24773
+        },
+        "objstm_off": {
+          "ember": 0.958,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28198
+        },
+        "normalize": {
+          "ember": 0.0099,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24769
+        },
+        "linearize": {
+          "ember": 0.0024,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25773
+        },
+        "encrypt_rc4": {
+          "ember": 0.1484,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25393
+        },
+        "encrypt_aes": {
+          "ember": 0.147,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 25693
+        }
+      }
+    },
+    {
+      "base": "pdflatex-forms.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9583,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28198
+        },
+        "recompress": {
+          "ember": 0.9561,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28224
+        },
+        "decompress": {
+          "ember": 0.5076,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 31383
+        },
+        "objstm_gen": {
+          "ember": 0.0306,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24766
+        },
+        "objstm_off": {
+          "ember": 0.9583,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28198
+        },
+        "normalize": {
+          "ember": 0.9878,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28194
+        },
+        "linearize": {
+          "ember": 0.9181,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 28723
+        },
+        "encrypt_rc4": {
+          "ember": 0.9954,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30457
+        },
+        "encrypt_aes": {
+          "ember": 0.9948,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 30757
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.9118,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1353
+        },
+        "recompress": {
+          "ember": 0.9677,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1353
+        },
+        "decompress": {
+          "ember": 0.9681,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1998
+        },
+        "objstm_gen": {
+          "ember": 0.9118,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1353
+        },
+        "objstm_off": {
+          "ember": 0.9483,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2043
+        },
+        "normalize": {
+          "ember": 0.0686,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1396
+        },
+        "linearize": {
+          "ember": 0.0034,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2588
+        },
+        "encrypt_rc4": {
+          "ember": 0.8494,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1791
+        },
+        "encrypt_aes": {
+          "ember": 0.9811,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2091
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9493,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2043
+        },
+        "recompress": {
+          "ember": 0.9583,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2043
+        },
+        "decompress": {
+          "ember": 0.9607,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2086
+        },
+        "objstm_gen": {
+          "ember": 0.8458,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1353
+        },
+        "objstm_off": {
+          "ember": 0.9493,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2043
+        },
+        "normalize": {
+          "ember": 0.9607,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2086
+        },
+        "linearize": {
+          "ember": 0.986,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2562
+        },
+        "encrypt_rc4": {
+          "ember": 0.9975,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3141
+        },
+        "encrypt_aes": {
+          "ember": 0.9993,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3441
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.828,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1404
+        },
+        "recompress": {
+          "ember": 0.9256,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1404
+        },
+        "decompress": {
+          "ember": 0.9587,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2114
+        },
+        "objstm_gen": {
+          "ember": 0.828,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1404
+        },
+        "objstm_off": {
+          "ember": 0.9657,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2206
+        },
+        "normalize": {
+          "ember": 0.0389,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1447
+        },
+        "linearize": {
+          "ember": 0.0024,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2677
+        },
+        "encrypt_rc4": {
+          "ember": 0.9132,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1852
+        },
+        "encrypt_aes": {
+          "ember": 0.8987,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2152
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9634,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2206
+        },
+        "recompress": {
+          "ember": 0.9714,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2206
+        },
+        "decompress": {
+          "ember": 0.9758,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2249
+        },
+        "objstm_gen": {
+          "ember": 0.8313,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1409
+        },
+        "objstm_off": {
+          "ember": 0.9634,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2206
+        },
+        "normalize": {
+          "ember": 0.9758,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2249
+        },
+        "linearize": {
+          "ember": 0.9834,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2726
+        },
+        "encrypt_rc4": {
+          "ember": 0.999,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3357
+        },
+        "encrypt_aes": {
+          "ember": 0.9988,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3657
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.8906,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1376
+        },
+        "recompress": {
+          "ember": 0.8924,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1376
+        },
+        "decompress": {
+          "ember": 0.9376,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2051
+        },
+        "objstm_gen": {
+          "ember": 0.8906,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1376
+        },
+        "objstm_off": {
+          "ember": 0.9821,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2120
+        },
+        "normalize": {
+          "ember": 0.0281,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1419
+        },
+        "linearize": {
+          "ember": 0.004,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2637
+        },
+        "encrypt_rc4": {
+          "ember": 0.8504,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1822
+        },
+        "encrypt_aes": {
+          "ember": 0.949,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2122
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9803,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2120
+        },
+        "recompress": {
+          "ember": 0.9874,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2120
+        },
+        "decompress": {
+          "ember": 0.9748,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2163
+        },
+        "objstm_gen": {
+          "ember": 0.7728,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1378
+        },
+        "objstm_off": {
+          "ember": 0.9803,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2120
+        },
+        "normalize": {
+          "ember": 0.9748,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2163
+        },
+        "linearize": {
+          "ember": 0.9832,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2645
+        },
+        "encrypt_rc4": {
+          "ember": 0.9988,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3218
+        },
+        "encrypt_aes": {
+          "ember": 0.9991,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3518
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.8391,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1370
+        },
+        "recompress": {
+          "ember": 0.8964,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1370
+        },
+        "decompress": {
+          "ember": 0.9392,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2052
+        },
+        "objstm_gen": {
+          "ember": 0.8391,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1370
+        },
+        "objstm_off": {
+          "ember": 0.9251,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2121
+        },
+        "normalize": {
+          "ember": 0.2603,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1413
+        },
+        "linearize": {
+          "ember": 0.0018,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2617
+        },
+        "encrypt_rc4": {
+          "ember": 0.7873,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1808
+        },
+        "encrypt_aes": {
+          "ember": 0.8504,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2108
+        }
+      }
+    },
+    {
+      "base": "annotated_pdf.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.8935,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2121
+        },
+        "recompress": {
+          "ember": 0.9337,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2121
+        },
+        "decompress": {
+          "ember": 0.968,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2164
+        },
+        "objstm_gen": {
+          "ember": 0.9173,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 1372
+        },
+        "objstm_off": {
+          "ember": 0.8935,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2121
+        },
+        "normalize": {
+          "ember": 0.968,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2164
+        },
+        "linearize": {
+          "ember": 0.9823,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 2641
+        },
+        "encrypt_rc4": {
+          "ember": 0.9988,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3219
+        },
+        "encrypt_aes": {
+          "ember": 0.9989,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 3519
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.6952,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16925
+        },
+        "recompress": {
+          "ember": 0.9223,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16958
+        },
+        "decompress": {
+          "ember": 0.41,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19958
+        },
+        "objstm_gen": {
+          "ember": 0.6952,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16925
+        },
+        "objstm_off": {
+          "ember": 0.9254,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17696
+        },
+        "normalize": {
+          "ember": 0.0646,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17743
+        },
+        "linearize": {
+          "ember": 0.0126,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17746
+        },
+        "encrypt_rc4": {
+          "ember": 0.9674,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17408
+        },
+        "encrypt_aes": {
+          "ember": 0.8908,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17708
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9216,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17696
+        },
+        "recompress": {
+          "ember": 0.9378,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17729
+        },
+        "decompress": {
+          "ember": 0.6021,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20104
+        },
+        "objstm_gen": {
+          "ember": 0.6533,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16920
+        },
+        "objstm_off": {
+          "ember": 0.9216,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17696
+        },
+        "normalize": {
+          "ember": 0.6618,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18514
+        },
+        "linearize": {
+          "ember": 0.9195,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18221
+        },
+        "encrypt_rc4": {
+          "ember": 0.9908,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18746
+        },
+        "encrypt_aes": {
+          "ember": 0.9886,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19046
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.9458,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16959
+        },
+        "recompress": {
+          "ember": 0.9815,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16992
+        },
+        "decompress": {
+          "ember": 0.4042,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20041
+        },
+        "objstm_gen": {
+          "ember": 0.9458,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16959
+        },
+        "objstm_off": {
+          "ember": 0.9187,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17826
+        },
+        "normalize": {
+          "ember": 0.0901,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17777
+        },
+        "linearize": {
+          "ember": 0.0176,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17799
+        },
+        "encrypt_rc4": {
+          "ember": 0.9924,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17435
+        },
+        "encrypt_aes": {
+          "ember": 0.8879,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17735
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9356,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17826
+        },
+        "recompress": {
+          "ember": 0.9476,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17859
+        },
+        "decompress": {
+          "ember": 0.5027,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20234
+        },
+        "objstm_gen": {
+          "ember": 0.8084,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16953
+        },
+        "objstm_off": {
+          "ember": 0.9356,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17826
+        },
+        "normalize": {
+          "ember": 0.7764,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18644
+        },
+        "linearize": {
+          "ember": 0.9001,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18351
+        },
+        "encrypt_rc4": {
+          "ember": 0.9968,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18929
+        },
+        "encrypt_aes": {
+          "ember": 0.9943,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19229
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.7692,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16930
+        },
+        "recompress": {
+          "ember": 0.9838,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16963
+        },
+        "decompress": {
+          "ember": 0.4112,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19979
+        },
+        "objstm_gen": {
+          "ember": 0.7692,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16930
+        },
+        "objstm_off": {
+          "ember": 0.8806,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17740
+        },
+        "normalize": {
+          "ember": 0.0473,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17748
+        },
+        "linearize": {
+          "ember": 0.0058,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17763
+        },
+        "encrypt_rc4": {
+          "ember": 0.9732,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17405
+        },
+        "encrypt_aes": {
+          "ember": 0.9405,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17705
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.8871,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17740
+        },
+        "recompress": {
+          "ember": 0.9064,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17773
+        },
+        "decompress": {
+          "ember": 0.6267,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20148
+        },
+        "objstm_gen": {
+          "ember": 0.5741,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16927
+        },
+        "objstm_off": {
+          "ember": 0.8871,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17740
+        },
+        "normalize": {
+          "ember": 0.6672,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18558
+        },
+        "linearize": {
+          "ember": 0.9563,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18270
+        },
+        "encrypt_rc4": {
+          "ember": 0.9815,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18790
+        },
+        "encrypt_aes": {
+          "ember": 0.9882,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19090
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.5878,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16943
+        },
+        "recompress": {
+          "ember": 0.9645,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16976
+        },
+        "decompress": {
+          "ember": 0.4622,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20013
+        },
+        "objstm_gen": {
+          "ember": 0.5878,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16943
+        },
+        "objstm_off": {
+          "ember": 0.9096,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17774
+        },
+        "normalize": {
+          "ember": 0.078,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17761
+        },
+        "linearize": {
+          "ember": 0.0163,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17772
+        },
+        "encrypt_rc4": {
+          "ember": 0.8019,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17424
+        },
+        "encrypt_aes": {
+          "ember": 0.872,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17723
+        }
+      }
+    },
+    {
+      "base": "minimal-document.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.9,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17774
+        },
+        "recompress": {
+          "ember": 0.9096,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17807
+        },
+        "decompress": {
+          "ember": 0.6208,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 20182
+        },
+        "objstm_gen": {
+          "ember": 0.7146,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16939
+        },
+        "objstm_off": {
+          "ember": 0.9,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17774
+        },
+        "normalize": {
+          "ember": 0.6487,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18592
+        },
+        "linearize": {
+          "ember": 0.9364,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18299
+        },
+        "encrypt_rc4": {
+          "ember": 0.9889,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 18824
+        },
+        "encrypt_aes": {
+          "ember": 0.9928,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 19124
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "openaction",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.1298,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14256
+        },
+        "recompress": {
+          "ember": 0.2402,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14267
+        },
+        "decompress": {
+          "ember": 0.8768,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24078
+        },
+        "objstm_gen": {
+          "ember": 0.1298,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14256
+        },
+        "objstm_off": {
+          "ember": 0.6035,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16128
+        },
+        "normalize": {
+          "ember": 0.0362,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 21005
+        },
+        "linearize": {
+          "ember": 0.0042,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 15165
+        },
+        "encrypt_rc4": {
+          "ember": 0.9568,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14179
+        },
+        "encrypt_aes": {
+          "ember": 0.8055,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14476
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "openaction",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.6756,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16128
+        },
+        "recompress": {
+          "ember": 0.7536,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16141
+        },
+        "decompress": {
+          "ember": 0.8972,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24392
+        },
+        "objstm_gen": {
+          "ember": 0.0728,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14237
+        },
+        "objstm_off": {
+          "ember": 0.6756,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16128
+        },
+        "normalize": {
+          "ember": 0.8644,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 22877
+        },
+        "linearize": {
+          "ember": 0.7427,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16662
+        },
+        "encrypt_rc4": {
+          "ember": 0.97,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16957
+        },
+        "encrypt_aes": {
+          "ember": 0.9908,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17257
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "names_js",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.1123,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14288
+        },
+        "recompress": {
+          "ember": 0.1024,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14300
+        },
+        "decompress": {
+          "ember": 0.8589,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24162
+        },
+        "objstm_gen": {
+          "ember": 0.1123,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14288
+        },
+        "objstm_off": {
+          "ember": 0.6972,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16258
+        },
+        "normalize": {
+          "ember": 0.0308,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 21038
+        },
+        "linearize": {
+          "ember": 0.0021,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 15213
+        },
+        "encrypt_rc4": {
+          "ember": 0.9287,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14208
+        },
+        "encrypt_aes": {
+          "ember": 0.9689,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14504
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "names_js",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.6988,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16258
+        },
+        "recompress": {
+          "ember": 0.8402,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16271
+        },
+        "decompress": {
+          "ember": 0.8655,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24522
+        },
+        "objstm_gen": {
+          "ember": 0.0705,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14272
+        },
+        "objstm_off": {
+          "ember": 0.6988,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16258
+        },
+        "normalize": {
+          "ember": 0.8132,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 23007
+        },
+        "linearize": {
+          "ember": 0.8685,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16791
+        },
+        "encrypt_rc4": {
+          "ember": 0.9876,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17140
+        },
+        "encrypt_aes": {
+          "ember": 0.9948,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17440
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "page_aa",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.1213,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14262
+        },
+        "recompress": {
+          "ember": 0.3082,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14274
+        },
+        "decompress": {
+          "ember": 0.8675,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24099
+        },
+        "objstm_gen": {
+          "ember": 0.1213,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14262
+        },
+        "objstm_off": {
+          "ember": 0.6294,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16172
+        },
+        "normalize": {
+          "ember": 0.0348,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 21012
+        },
+        "linearize": {
+          "ember": 0.007,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 15175
+        },
+        "encrypt_rc4": {
+          "ember": 0.8854,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14175
+        },
+        "encrypt_aes": {
+          "ember": 0.7518,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14473
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "page_aa",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.6294,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16172
+        },
+        "recompress": {
+          "ember": 0.5116,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16185
+        },
+        "decompress": {
+          "ember": 0.8989,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24436
+        },
+        "objstm_gen": {
+          "ember": 0.0651,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14247
+        },
+        "objstm_off": {
+          "ember": 0.6294,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16172
+        },
+        "normalize": {
+          "ember": 0.8367,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 22921
+        },
+        "linearize": {
+          "ember": 0.7303,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16709
+        },
+        "encrypt_rc4": {
+          "ember": 0.9934,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17001
+        },
+        "encrypt_aes": {
+          "ember": 0.9977,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17301
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "action_chain",
+      "hide": true,
+      "variants": {
+        "baseline": {
+          "ember": 0.0897,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14273
+        },
+        "recompress": {
+          "ember": 0.4212,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14285
+        },
+        "decompress": {
+          "ember": 0.8844,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24133
+        },
+        "objstm_gen": {
+          "ember": 0.0897,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14273
+        },
+        "objstm_off": {
+          "ember": 0.7541,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16206
+        },
+        "normalize": {
+          "ember": 0.0332,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 21023
+        },
+        "linearize": {
+          "ember": 0.0028,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 15192
+        },
+        "encrypt_rc4": {
+          "ember": 0.8227,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14196
+        },
+        "encrypt_aes": {
+          "ember": 0.4296,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14492
+        }
+      }
+    },
+    {
+      "base": "crazyones-pdfa.pdf",
+      "wiring": "action_chain",
+      "hide": false,
+      "variants": {
+        "baseline": {
+          "ember": 0.77,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16206
+        },
+        "recompress": {
+          "ember": 0.8049,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16219
+        },
+        "decompress": {
+          "ember": 0.8976,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 24470
+        },
+        "objstm_gen": {
+          "ember": 0.0989,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 14259
+        },
+        "objstm_off": {
+          "ember": 0.77,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16206
+        },
+        "normalize": {
+          "ember": 0.8729,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 22955
+        },
+        "linearize": {
+          "ember": 0.7314,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 16739
+        },
+        "encrypt_rc4": {
+          "ember": 0.9893,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17035
+        },
+        "encrypt_aes": {
+          "ember": 0.9937,
+          "reach": "ACTIVE_ONOPEN",
+          "bytes": 17335
+        }
+      }
+    }
+  ]
+}
