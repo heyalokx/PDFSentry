@@ -1,0 +1,534 @@
+{
+  "source": "pdflatex-outline.pdf + injected reachable /OpenAction\u2192JavaScript",
+  "nodes": [
+    {
+      "id": "1_0",
+      "label": "Catalog",
+      "role": "catalog"
+    },
+    {
+      "id": "3_0",
+      "label": "Names",
+      "role": "trigger"
+    },
+    {
+      "id": "4_0",
+      "label": "JavaScript",
+      "role": "dangerous"
+    },
+    {
+      "id": "5_0",
+      "label": "Outlines",
+      "role": "dict"
+    },
+    {
+      "id": "6_0",
+      "label": "Pages",
+      "role": "pages"
+    },
+    {
+      "id": "7_0",
+      "label": "Dests",
+      "role": "dict"
+    },
+    {
+      "id": "8_0",
+      "label": "First",
+      "role": "dict"
+    },
+    {
+      "id": "9_0",
+      "label": "Last",
+      "role": "dict"
+    },
+    {
+      "id": "6_0:/Kids",
+      "label": "Kids",
+      "role": "other"
+    },
+    {
+      "id": "7_0:/Kids",
+      "label": "Kids",
+      "role": "other"
+    },
+    {
+      "id": "7_0:/Limits",
+      "label": "Limits",
+      "role": "other"
+    },
+    {
+      "id": "17_0",
+      "label": "A",
+      "role": "dict"
+    },
+    {
+      "id": "18_0",
+      "label": "Next",
+      "role": "dict"
+    },
+    {
+      "id": "20_0",
+      "label": "A",
+      "role": "dict"
+    },
+    {
+      "id": "21_0",
+      "label": "Prev",
+      "role": "dict"
+    },
+    {
+      "id": "10_0",
+      "label": "Page",
+      "role": "page"
+    },
+    {
+      "id": "11_0",
+      "label": "Page",
+      "role": "page"
+    },
+    {
+      "id": "12_0",
+      "label": "Page",
+      "role": "page"
+    },
+    {
+      "id": "13_0",
+      "label": "Page",
+      "role": "page"
+    },
+    {
+      "id": "14_0",
+      "label": "[0]",
+      "role": "dict"
+    },
+    {
+      "id": "15_0",
+      "label": "[1]",
+      "role": "dict"
+    },
+    {
+      "id": "16_0",
+      "label": "[2]",
+      "role": "dict"
+    },
+    {
+      "id": "55_0",
+      "label": "A",
+      "role": "dict"
+    },
+    {
+      "id": "56_0",
+      "label": "Next",
+      "role": "dict"
+    },
+    {
+      "id": "58_0",
+      "label": "A",
+      "role": "dict"
+    },
+    {
+      "id": "59_0",
+      "label": "Prev",
+      "role": "dict"
+    },
+    {
+      "id": "10_0:/Annots",
+      "label": "Annots",
+      "role": "other"
+    },
+    {
+      "id": "32_0",
+      "label": "Contents",
+      "role": "dict"
+    },
+    {
+      "id": "10_0:/MediaBox",
+      "label": "MediaBox",
+      "role": "other"
+    },
+    {
+      "id": "33_0",
+      "label": "Resources",
+      "role": "dict"
+    },
+    {
+      "id": "34_0",
+      "label": "Contents",
+      "role": "dict"
+    },
+    {
+      "id": "11_0:/MediaBox",
+      "label": "MediaBox",
+      "role": "other"
+    },
+    {
+      "id": "35_0",
+      "label": "Resources",
+      "role": "dict"
+    },
+    {
+      "id": "36_0",
+      "label": "Contents",
+      "role": "dict"
+    },
+    {
+      "id": "12_0:/MediaBox",
+      "label": "MediaBox",
+      "role": "other"
+    },
+    {
+      "id": "37_0",
+      "label": "Resources",
+      "role": "dict"
+    },
+    {
+      "id": "38_0",
+      "label": "Contents",
+      "role": "dict"
+    },
+    {
+      "id": "13_0:/MediaBox",
+      "label": "MediaBox",
+      "role": "other"
+    },
+    {
+      "id": "39_0",
+      "label": "Resources",
+      "role": "dict"
+    },
+    {
+      "id": "14_0:/Limits",
+      "label": "Limits",
+      "role": "other"
+    },
+    {
+      "id": "14_0:/Names",
+      "label": "Names",
+      "role": "trigger"
+    },
+    {
+      "id": "15_0:/Limits",
+      "label": "Limits",
+      "role": "other"
+    },
+    {
+      "id": "15_0:/Names",
+      "label": "Names",
+      "role": "trigger"
+    },
+    {
+      "id": "16_0:/Limits",
+      "label": "Limits",
+      "role": "other"
+    },
+    {
+      "id": "16_0:/Names",
+      "label": "Names",
+      "role": "trigger"
+    },
+    {
+      "id": "64_0",
+      "label": "A",
+      "role": "dict"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1_0",
+      "target": "3_0",
+      "label": "Names"
+    },
+    {
+      "source": "1_0",
+      "target": "4_0",
+      "label": "OpenAction"
+    },
+    {
+      "source": "1_0",
+      "target": "5_0",
+      "label": "Outlines"
+    },
+    {
+      "source": "1_0",
+      "target": "6_0",
+      "label": "Pages"
+    },
+    {
+      "source": "3_0",
+      "target": "7_0",
+      "label": "Dests"
+    },
+    {
+      "source": "5_0",
+      "target": "8_0",
+      "label": "First"
+    },
+    {
+      "source": "5_0",
+      "target": "9_0",
+      "label": "Last"
+    },
+    {
+      "source": "6_0",
+      "target": "6_0:/Kids",
+      "label": "Kids"
+    },
+    {
+      "source": "7_0",
+      "target": "7_0:/Kids",
+      "label": "Kids"
+    },
+    {
+      "source": "7_0",
+      "target": "7_0:/Limits",
+      "label": "Limits"
+    },
+    {
+      "source": "8_0",
+      "target": "17_0",
+      "label": "A"
+    },
+    {
+      "source": "8_0",
+      "target": "18_0",
+      "label": "Next"
+    },
+    {
+      "source": "8_0",
+      "target": "5_0",
+      "label": "Parent"
+    },
+    {
+      "source": "9_0",
+      "target": "20_0",
+      "label": "A"
+    },
+    {
+      "source": "9_0",
+      "target": "5_0",
+      "label": "Parent"
+    },
+    {
+      "source": "9_0",
+      "target": "21_0",
+      "label": "Prev"
+    },
+    {
+      "source": "6_0:/Kids",
+      "target": "10_0",
+      "label": "[0]"
+    },
+    {
+      "source": "6_0:/Kids",
+      "target": "11_0",
+      "label": "[1]"
+    },
+    {
+      "source": "6_0:/Kids",
+      "target": "12_0",
+      "label": "[2]"
+    },
+    {
+      "source": "6_0:/Kids",
+      "target": "13_0",
+      "label": "[3]"
+    },
+    {
+      "source": "7_0:/Kids",
+      "target": "14_0",
+      "label": "[0]"
+    },
+    {
+      "source": "7_0:/Kids",
+      "target": "15_0",
+      "label": "[1]"
+    },
+    {
+      "source": "7_0:/Kids",
+      "target": "16_0",
+      "label": "[2]"
+    },
+    {
+      "source": "18_0",
+      "target": "55_0",
+      "label": "A"
+    },
+    {
+      "source": "18_0",
+      "target": "56_0",
+      "label": "Next"
+    },
+    {
+      "source": "18_0",
+      "target": "5_0",
+      "label": "Parent"
+    },
+    {
+      "source": "18_0",
+      "target": "8_0",
+      "label": "Prev"
+    },
+    {
+      "source": "21_0",
+      "target": "58_0",
+      "label": "A"
+    },
+    {
+      "source": "21_0",
+      "target": "9_0",
+      "label": "Next"
+    },
+    {
+      "source": "21_0",
+      "target": "5_0",
+      "label": "Parent"
+    },
+    {
+      "source": "21_0",
+      "target": "59_0",
+      "label": "Prev"
+    },
+    {
+      "source": "10_0",
+      "target": "10_0:/Annots",
+      "label": "Annots"
+    },
+    {
+      "source": "10_0",
+      "target": "32_0",
+      "label": "Contents"
+    },
+    {
+      "source": "10_0",
+      "target": "10_0:/MediaBox",
+      "label": "MediaBox"
+    },
+    {
+      "source": "10_0",
+      "target": "6_0",
+      "label": "Parent"
+    },
+    {
+      "source": "10_0",
+      "target": "33_0",
+      "label": "Resources"
+    },
+    {
+      "source": "11_0",
+      "target": "34_0",
+      "label": "Contents"
+    },
+    {
+      "source": "11_0",
+      "target": "11_0:/MediaBox",
+      "label": "MediaBox"
+    },
+    {
+      "source": "11_0",
+      "target": "6_0",
+      "label": "Parent"
+    },
+    {
+      "source": "11_0",
+      "target": "35_0",
+      "label": "Resources"
+    },
+    {
+      "source": "12_0",
+      "target": "36_0",
+      "label": "Contents"
+    },
+    {
+      "source": "12_0",
+      "target": "12_0:/MediaBox",
+      "label": "MediaBox"
+    },
+    {
+      "source": "12_0",
+      "target": "6_0",
+      "label": "Parent"
+    },
+    {
+      "source": "12_0",
+      "target": "37_0",
+      "label": "Resources"
+    },
+    {
+      "source": "13_0",
+      "target": "38_0",
+      "label": "Contents"
+    },
+    {
+      "source": "13_0",
+      "target": "13_0:/MediaBox",
+      "label": "MediaBox"
+    },
+    {
+      "source": "13_0",
+      "target": "6_0",
+      "label": "Parent"
+    },
+    {
+      "source": "13_0",
+      "target": "39_0",
+      "label": "Resources"
+    },
+    {
+      "source": "14_0",
+      "target": "14_0:/Limits",
+      "label": "Limits"
+    },
+    {
+      "source": "14_0",
+      "target": "14_0:/Names",
+      "label": "Names"
+    },
+    {
+      "source": "15_0",
+      "target": "15_0:/Limits",
+      "label": "Limits"
+    },
+    {
+      "source": "15_0",
+      "target": "15_0:/Names",
+      "label": "Names"
+    },
+    {
+      "source": "16_0",
+      "target": "16_0:/Limits",
+      "label": "Limits"
+    },
+    {
+      "source": "16_0",
+      "target": "16_0:/Names",
+      "label": "Names"
+    },
+    {
+      "source": "56_0",
+      "target": "64_0",
+      "label": "A"
+    },
+    {
+      "source": "56_0",
+      "target": "5_0",
+      "label": "Parent"
+    },
+    {
+      "source": "56_0",
+      "target": "18_0",
+      "label": "Prev"
+    }
+  ],
+  "danger": [
+    "4_0"
+  ],
+  "role_counts": {
+    "catalog": 1,
+    "trigger": 4,
+    "dangerous": 1,
+    "dict": 24,
+    "pages": 1,
+    "other": 11,
+    "page": 4
+  }
+}

@@ -27,6 +27,7 @@ bundle = {
     "structural_evasion": L("structural_evasion_study.json"),
     "evasion_generality": L("evasion_generality.json"),
     "challenge_structure": L("challenge_structure.json"),
+    "object_graph": L("object_graph.json"),
 }
 out = art("metrics", "dashboard_data.json")
 json.dump(bundle, open(out, "w"))
