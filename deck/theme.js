@@ -33,6 +33,8 @@ function metricStrip(s,metrics,y){ const n=metrics.length, gap=0.4, cw=(11.9-(n-
 function cover(p,o){ const s=newslide(p); s.background={path:A+'bg_cover.jpg'}; nav(s,o.right||'BCSE321L · MALWARE ANALYSIS');
   s.addImage({path:A+'orn_globe.png',x:8.7,y:1.45,w:4.0,h:4.0,transparency:28});
   s.addImage({path:A+'orn_arcs.png',x:11.2,y:5.0,w:1.5,h:1.5,transparency:45});
+  s.addImage({path:A+'orn_star.png',x:7.95,y:2.2,w:0.85,h:0.85,transparency:35});
+  s.addImage({path:A+'orn_star.png',x:12.25,y:1.3,w:0.5,h:0.5,transparency:50});
   s.addText(o.eyebrow,{x:0.6,y:1.95,w:8,h:0.4,isTextBox:true,margin:0,fontFace:BODY,fontSize:14,bold:true,color:C.TEAL,charSpacing:5});
   s.addText(o.title,{x:0.52,y:2.37,w:9,h:1.5,isTextBox:true,margin:0,fontFace:HEAD,fontSize:o.titleSize||82,color:C.INK,charSpacing:1});
   s.addText(o.subtitle,{x:0.6,y:o.subY||3.95,w:7.7,h:0.9,isTextBox:true,margin:0,fontFace:BODY,fontSize:21,color:C.GRAPH,lineSpacingMultiple:1.05});
@@ -146,4 +148,59 @@ function closing(p,o){ const s=newslide(p); s.background={path:A+'bg_cover.jpg'}
     {x:0.6,y:yy,w:12,h:0.35,isTextBox:true,margin:0,fontFace:BODY,fontSize:13.5}); }
   return s; }
 
-module.exports={ mk,nav,orn,title,card,cover,divider,numbered,bullets,imageSlide,stats,chartSlide,tableSlide,closing,metricStrip,C,W,H,A };
+// ================= GLAM DARK SLIDES (command-center showcase) =================
+const D = { INK:'eef1f5', MUT:'9aa6b2', FNT:'5c6673', TEAL:'34d6c2', AMBER:'f2a93b', RED:'f2495c', LINE:'2b3542', GLASS:'141a24' };
+function navD(s,right){
+  s.addText('PDFSENTRY',{x:0.55,y:0.32,w:5,h:0.3,isTextBox:true,margin:0,fontFace:BODY,fontSize:11,bold:true,color:D.MUT,charSpacing:4});
+  if(right) s.addText(right,{x:W-6.05,y:0.32,w:5.5,h:0.3,isTextBox:true,margin:0,align:'right',fontFace:BODY,fontSize:11,color:D.MUT,charSpacing:3}); }
+function footD(s){
+  s.addText('PDFSentry · Reachability over Recognition',{x:0.55,y:7.14,w:7,h:0.26,isTextBox:true,margin:0,fontFace:BODY,fontSize:8.5,color:D.FNT,charSpacing:1.5});
+  s.addText(String(PAGE).padStart(2,'0'),{x:W-0.95,y:7.12,w:0.5,h:0.28,isTextBox:true,margin:0,align:'right',fontFace:BODY,fontSize:9.5,bold:true,color:D.MUT}); }
+function frame(s,ix,iy,iw,ih,img){
+  s.addShape('roundRect',{x:ix-0.07,y:iy-0.07,w:iw+0.14,h:ih+0.14,rectRadius:0.05,fill:{color:'0b0e14'},line:{color:D.TEAL,width:1},
+    shadow:{type:'outer',color:'000000',blur:16,offset:6,angle:90,opacity:0.55}});
+  s.addImage({path:img,x:ix,y:iy,w:iw,h:ih}); }
+
+// dark section divider
+function darkDivider(p,o){ const s=newslide(p); s.background={path:A+'bg_dark.jpg'}; navD(s,o.right||'');
+  s.addImage({path:A+'orn_star_w.png',x:o.ornX!=null?o.ornX:10.2,y:o.ornY!=null?o.ornY:1.0,w:o.ornW||2.1,h:o.ornW||2.1,transparency:30});
+  s.addText(o.eb||'',{x:0.6,y:2.0,w:9,h:0.4,isTextBox:true,margin:0,fontFace:BODY,fontSize:14,bold:true,color:D.TEAL,charSpacing:5});
+  s.addText(o.title,{x:0.52,y:2.45,w:11,h:1.6,isTextBox:true,margin:0,fontFace:HEAD,fontSize:o.tsz||60,color:D.INK,charSpacing:1,lineSpacingMultiple:0.95});
+  if(o.desc) s.addText(o.desc,{x:0.6,y:o.descY||4.6,w:9.4,h:0.9,isTextBox:true,margin:0,fontFace:BODY,fontSize:18,color:D.MUT,lineSpacingMultiple:1.15});
+  return s; }
+
+// one big hero screenshot on dark + caption (+ optional metric chips)
+function heroShot(p,o){ const s=newslide(p); s.background={path:A+'bg_dark.jpg'}; navD(s,o.right||'');
+  if(o.eb) s.addText(o.eb,{x:0.56,y:0.86,w:11,h:0.28,isTextBox:true,margin:0,fontFace:BODY,fontSize:11,bold:true,color:D.TEAL,charSpacing:4});
+  s.addText(o.title,{x:0.55,y:1.12,w:12.2,h:0.7,isTextBox:true,margin:0,fontFace:HEAD,fontSize:o.tsz||30,color:D.INK});
+  const iw=o.iw||9.3, ih=iw*(o.ratio||0.625), ix=(W-iw)/2, iy=o.iy||1.95;
+  frame(s,ix,iy,iw,ih,o.img);
+  if(o.caption) s.addText(o.caption,{x:1,y:iy+ih+0.1,w:W-2,h:0.4,isTextBox:true,margin:0,align:'center',fontFace:BODY,fontSize:11.5,italic:true,color:D.MUT});
+  footD(s); return s; }
+
+// two screenshots side by side on dark
+function gallery2(p,o){ const s=newslide(p); s.background={path:A+'bg_dark.jpg'}; navD(s,o.right||'');
+  if(o.eb) s.addText(o.eb,{x:0.56,y:0.86,w:11,h:0.28,isTextBox:true,margin:0,fontFace:BODY,fontSize:11,bold:true,color:D.TEAL,charSpacing:4});
+  s.addText(o.title,{x:0.55,y:1.12,w:12.2,h:0.7,isTextBox:true,margin:0,fontFace:HEAD,fontSize:o.tsz||30,color:D.INK});
+  const gap=0.5, iw=(11.9-gap)/2, ih=iw*(o.ratio||0.625), iy=o.iy||2.3;
+  const items=o.shots;
+  [0,1].forEach(i=>{ if(!items[i])return; const ix=0.6+i*(iw+gap);
+    frame(s,ix,iy,iw,ih,items[i].img);
+    s.addText(items[i].cap,{x:ix,y:iy+ih+0.12,w:iw,h:0.4,isTextBox:true,margin:0,align:'center',fontFace:BODY,fontSize:11,italic:true,color:D.MUT}); });
+  footD(s); return s; }
+
+// dark glam closing
+function closingDark(p,o){ const s=newslide(p); s.background={path:A+'bg_dark.jpg'}; navD(s,o.right||'');
+  s.addImage({path:A+'orn_star_w.png',x:10.6,y:0.9,w:1.9,h:1.9,transparency:25});
+  s.addImage({path:A+'orn_star_w.png',x:9.1,y:3.4,w:0.95,h:0.95,transparency:45});
+  s.addText(o.eyebrow||'',{x:0.6,y:2.1,w:9,h:0.4,isTextBox:true,margin:0,fontFace:BODY,fontSize:14,bold:true,color:D.TEAL,charSpacing:5});
+  s.addText(o.title,{x:0.52,y:2.55,w:11,h:1.6,isTextBox:true,margin:0,fontFace:HEAD,fontSize:o.tsz||52,color:D.INK,lineSpacingMultiple:0.95});
+  if(o.lines){ const runs=o.lines.map(l=>({text:l,options:{bullet:{code:'2022'},breakLine:true,paraSpaceAfter:9}}));
+    s.addText(runs,{x:0.62,y:o.linesY||4.3,w:8.6,h:1.7,isTextBox:true,margin:0,valign:'top',fontFace:BODY,fontSize:15,color:D.MUT,lineSpacingMultiple:1.12}); }
+  let yy=o.linksY||6.35;
+  if(o.repo){ s.addText([{text:'Repository   ',options:{bold:true,color:D.INK}},{text:o.repo,options:{color:D.TEAL}}],{x:0.6,y:yy,w:12,h:0.35,isTextBox:true,margin:0,fontFace:BODY,fontSize:13.5}); yy+=0.42; }
+  if(o.dash){ s.addText([{text:'Live dashboard   ',options:{bold:true,color:D.INK}},{text:o.dash,options:{color:D.TEAL}}],{x:0.6,y:yy,w:12,h:0.35,isTextBox:true,margin:0,fontFace:BODY,fontSize:13.5}); }
+  return s; }
+
+module.exports={ mk,nav,orn,title,card,cover,divider,numbered,bullets,imageSlide,stats,chartSlide,tableSlide,closing,metricStrip,
+  darkDivider,heroShot,gallery2,closingDark,C,D,W,H,A };

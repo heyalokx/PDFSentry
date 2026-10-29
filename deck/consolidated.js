@@ -153,9 +153,9 @@ T.bullets(p,{title:'Behavioural reasoning — without execution',right:R2,eb:'BE
   ['The void confirmed','SHAP shows the model acts on string/byte statistics and essentially nothing structural — so it cannot separate evasive malware from benign files.'],
   ['Our fill','Reachability supplies exactly that missing structural evidence, as a 65-D feature vector fused with the EMBER score.'],
 ],lede:'The template’s “dynamic analysis” is answered by static behavioural reachability — safer, and reproducible.',
-  img:A+'dash_overview.jpg',imgW:5.0,imgY:3.5,caption:'Reproduction + SHAP in the dashboard'});
+  img:A+'shot_overview.jpg',imgW:5.0,imgY:3.5,caption:'Reproduction + SHAP in the dashboard'});
 
-T.imageSlide(p,{title:'Screenshots — interactive dashboard',right:R2,eb:'SCREENSHOTS',img:A+'dash_overview.jpg',ratio:0.573,notes:[
+T.imageSlide(p,{title:'Screenshots — interactive dashboard',right:R2,eb:'SCREENSHOTS',img:A+'shot_overview.jpg',ratio:0.625,notes:[
   ['Traceable','Every KPI links to a stored JSON artifact — nothing is hand-typed.'],
   ['Three pillars','Detection, Robustness and Assurance, each a clickable view.'],
   ['Live PR curves','Ordinary vs evasive, rendered from the real EMBER model.'],
@@ -236,7 +236,7 @@ T.chartSlide(p,{title:'Pillar 02 · Robustness — semantic stability',right:R3,
     valAxisMinVal:0,valAxisMaxVal:1,showValue:true,dataLabelPosition:'outEnd',dataLabelColor:C.GRAPH,dataLabelFontFace:'Calibri',dataLabelFontSize:9,dataLabelFormatCode:'0.00'},
   stats:[['78.4%','of docs get BOTH EMBER verdicts',C.RED],['1.000','reachability stability index',C.TEAL],['0.216','EMBER stability index',C.AMBER]]});
 
-T.imageSlide(p,{title:'Pillar 03 · Assurance — verifiable verdicts',right:R3,eb:'ASSURANCE',img:A+'dash_assurance.jpg',ratio:0.573,notes:[
+T.imageSlide(p,{title:'Pillar 03 · Assurance — verifiable verdicts',right:R3,eb:'ASSURANCE',img:A+'shot_assurance.jpg',ratio:0.625,notes:[
   ['Certificate','Each alarm ships a minimal witness: catalog → trigger → dangerous node.'],
   ['0 / 285','false positives on the benign corpus (auto-exec gate).'],
   ['Deterministic','identical verdict + path over repeated runs; no training data.'],
@@ -270,12 +270,23 @@ T.tableSlide(p,{title:'Comparison / results',right:R3,eb:'COMPARISON',
   ],lede:'PDFSentry against the byte-ML baseline and a classic structural-path detector.',
   note:'Honest scope: the 0.78 EMBER benchmark is NOT improved (no raw evasive files to retrain). The 0.998 is a controlled result that isolates the mechanism.'});
 
-T.imageSlide(p,{title:'Screenshots — reachability & robustness',right:R3,eb:'SCREENSHOTS',img:A+'dash_stability.jpg',ratio:0.573,notes:[
-  ['Interactive','Pick any weaponized twin; its EMBER score-swing plots live.'],
-  ['Invariance','Reachability verdict held constant across all re-saves.'],
-  ['Object graph','A force-directed view traces the catalog→danger path.'],
-  ['Negative control','A feature-only recovery rule fails — motivating true reachability.'],
-]});
+/* ============ THE PORTAL — enterprise showcase (dark) ============ */
+T.darkDivider(p,{eb:'ENTERPRISE · SECURITY OPERATIONS',title:'The Command Center',right:'LIVE PORTAL',
+  desc:'The research shipped as a working PDF-security portal — ingest, risk-score, triage, and prove every verdict.'});
+
+T.heroShot(p,{eb:'TRIAGE CONSOLE',title:'Every PDF, parsed and risk-scored',right:'LIVE PORTAL',img:A+'shot_console.jpg',
+  caption:'826 artifacts triaged — an auto-exec threat open, with its indicators and the reachability witness that justifies quarantine.'});
+
+T.gallery2(p,{eb:'OPERATIONS',title:'Fleet posture at a glance',right:'LIVE PORTAL',shots:[
+  {img:A+'shot_ops.jpg',cap:'Operations — 0.00% false positives · 1.17 ms · 100% deterministic'},
+  {img:A+'shot_evasion.jpg',cap:'Structural evasion — fusion lifts 0.649 → 0.998'}]});
+
+T.heroShot(p,{eb:'LIVE ANALYSIS',title:'The attack path, traced live',right:'LIVE PORTAL',img:A+'shot_live.jpg',
+  caption:'EMBER says benign; PDFSentry says dangerous — and the object graph lights the catalog → trigger → JavaScript path.'});
+
+T.gallery2(p,{eb:'EVIDENCE',title:'The science behind the verdict',right:'LIVE PORTAL',shots:[
+  {img:A+'shot_realmal.jpg',cap:'Real evasive malware — the compression signature (p < 10⁻¹⁵)'},
+  {img:A+'shot_stability.jpg',cap:'Semantic stability — SSI 1.000 vs EMBER 0.216'}]});
 
 T.bullets(p,{title:'Honest scope & limitations',right:R3,eb:'LIMITATIONS',bullets:[
   ['Benchmark not beaten','We did NOT raise EMBER’s 0.78 evasive score — retraining needs raw evasive PDFs we could not obtain.'],
@@ -298,8 +309,8 @@ T.bullets(p,{title:'Future enhancement',right:R3,eb:'FUTURE WORK',bullets:[
   ['Beyond PDF','Extend the reachability abstraction to Office OOXML and other active-content formats.'],
 ]});
 
-T.closing(p,{eyebrow:'PROJECT DEMONSTRATION',title:'Detection. Robustness. Assurance.',
-  lines:['Live dashboard — 11 interactive views, every number traceable.','GitHub — full code, scripts, tests and stored artifacts.','Static throughout — nothing is ever executed.'],
-  repo:'github.com/heyalokx/PDFSentry', dash:'published interactive dashboard (link in repo README)', right:R3});
+T.closingDark(p,{eyebrow:'THANK YOU',title:'Detection. Robustness.\nAssurance.',
+  lines:['Reachability over recognition — reading what a PDF will do, not what it looks like.','A working portal, 23 tests, and every number traced to an artifact.','Honest by design — static throughout, nothing ever executed.'],
+  repo:'github.com/heyalokx/PDFSentry', dash:'self-contained interactive dashboard (link in repo README)', right:'PDFSENTRY · R3'});
 
 p.writeFile({fileName:'PDFSentry_Consolidated_R1-R2-R3.pptx'}).then(f=>console.log('wrote',f));
