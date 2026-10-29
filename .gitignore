@@ -36,3 +36,4 @@ artifacts/**/*.npz
 # Local distribution artifact (not part of the project)
 PDFSentry.bundle
 *.bundle
+*.zip
